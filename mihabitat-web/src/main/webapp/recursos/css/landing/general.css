@@ -1,0 +1,1481 @@
+/*--- Estilos Genetales ---*/
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #1B1C25;
+}
+section, span, div, a{
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+}
+img, a{
+	border: 0;
+	outline: 0;
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+@font-face {
+    font-family: 'AvenirNextLTProBold';
+    src: url('../../fonts/landing/AvenirNextLTProBold.eot');
+    src: url('../../fonts/landing/AvenirNextLTProBold.eot') format('embedded-opentype'),
+         url('../../fonts/landing/AvenirNextLTProBold.woff2') format('woff2'),
+         url('../../fonts/landing/AvenirNextLTProBold.woff') format('woff'),
+         url('../../fonts/landing/AvenirNextLTProBold.ttf') format('truetype'),
+         url('../../fonts/landing/AvenirNextLTProBold.svg#AvenirNextLTProBold') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProRegular';
+    src: url('../../fonts/landing/AvenirNextLTProRegular.eot');
+    src: url('../../fonts/landing/AvenirNextLTProRegular.eot') format('embedded-opentype'),
+         url('../../fonts/landing/AvenirNextLTProRegular.woff2') format('woff2'),
+         url('../../fonts/landing/AvenirNextLTProRegular.woff') format('woff'),
+         url('../../fonts/landing/AvenirNextLTProRegular.ttf') format('truetype'),
+         url('../../fonts/landing/AvenirNextLTProRegular.svg#AvenirNextLTProRegular') format('svg');
+}
+/*--- Estilos del loading ---*/
+.contLoading{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../../img/landing/load.gif);
+}
+
+.enviando {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../../img/landing/load.gif);
+}
+
+/*--- Estilos del Menú---*/
+
+.sesion{
+
+	border: 1px solid #01B6AF;
+	padding: 5px;
+	margin-top: -5px;
+	cursor: pointer;
+}
+.menuNoFijo{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	width: 100%;
+	background-color: #1B1C25;
+}
+.contGenMenu a{
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+}
+.logoMenu{
+	position: relative;
+	overflow: hidden;
+	margin-left: 50px;
+	width: 300px;
+	margin-top: 10px;
+	display: block;
+}
+.contMenuMov{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 60;
+	background-color: #000;
+}
+.contOpcMov{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 180px;
+	-webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.contOpcMov a{
+	display: inline-block;
+	position: relative;
+	font-size: 16px;
+	line-height: 40px;
+	font-family: 'AvenirNextLTProRegular';
+	color: #01B6AF;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.menuMov{
+	display: none;
+}
+.contBtnMenu{
+	position: absolute;
+	overflow: visible;
+	top: 26px;
+    right: 50px;
+	width: 30px;
+	z-index: 100;
+	cursor: pointer;
+}
+.lineM{
+	display: inline-block;
+	width: 30px;
+	height: 4px;
+	float: left;
+	margin-bottom: 6px;
+	background-color: #FFF;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.mLActivo{
+	background-color: #16171E;
+}
+.lineM1{
+	-webkit-transform: rotate3d(0, 0, 1, 180deg);
+	-moz-transform: rotate3d(0, 0, 1, 180deg);
+	-ms-transform: rotate3d(0, 0, 1, 180deg);
+	-o-transform: rotate3d(0, 0, 1, 180deg);
+	transform: rotate3d(0, 0, 1, 180deg);
+}
+.lineM3{
+	-webkit-transform: rotate3d(0, 0, 1, -180deg);
+	-moz-transform: rotate3d(0, 0, 1, -180deg);
+	-ms-transform: rotate3d(0, 0, 1, -180deg);
+	-o-transform: rotate3d(0, 0, 1, -180deg);
+	transform: rotate3d(0, 0, 1, -180deg);
+}
+.menuAct .lineM1{
+	top: 9px;
+	background-color: #FFF !important;
+	-webkit-transform: rotate3d(0, 0, 1, 45deg);
+	-moz-transform: rotate3d(0, 0, 1, 45deg);
+	-ms-transform: rotate3d(0, 0, 1, 45deg);
+	-o-transform: rotate3d(0, 0, 1, 45deg);
+	transform: rotate3d(0, 0, 1, 45deg);
+}
+.menuAct .lineM2{
+	opacity: 0;
+}
+.menuAct .lineM3{
+	top: -11px;
+	background-color: #FFF !important;
+	-webkit-transform: rotate3d(0, 0, 1, -45deg);
+	-moz-transform: rotate3d(0, 0, 1, -45deg);
+	-ms-transform: rotate3d(0, 0, 1, -45deg);
+	-o-transform: rotate3d(0, 0, 1, -45deg);
+	transform: rotate3d(0, 0, 1, -45deg);
+}
+.contMenu{
+	position: absolute;
+	overflow: visible;
+	width: 880px;
+	z-index: 10;
+	top: 50%;
+	margin-top: -9px;
+	right: 100px;
+
+}
+.contMenu a{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+	font-size: 14px;
+	font-family: 'AvenirNextLTProRegular';
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 20px;
+	opacity: 0;
+	text-transform: uppercase;
+}
+.contMenu a:hover{
+	color: #01B6AF;
+}
+
+
+
+
+
+#login{
+
+	background-color: #1B1C25;
+	display:none;
+	position: fixed;
+	overflow: visible;
+	width: 500px;
+	z-index: 1000000;
+	top: 78px;
+	right: 0px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+
+}
+
+
+#login form ul{
+list-style: none;
+padding: 0px;
+padding-left: 40px;
+margin: 0px;
+
+}
+
+#alerta{
+	display: none;
+	color: #C02631;
+	text-align: center;
+	margin-bottom: 5%;
+	font-size: 15px;
+
+}
+#login form ul li{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+	font-size: 14px;
+	font-family: 'AvenirNextLTProRegular';
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 20px;
+	padding: 0;
+	opacity: 1;
+	text-transform: uppercase;
+
+}
+
+#login form ul li input[type="checkbox"]{
+	display: block;
+	position: relative;
+	margin-top:0px;
+	margin-right: 28px;
+
+}
+
+
+#login_movil{
+	position: fixed;
+	display: none;
+	z-index: 1000000;
+	overflow:hidden;
+	background-color: #1B1C25;
+	width: 50%;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	margin-left: 35%;
+
+
+}
+#login_movil form ul{
+list-style: none;
+padding-top: 10%;
+padding-right: 40px;
+padding-left: 40px;
+margin: 0px;
+padding-bottom: 40px;
+
+}
+
+#login_movil form ul li{
+	display: block;
+	position: relative;
+	font-size: 14px;
+	font-family: 'AvenirNextLTProRegular';
+	color: #FFF;
+	text-decoration: none;
+	opacity: 1;
+	margin-bottom: 25px;
+
+
+}
+#ingreso_movil{
+	padding-left: 30px;
+}
+
+#ingreso_movil a{
+	cursor: pointer;
+	display: inline;
+	padding: 10px 8px;
+	color: #FFF;
+	border: 1px solid #01B6AF;
+	font-size: 15px;
+	font-family: 'AvenirNextLTProRegular';
+	border-radius: 5px;	
+}
+
+#ingreso_movil a:hover{
+	cursor: pointer;
+	
+	background-color:#01B6AF;
+	display: inline;
+
+	color: #fff;
+	opacity: .8;
+	transition-duration:.5s;
+}
+
+
+#login_movil form ul li a{
+	display: inline;
+	position: relative;
+	margin-top: 25px;
+	margin-right: 20px;
+	
+}
+
+
+
+#sesion-movil{
+	cursor: pointer;
+}
+
+
+#ingresar a{
+	cursor: pointer;
+	display: block;
+	padding: 8px 4px;
+	color: #FFF;
+	border: 1px solid #01B6AF;
+	font-size: 13px;
+	font-family: 'AvenirNextLTProRegular';
+	border-radius: 3px;
+}
+#ingresar a:hover{
+	cursor: pointer;
+	
+	background-color:#01B6AF;
+	display: inline-block;
+	padding: 8px 4px;
+	color: #fff;
+	opacity: .8;
+	transition-duration:.5s;
+}
+#olvide {
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+#olvide a{
+	font-family: 'AvenirNextLTProRegular';
+	color: #01B6AF;
+	font-size: 11px;
+}
+#olvide2 {
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+#olvide2 a{
+	font-family: 'AvenirNextLTProRegular';
+	color: #01B6AF;
+	font-size: 11px;
+}
+
+
+#olvide a:hover{
+	font-family: 'AvenirNextLTProRegular';
+	color: #fff;
+	font-size: 11px;
+	transition-duration:.8s;
+
+}
+
+
+
+
+
+/*menu estatico*/
+.contMenu2{
+	display: block;
+	position: absolute;
+	overflow: visible;
+	width: 880px;
+	z-index: 10;
+	top: 50%;
+	margin-top: -9px;
+	right: 0px;
+
+}
+.contMenu2 a{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	vertical-align: middle;
+	font-size: 14px;
+	font-family: 'AvenirNextLTProRegular';
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 20px;
+	opacity: 1;
+}
+.contMenu2 a:hover{
+	color: #01B6AF;
+}
+
+
+
+
+
+
+
+
+
+
+.tiempo{
+	-webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.inicio{
+    -webkit-transform: translate(0px,-50px);
+    -moz-transform: translate(0px,-50px);
+	-ms-transform: translate(0px,-50px);
+	-o-transform: translate(0px,-50px);
+    transform: translate(0px,-50px);
+}
+.fin{
+	-webkit-transform: translate(0px,50px);
+    -moz-transform: translate(0px,50px);
+	-ms-transform: translate(0px,50px);
+	-o-transform: translate(0px,50px);
+    transform: translate(0px,50px);
+}
+/*--- Estilos del Home ---*/
+.contGenPag{
+	position: relative;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+}
+.seccion{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.contSlider{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.slide{
+	background-size: 55%;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.slide1{
+	background-image: url(../../img/landing/building-04.png);
+}
+.slide2{
+	background-image: url(../../img/landing/building-01.png);
+}
+.slide3{
+	background-image: url(../../img/landing/building-02.png);
+}
+.slide4{
+	background-image: url(../../img/landing/building-03.png);
+}
+.contTitulo{
+	position: absolute;
+	width: 400px;
+	top: 50%;
+	left: 5%;
+	z-index: 100;
+	text-align: center;
+	margin-top: -90px;
+}
+.contTitulo h1{
+	text-align: left;
+	color: #FFF;
+	margin-bottom: 30px;
+	font-size: 40px;
+	font-family: 'AvenirNextLTProBold';
+}
+.contTitulo p{
+	font-size: 14px;
+	text-align: left;
+	font-family: Helvetica;
+    color: #999;
+}
+.contTitulo p strong{
+	color: #FFF;
+}
+
+/*union de section*/
+
+
+
+.contTitulo2{
+	position: absolute;
+	width: 500px;
+	top: 30%;
+	left: 5%;
+	z-index: 100;
+	text-align: center;
+	margin-top: -90px;
+}
+.contTitulo2 h1{
+	text-align: left;
+	color: #01B6AF;
+	margin-bottom: 30px;
+	font-size: 40px;
+	font-family: 'AvenirNextLTProBold';
+}
+.contTitulo2 h2{
+	text-align: left;
+	color: #01B6AF;
+	margin-bottom: 10px;
+	font-size: 30px;
+
+	font-family: 'AvenirNextLTProBold';
+}
+.contTitulo2 p{
+	font-size: 14px;
+	text-align: left;
+	font-family: Helvetica;
+    color: #999;
+}
+.contTitulo2 p strong{
+	color: #FFF;
+}
+
+
+
+
+
+
+
+.btnN{
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px 35px;
+	color: #FFF;
+	border: 1px solid #01B6AF;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-family: 'AvenirNextLTProRegular';
+	background-repeat: no-repeat;
+	background-position: 94% 6px;
+	-webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.contTitulo .btnN{
+	width: 155px;
+	padding: 15px 15px;
+}
+.btnN:hover{
+	color: #FFF !important;
+	background-color: #01B6AF;
+}
+
+#home .btnN{
+	font-size: 11px;
+}
+
+#porque{
+	background-color: #FFF;
+}
+
+#porque .contTitulo h1{
+	color: #01B6AF;
+}
+
+#porque .contTitulo .btnN{
+	color: #01B6AF;
+}
+
+/*--- Seccion Ventajas --*/
+
+#ventajas{
+	background-color: #F2F2F2;
+	overflow: hidden;
+}
+
+.contenedorV{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	min-height: 642px;
+	height: 100%;
+}
+
+.contImgVent{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 50%;
+	height: 100%;
+}
+
+.contImgVent img{
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	width: 80%;
+	-webkit-transform: translate(0px,-50%);
+    -moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+    transform: translate(0px,-50%);
+}
+
+.contVentajas{
+	position: absolute;
+	top: 50%;
+	margin-top: -200px;
+	right: 2%;
+	width: 620px;
+	text-align: center;
+}
+
+.contVentajas h2{
+	text-align: center;
+	color: #000;
+	font-size: 40px;
+	margin-bottom: 30px;
+	font-family: 'AvenirNextLTProBold';
+}
+
+.listaVentajas{
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.listaVentajas li{
+	text-align: left;
+	padding-left: 30px;
+	font-family: helvetica;
+	font-size: 14px;
+	color: #999;
+	margin: 10px 0px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: 0px 50%;
+	background-image: url(../../img/landing/bullet.png);
+}
+.btnVent{
+	margin-top: 20px;
+	color: #000 !important;
+	background-position: 88% 5px !important;
+}
+/*---- Seccion clientes ----*/
+#clientes{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	min-height: 650px;
+	background-color: #FFF;
+}
+#clientes h2{
+	text-align: center;
+	font-size: 40px;
+	margin: 20px 0px;
+	color: #01B6AF;
+	font-family: 'AvenirNextLTProBold';
+}
+.contClientes{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	z-index: 1;
+	-webkit-transform: translate(0px,-50%);
+    -moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+    transform: translate(0px,-50%);
+}
+.conSlideClientes{
+	width: 960px;
+	margin: 0px auto 0;
+	z-index: 10;
+}
+.SlideClientes{
+	width: 700px !important;
+	margin: 0 auto;
+}
+.opinionCli{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+}
+.opinionCli img{
+	margin: 10px 0px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.opinionCli h3{
+	color: #000;
+	font-weight: normal;
+	font-family: 'AvenirNextLTProRegular';
+	text-align: center;
+	font-size: 30px;
+}
+.opinionCli p{
+	font-size: 15px;
+    text-align: center;
+    font-family: Helvetica;
+    color: #999;
+}
+.slidPrev, .slidNext{
+	position: absolute;
+	top: 50%;
+	margin-top: -56px;
+	width: 57px;
+	height: 112px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.slidPrev{
+	left: 0px;
+	background-image: url(../../img/landing/arrow_left.png);
+}
+.slidNext{
+	right: 0px;
+	background-image: url(../../img/landing/arrow_right.png);
+}
+.contLogos{
+	position: relative;
+	overflow: hidden;
+	max-width: 900px;
+	width: 100%;
+	padding: 10px 0px;
+	text-align: center;
+	margin: 20px auto 0px;
+}
+.contLogos span{
+	display: inline-block;
+	margin: 0px 20px;
+	color: #01B6AF;
+	cursor: pointer;
+	font-size: 30px;
+	font-family: 'AvenirNextLTProBold';
+}
+/*--- Seccion de servicios --*/
+#servicios{
+	background-color: #F2F2F2;
+	overflow: visible !important;
+	min-height: 450px;
+}
+.conteServ{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	-webkit-transform: translate(0px,-50%);
+    -moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+    transform: translate(0px,-50%);
+}
+.conteServ h2{
+	color: #01B6AF;
+	font-size: 40px;
+	margin-bottom: 30px;
+	font-family: 'AvenirNextLTProBold';
+}
+.contList{
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+.lista{
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+	font-family: Helvetica;
+	color: #777;
+	background-color: #f1f1f1;
+	font-family: 'AvenirNextLTProRegular';
+	padding: 10px 20px;
+	cursor: pointer;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.lastlist{
+	border-right: 1px solid #ccc;
+	-webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+.lista:first-child {
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+.contList .activo{
+	color: #222;
+	background: #e6e6e6;
+}
+.contListas{
+	position: relative;
+	overflow: hidden;
+	height: 260px;
+	float: left;
+	width: 100%;
+}
+.opcList{
+	position: relative;
+	overflow: hidden;
+	display: none;
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+.opcList img{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+}
+.opcList h1{
+	font-family: 'AvenirNextLTProRegular';
+	color: #000;
+	font-size: 25px;
+	text-align: left;
+}
+.opcList ul{
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0px;
+}
+.opcList ul li{
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	font-family: Helvetica;
+	font-size: 15px;
+	color: #777;
+	padding-left: 13px;
+	text-align: left;
+	line-height: 22px;
+}
+.opcList ul li:after{
+	content: '';
+	position: absolute;
+	top: 6px;
+	left: 0px;
+	width: 9px;
+	height: 9px;
+	background-color: #01B6AF;
+	-webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.calc{
+	width: 145px;
+}
+.nota{
+	width: 145px;
+}
+.edif{
+	width: 310px;
+}
+.comp{
+	width: 310px;
+}
+/*---- Seccion del Contacto ----*/
+#contacto{
+	overflow: visible;
+}
+.contGenCont{
+	width: 100%;
+	height: 100%;
+	min-height: 590px;
+}
+.contForm{
+	position: absolute;
+	width: 600px;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -169px;
+	text-align: center;
+	z-index: 100;
+}
+.contForm h3{
+	color: #01B6AF;
+	font-size: 22px;
+	margin-bottom: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'AvenirNextLTProRegular';
+}
+input, textarea{
+	width: 100%;
+	border: 0px;
+	border-bottom: 1px solid #01B6AF;
+	font-family: 'AvenirNextLTProRegular';
+	font-size: 15px;
+	color: #FFF;
+	padding: 5px 0px;
+	margin-bottom: 25px;
+	background-color: #1B1C25;
+	text-align: center;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	-ms-border-radius: 0px !important;
+	-o-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	-moz-box-shadow: none !important;
+	-ms-box-shadow: none !important;
+	-o-box-shadow: none !important;
+	box-shadow: none !important;
+}
+input::-webkit-input-placeholder { color: #FFF; }
+input::-webkit-input-placeholder { color: #FFF; }
+input::-moz-placeholder { color: #FFF; }
+input:-ms-input-placeholder { color: #FFF; }
+textarea::-webkit-input-placeholder { color: #FFF; }
+textarea::-webkit-input-placeholder { color: #FFF; }
+textarea::-moz-placeholder { color: #FFF; }
+textarea:-ms-input-placeholder { color: #FFF; }
+textarea{
+	height: 80px;
+	-webkit-resize: none;
+	-moz-resize: none;
+	-ms-resize: none;
+	-o-resize: none;
+	resize: none;
+}
+input:focus, textarea:focus{
+	outline: 0;
+	border: 0px;
+	border-bottom: 1px solid #01B6AF;
+}
+.contResp{
+	width: 100%;
+	height: 282px;
+	text-align: center;
+}
+.contResp h4{
+	color: #FFF;
+	font-size: 18px;
+	text-align: center;
+	font-family: 'AvenirNextLTProRegular';
+}
+.contEnviando{
+	width: 100%;
+	height: 282px;
+	text-align: center;
+}
+.contEnviando h4{
+	color: #FFF;
+	font-size: 18px;
+	text-align: center;
+	font-family: 'AvenirNextLTProRegular';
+}
+.btnNuev{
+    margin-top: 30px;
+}
+/*---- Estilos del Footer ----*/
+footer{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	background-color: #0A0917;
+}
+.conGenFooter{
+	width: 100%;
+}
+.conGenFooter img{
+	position: relative;
+	overflow: hidden;
+	float: right;
+	margin-right: 50px;
+	margin-top: 4px;
+	width: 300px;
+	display: block;
+}
+.conGenFooter p, .conGenFooter p a{
+	font-family: 'AvenirNextLTProRegular';
+	color: #FFF;
+	font-size: 12px;
+	float: left;
+	margin: 0px 0px 0px 50px;
+}
+.conGenFooter p{
+	padding: 20px 0px;
+}
+.conGenFooter p a{
+	float: none;
+	margin: 0px !important;
+}
+@media all and (max-width: 1378px) {
+	.contMenu2 a{
+		font-size: 12px;
+	}
+	.contMenu2{
+		width: 770px;
+		margin-top: -10px;
+	}
+	
+
+}
+/*----Responsiv Web Pantallas Pequeñas----*/
+@media all and (max-width: 1230px) {
+	.contVentajas{
+		width: 465px;
+	}
+	.logoMenu{
+		width: 250px;
+	}
+	.contBtnMenu{
+		top: 23px;
+	}
+	.listaVentajas li{
+		font-size: 14px;
+		background-size: 15px 15px;
+	}
+	.contTitulo h1, .contVentajas h2{
+		font-size: 30px;
+	}
+	.conGenFooter img{
+		width: 250px;
+	}
+	.conGenFooter p{
+		padding: 14px 0px;
+	}
+	.lineM{
+		width: 25px;
+		margin-bottom: 4px;
+	}
+	.menuAct .lineM1{
+		top: 5px;
+	}
+	.contMenu2{
+		margin-top: -11px;
+	}
+	.menuMov{
+		display: block;
+	}
+	.menuWeb{
+		display: none;
+	}
+	.contMenu2{
+		display: none;
+	}
+	.conteServ h2, #clientes h2, .contForm h3{
+		font-size: 30px;
+	}
+
+
+/*----Responsiv Ipads----*/
+@media all and (max-width: 1100px) {
+	.btnN{
+		color: #FFF !important;
+		background-color: #01B6AF !important;
+	}
+	.conSlideClientes{
+		width: 780px;
+	}
+	.lista{
+		font-size: 13px;
+		padding: 5px 10px;
+	}
+	.opcList h1{
+		font-size: 20px;
+	}
+	.opcList ul li{
+		font-size: 13px;
+	}
+}
+@media all and (max-width: 917px) {
+	#home, #porque{
+		min-height: 850px;
+	}
+	.contTitulo{
+		top: 80px;
+		margin-top: 0px;
+		left: 50%;
+		margin-left: -200px;
+	}
+	.contTitulo2{
+		top: 80px;
+		margin-top: 0px;
+		left: 50%;
+		margin-left: -200px;
+	}
+	.slide{
+		background-position: center bottom;
+		background-size: 85%;
+	}
+	.contImgVent, .contVentajas{
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		margin-top: 47px;
+	}
+	.contImgVent img{
+		width: 570px;
+		margin: 60px auto;
+		position: relative;
+		display: block;
+		top: auto;
+		left: auto;
+		-webkit-transform: translate(0px,0%);
+	    -moz-transform: translate(0px,0%);
+		-ms-transform: translate(0px,0%);
+		-o-transform: translate(0px,0%);
+	    transform: translate(0px,0%);
+	}
+	#queEs .contTitulo{
+		width: 80% !important;
+		position: relative;
+		top: auto;
+		left: auto;
+		margin: 60px auto;
+	}
+	#queEs .contTitulo h1{
+		text-align: center;
+	}
+	#queEs{
+		height: auto;
+		text-align: center;
+		/*background-image: url() !important;*/
+	}
+	.imgMovil{
+		width: 50%;
+		margin: 0 auto;
+		display: block;
+	}
+	.contVentajas{
+		width: 400px;
+		margin: 0 auto;
+	}
+	#ventajas, .contImgVent{
+		height: auto;
+	}
+	.contVentajas h2{
+		margin-bottom: 0px;
+	}
+	.servicios{
+		width: 285px;
+		margin: 0px 10% 60px;
+	}
+	.contServ h2{
+		width: 80%;
+		text-align: center;
+		font-size: 18px;
+		margin: 0px auto;
+	}
+	.conGenFooter p{
+		margin-left: 25px;
+		padding: 13px 0px;
+	}
+	#servicios{
+		height: auto;
+		min-height: auto;
+	}
+	.conteServ{
+		position: relative;
+		top: auto;
+		left: auto;
+		padding-top: 60px;
+		-webkit-transform: translate(0px,0%);
+    	-moz-transform: translate(0px,0%);
+		-ms-transform: translate(0px,0%);
+		-o-transform: translate(0px,0%);
+    	transform: translate(0px,0%);
+	}
+	.lista{
+		display: none;
+	}
+	.opcList{
+		display: block !important;
+		float: none;
+		margin: 10px auto;
+	}
+	#clientes{
+		padding-bottom: 60px;
+	}
+	.contListas{
+		width: 370px;
+		height: auto;
+	}
+	.opcList h1{
+		text-align: center;
+	}
+	.opcList img{
+		position: relative;
+		top: auto;
+		right: auto;
+		display: block;
+		margin: 0 auto;
+	}
+	.contList{
+		margin-bottom: 0px;
+	}
+	#clientes h2{
+		margin-top: 0px;
+	}
+	.edif, .comp{
+		width: 240px;
+	}
+	.contImgVent{
+		display: none;
+	}
+}
+}
+@media all and (max-width: 848px) {
+	.logoMenu{
+		margin-left: 20px;
+	}
+	.contBtnMenu{
+		right: 20px;
+	}
+	.contMenu{
+		right: 60px;
+	}
+	.conSlideClientes{
+		width: 630px;
+	}
+	.SlideClientes{
+		width: 550px !important;
+	}
+}
+@media all and (max-width: 750px) {
+	.datosWeb{
+		display: none;
+	}
+	.datosMovil{
+		display: block !important;
+	}
+	.conGenFooter{
+		text-align: center;
+	}
+	.conGenFooter p{
+		font-size: 13px;
+		line-height: 20px;
+		text-align: center;
+		margin: 0px;
+		width: 100%;
+	}
+	.conGenFooter img{
+		float: none;
+		display: block;
+		margin: 10px auto;
+	}
+	.menuAct{
+		top: 17px !important;
+	}
+	#home, #porque{
+    	min-height: 768px;
+	}
+}
+/*----Responsiv Ipods----*/
+@media all and (max-width: 670px) {
+	.logoMenu{
+		width: 200px;
+	}
+	.conGenFooter img{
+		width: 200px;
+	}
+	.contBtnMenu{
+		top: 20px;
+	}
+	.contImgVent img{
+		width: 80%;
+	}
+	.contVentajas{
+		width: 80%;
+	}
+	/*#contacto, .contGenCont{
+		height: auto;
+		min-height: auto;
+	}*/
+	#clientes{
+		height: 600px;
+		min-height: 545px;
+	}
+	footer{
+		/*position: relative;*/
+	}
+	.contForm{
+		position: relative;
+		width: 80%;
+		top: auto;
+		left: auto;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		margin: 0 auto;
+	}
+	.slidPrev, .slidNext{
+		display: none;
+	}
+	.contLogos span{
+		font-size: 15px;
+		margin: 0px 10px;
+	}
+	.conSlideClientes{
+		width: 100%;
+	}
+	.SlideClientes{
+		width: 80% !important;
+	}
+	.opinionCli p{
+		font-size: 12px;
+		text-align: justify;
+	}
+	.contTitulo .btnN{
+		width: 130px;
+		font-size: 12px;
+		padding: 10px 10px;
+	}
+	#porque .contTitulo .btnN{
+		padding: 15px 10px;
+	}
+}
+@media all and (max-width: 508px) {
+	#home, #porque{
+   		min-height: 590px;
+	}
+	.contTitulo{
+		left: 0px;
+		margin-left: 0px;
+		width: 100%;
+	}
+	.contTitulo h1{
+		text-align: center;
+	}
+	.contTitulo p{
+		padding: 0px 30px;
+	}
+	.contTitulo .btnN{
+		float: none !important;
+		margin: 10px 25px;
+	}
+	.contTitulo2{
+		left: 0px;
+		margin-left: 0px;
+		width: 100%;
+	}
+	.contTitulo2 h1{
+		text-align: center;
+	}
+	.contTitulo2 h2{
+		text-align: center;
+	}
+	.contTitulo2 p{
+		padding: 0px 30px;
+	}
+	.contTitulo2 .btnN{
+		float: none !important;
+		margin: 10px 25px;
+	}
+	.listaVentajas{
+		padding: 0px 30px;
+	
+	}
+	#clientes{
+		height: 680px;
+	}
+}
+@media all and (max-width: 475px) {
+	#home, #porque{
+   		min-height: 650px;
+	}
+	.contTitulo2 h2{
+		display: none;
+	}
+	.listaVentajas{
+		display: none;
+	}
+}
+@media all and (max-width: 380px) {
+	.slide{
+		background-size: 90%;
+	}
+	.contListas{
+		float: none;
+		margin: 0 auto;
+		width: 80%;
+	}
+	.contOpcMov a{
+		font-size: 14px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

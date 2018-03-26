@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bstmexico.mihabitat</groupId>
+	<artifactId>mihabitat-pom</artifactId>
+	<version>1.11-BETA</version>
+	<packaging>pom</packaging>
+
+	<name>mihabitat-pom</name>
+
+	<developers>
+		<developer>
+			<id>bstmexico</id>
+			<name>BSTMéxico Tecnologías de Información</name>
+			<email>desarrollo@bstmexico.com</email>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>mihabitat-test-dataset</module>
+		<module>mihabitat-comunes</module>
+		<module>mihabitat-condominios</module>
+		<module>mihabitat-contabilidad</module>
+		<module>mihabitat-instalaciones</module>
+		<module>mihabitat-notificaciones</module>
+		<module>mihabitat-comunicacion</module>
+    	<module>mihabitat-especiales</module>
+    	<module>mihabitat-arrendamiento</module>
+    	<module>mihabitat-visitantes</module>
+		<module>mihabitat-web</module>
+  </modules>
+
+	<properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+		<compiler-version>1.7</compiler-version>
+		<project-version>1.11-BETA</project-version>
+
+		<hibernate.version>4.3.2.Final</hibernate.version>
+		<mysql.version>5.1.34</mysql.version>
+		<spring.version>4.1.4.RELEASE</spring.version>
+		<jackson.version>2.5.1</jackson.version>
+		<log.version>1.1.2</log.version>
+		<junit.version>4.12</junit.version>
+		<dbunit.version>2.5.0</dbunit.version>
+		<hsqldb.version>2.3.2</hsqldb.version>
+		<springtestdbunit.version>1.2.1</springtestdbunit.version>
+		<springockito.version>1.0.9</springockito.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${log.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>hamcrest-core</artifactId>
+					<groupId>org.hamcrest</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>${dbunit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.springtestdbunit</groupId>
+			<artifactId>spring-test-dbunit</artifactId>
+			<version>${springtestdbunit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kubek2k</groupId>
+			<artifactId>springockito-annotations</artifactId>
+			<version>${springockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!--<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadJavadocs>true</downloadJavadocs>
+					<downloadSources>true</downloadSources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<compilerVersion>${compiler-version}</compilerVersion>
+					<debug>true</debug>
+					<encoding>${project-build-sourceEncoding}</encoding>
+					<optimize>true</optimize>
+					<source>${compiler-version}</source>
+					<target>${compiler-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>-->
+
+	<build>
+		<finalName>${war.name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>email/template/**</include>
+					<include>i18n/**</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<resourceEncoding>${project.build.sourceEncoding}</resourceEncoding>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>png</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jasper</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<compilerVersion>${compiler-version}</compilerVersion>
+					<debug>true</debug>
+					<encoding>${project-build-sourceEncoding}</encoding>
+					<optimize>true</optimize>
+					<source>${compiler-version}</source>
+					<target>${compiler-version}</target>
+				</configuration>
+			</plugin>
+			<!-- 			<plugin> -->
+			<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+			<!-- 				<artifactId>maven-resources-plugin</artifactId> -->
+			<!-- 				<version>2.7</version> -->
+			<!-- 				<configuration> -->
+			<!-- 					<encoding>UTF-8</encoding> -->
+			<!-- 				</configuration> -->
+			<!-- 			</plugin> -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+				<configuration>
+					<!-- <contextPath>/</contextPath> -->
+					<!-- 					<jvmArgs>-Xmx1024</jvmArgs> -->
+					<!--<jvmArgs>-Xmx2024m -Xms2024m -XX:PermSize=256m -XX:MaxPermSize=512m</jvmArgs>-->
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8070</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<war.name>mihabitat-web</war.name>
+
+				<application.host>http://app.mihabitat.com.mx/</application.host>
+				<email.contacto>soporte@mihabitat.com</email.contacto>
+				<sendingblue.host>https://api.sendinblue.com/v2.0</sendingblue.host>
+				<sendingblue.key>N1tHf2Fd0wbxQTOY</sendingblue.key>
+				<email.direccion.origen.email>hola@mihabitat.com</email.direccion.origen.email>
+				<email.direccion.origen.nombre>Mi Hábitat</email.direccion.origen.nombre>
+
+				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:mysql://localhost/mihabitat</jdbc.url>
+				<jdbc.user>root</jdbc.user>
+				<jdbc.pass>root</jdbc.pass>
+				<!--<jdbc.url>jdbc:mysql://localhost/mihabitat</jdbc.url>
+				<jdbc.user>root</jdbc.user>
+				<jdbc.pass>root</jdbc.pass>-->
+
+				<hibernate.show_sql>false</hibernate.show_sql>
+				<hibernate.format_sql>false</hibernate.format_sql>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
+
+				<mail.host>p3plcpnl0677.prod.phx3.secureserver.net</mail.host>
+				<mail.port>465</mail.port>
+				<mail.username>desarrollo@bstmexico.com</mail.username>
+				<mail.password>D1pMin89</mail.password>
+				<mail.properties>
+					&lt;props&gt;
+					&lt;prop key="mail.smtp.from"&gt;desarrollo@bstmexico.com&lt;/prop&gt;
+					&lt;prop key="mail.smtp.auth"&gt;true&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.port"&gt;465&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.class"&gt;javax.net.ssl.SSLSocketFactory&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.fallback"&gt;false&lt;/prop&gt;
+					&lt;prop key="mail.debug"&gt;false&lt;/prop&gt;
+					&lt;/props&gt;
+				</mail.properties>
+
+				<log.name>mihabitat-web.dev</log.name>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<war.name>mihabitat-test</war.name>
+
+				<application.host>http://www.mihabitat.com/</application.host>
+				<email.contacto>hola@mihabitat.com.mx</email.contacto>
+
+				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:mysql://localhost/mihabitat-test</jdbc.url>
+				<sendingblue.host>https://api.sendinblue.com/v2.0</sendingblue.host>
+				<sendingblue.key>N1tHf2Fd0wbxQTOY</sendingblue.key>
+				<email.direccion.origen.email>hola@mihabitat.com</email.direccion.origen.email>
+				<email.direccion.origen.nombre>Mi Hábitat</email.direccion.origen.nombre>
+				<jdbc.user>mihabitat-test</jdbc.user>
+				<jdbc.pass>M1Hda3lne-$2da</jdbc.pass>
+
+				<hibernate.show_sql>true</hibernate.show_sql>
+				<hibernate.format_sql>true</hibernate.format_sql>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
+
+				<mail.host>p3plcpnl0677.prod.phx3.secureserver.net</mail.host>
+				<mail.port>465</mail.port>
+				<mail.username>desarrollo@bstmexico.com</mail.username>
+				<mail.password>D1pMin89</mail.password>
+				<mail.properties>
+					&lt;props&gt;
+					&lt;prop key="mail.smtp.from"&gt;desarrollo@bstmexico.com&lt;/prop&gt;
+					&lt;prop key="mail.smtp.auth"&gt;true&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.port"&gt;465&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.class"&gt;javax.net.ssl.SSLSocketFactory&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.fallback"&gt;false&lt;/prop&gt;
+					&lt;prop key="mail.debug"&gt;false&lt;/prop&gt;
+					&lt;/props&gt;
+				</mail.properties>
+
+				<log.name>mihabitat-web.test</log.name>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>produccion</id>
+			<properties>
+				<war.name>ROOT</war.name>
+
+				<application.host>http://app.mihabitat.com.mx/</application.host>
+				<email.contacto>soporte@mihabitat.com.mx</email.contacto>
+				<sendingblue.host>https://api.sendinblue.com/v2.0</sendingblue.host>
+				<sendingblue.key>N1tHf2Fd0wbxQTOY</sendingblue.key>
+				<email.direccion.origen.email>hola@mihabitat.com</email.direccion.origen.email>
+				<email.direccion.origen.nombre>Mi Hábitat</email.direccion.origen.nombre>
+
+				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:mysql://localhost/mihabitat_prod</jdbc.url>
+				<jdbc.user>no</jdbc.user>
+				<jdbc.pass>no</jdbc.pass>
+
+				<hibernate.show_sql>false</hibernate.show_sql>
+				<hibernate.format_sql>false</hibernate.format_sql>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
+
+				<mail.host>p3plcpnl0677.prod.phx3.secureserver.net</mail.host>
+				<mail.port>465</mail.port>
+				<mail.username>desarrollo@bstmexico.com</mail.username>
+				<mail.password>D1pMin89</mail.password>
+				<mail.properties>
+					&lt;props&gt;
+					&lt;prop key="mail.smtp.from"&gt;desarrollo@bstmexico.com&lt;/prop&gt;
+					&lt;prop key="mail.smtp.auth"&gt;true&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.port"&gt;465&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.class"&gt;javax.net.ssl.SSLSocketFactory&lt;/prop&gt;
+					&lt;prop key="mail.smtp.socketFactory.fallback"&gt;false&lt;/prop&gt;
+					&lt;prop key="mail.debug"&gt;false&lt;/prop&gt;
+					&lt;/props&gt;
+				</mail.properties>
+
+				<log.name>ezfact-web.prod</log.name>
+			</properties>
+		</profile>
+	</profiles>
+</project>

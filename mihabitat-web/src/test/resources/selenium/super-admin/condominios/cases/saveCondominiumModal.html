@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8070/" />
+<title>saveCondominiumModal</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">saveCondominiumModal</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luisangel</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Lista')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-nuevo-condominio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nombre</td>
+	<td>Residencial Reforma</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=administradores</td>
+	<td>label=José Manuel Madrid</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-pais</td>
+	<td>label=México</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-estado &gt; option[value=&quot;9&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-estado</td>
+	<td>label=Distrito Federal</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-municipio &gt; option[value=&quot;271&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-municipio</td>
+	<td>label=Cuauhtémoc</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-colonia &gt; option[value=&quot;93274&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-colonia</td>
+	<td>label=Morelos</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-calle</td>
+	<td>Av. Paseo de la Reforma</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-noExt</td>
+	<td>250</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-referencia</td>
+	<td>A un costado del Chedrahui</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-modal-save-condominio</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

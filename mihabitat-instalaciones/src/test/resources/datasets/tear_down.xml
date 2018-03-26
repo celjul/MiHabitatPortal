@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<tcatalogos/>
+	<tpaises />
+	<testados />	
+	<tmunicipios/>
+	<tcolonias/>
+	 <tusuarios/>
+	<tusuarioroles />
+	<tdireccioncondominio/>
+	<tcondominios/>
+	<tcondominioadministradores />
+	<tgruposcondominio/>
+	<tmantenimientoscondominio />
+	<tcontactos/>
+	<tdepartamentos/>
+	<tdepartamentocontactos />
+	<tinstalaciones />
+	<tdisponibilidades />
+</dataset>

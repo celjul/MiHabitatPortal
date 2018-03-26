@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.bstmexico.mihabitat</groupId>
+    <artifactId>mihabitat-pom</artifactId>
+    <version>1.11-BETA</version>
+  </parent>
+
+  <groupId>com.bstmexico.mihabitat</groupId>
+  <artifactId>mihabitat-notificaciones</artifactId>
+  <version>${project-version}</version>
+
+  <name>mihabitat-notificaciones</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <xmlbean.version>2.6.0</xmlbean.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-comunes</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-contabilidad</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-instalaciones</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-comunicacion</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,5 @@
+<dataset>
+	<tpersonas NIdPersona="1" VApellidoMaterno="Ortiz" VApellidoPaterno="Cardenas" VNombre="Luis Angel" />
+	<tpersonas NIdPersona="2" VApellidoMaterno="Zarate" VApellidoPaterno="Romero" VNombre="Jimena" />
+	<tpersonas NIdPersona="3" VApellidoMaterno="Allende" VApellidoPaterno="Cuevas" VNombre="Mercedes" />
+</dataset>

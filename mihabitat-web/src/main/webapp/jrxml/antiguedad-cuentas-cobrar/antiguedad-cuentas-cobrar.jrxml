@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-12-02T20:00:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="antiguedad-cuentas-cobrar" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db15d485-bc9d-49ab-afe1-d3433fee6415">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="20"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="IMAGEN" class="java.awt.Image" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FORMATO" class="java.lang.String"/>
+	<parameter name="TIPO" class="java.lang.Byte"/>
+	<parameter name="CONTACTO" class="java.lang.Boolean"/>
+	<parameter name="MOROSIDAD" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="anios" class="java.util.Collection">
+		<fieldDescription><![CDATA[anios]]></fieldDescription>
+	</field>
+	<field name="fin" class="java.util.Date">
+		<fieldDescription><![CDATA[fin]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
+	</field>
+	<field name="condominio" class="com.bstmexico.mihabitat.condominios.model.Condominio">
+		<fieldDescription><![CDATA[condominio]]></fieldDescription>
+	</field>
+	<field name="adeudos" class="java.util.Collection">
+		<fieldDescription><![CDATA[adeudos]]></fieldDescription>
+	</field>
+	<title>
+		<band height="60" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="822" height="60" backcolor="#A4D55D" uuid="78a0e2a9-c13d-4469-857e-6fcdc0704f81"/>
+				<textField>
+					<reportElement x="100" y="0" width="722" height="20" uuid="acd06eb1-9e46-4440-ba4d-f56e7e480c47"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{condominio}.getNombre()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="20" width="722" height="40" uuid="46fe997c-d5ee-433d-b4a4-0dd6d5076b53"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{condominio}.getDireccion().getCalle() + " " +
+$F{condominio}.getDireccion().getNoExterior() + ", " +
+$F{condominio}.getDireccion().getColonia().getNombre() + ", C.P. " +
+$F{condominio}.getDireccion().getColonia().getCodigoPostal() + ", " +
+$F{condominio}.getDireccion().getColonia().getMunicipio().getNombre() + ", " +
+$F{condominio}.getDireccion().getColonia().getMunicipio().getEstado().getNombre()]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="0" y="0" width="100" height="50" uuid="c0f0c7ac-7728-49fc-a10a-6c22e54b1091">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{IMAGEN}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40">
+			<rectangle>
+				<reportElement x="0" y="0" width="800" height="10" forecolor="#0A0918" backcolor="#0A0918" uuid="32c546c7-cc0c-4e4b-8392-45013372652d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="35" width="800" height="5" forecolor="#0A0918" backcolor="#0A0918" uuid="a7deae64-f1e5-43d0-abf8-a3e028a6935d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="1" y="10" width="580" height="25" uuid="15a85c6b-b4f3-4455-8c2d-4c09fe66c9c4">
+					<printWhenExpression><![CDATA[$P{MOROSIDAD}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MOROSIDAD POR " + ($P{TIPO} == 1 ? "DÍAS" : $P{TIPO} == 2 ? "MESES" : "AÑOS")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="10" width="568" height="25" uuid="b829d6cd-ecde-4450-bf6c-77023a0d5b94">
+					<printWhenExpression><![CDATA[!$P{MOROSIDAD}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ANTIGÜEDAD DE CUENTAS POR COBRAR POR " + ($P{TIPO} == 1 ? "DÍAS" : $P{TIPO} == 2 ? "MESES" : "AÑOS")]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="580" y="10" width="150" height="25" uuid="4cf078c1-ab6d-444a-a393-02c749918f01">
+					<printWhenExpression><![CDATA[$P{TIPO} == 1]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fin}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="580" y="10" width="150" height="25" uuid="32f1caf9-e37b-426e-ac9d-527d85610601">
+					<printWhenExpression><![CDATA[$P{TIPO} == 2]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{TIPO} == 1]]></printWhenExpression>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="800" height="30" uuid="1ca5b70b-a530-4cfb-a471-e6390496afba"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTACTO">
+					<subreportParameterExpression><![CDATA[$P{CONTACTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FORMATO">
+					<subreportParameterExpression><![CDATA[$P{FORMATO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{adeudos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "adeudos-dias.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$P{TIPO} == 2]]></printWhenExpression>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="800" height="30" uuid="9a7d4b77-bd6f-46a4-83df-03a4d8914792"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTACTO">
+					<subreportParameterExpression><![CDATA[$P{CONTACTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FORMATO">
+					<subreportParameterExpression><![CDATA[$P{FORMATO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{adeudos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "adeudos-meses.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$P{TIPO} == 3]]></printWhenExpression>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="800" height="30" uuid="d7ae2639-bbe2-45f0-bde3-c5fff10ce1ce"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ANIOS">
+					<subreportParameterExpression><![CDATA[$F{anios}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FORMATO">
+					<subreportParameterExpression><![CDATA[$P{FORMATO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTACTO">
+					<subreportParameterExpression><![CDATA[$P{CONTACTO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{adeudos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "adeudos-anios.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

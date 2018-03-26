@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tcatalogos NIdCatalogo="20" VDescripcion="Trabajo" VTipo="email" />
+	<tcatalogos NIdCatalogo="21" VDescripcion="Personal" VTipo="email" />
+	<tcatalogos NIdCatalogo="19" VDescripcion="Celular" VTipo="telefono" />
+	<tcatalogos NIdCatalogo="18" VDescripcion="Casa" VTipo="telefono" />
+
+
+	
+		<tcontactos NIdContacto="1" BActivo="1" NIdCondominio="1" NIdPersona="1" />
+
+<!-- 		<temailscontacto VDireccion="ale_vale92@hotmail.com" -->
+<!-- 			NIdEmail="1" NIdPersona="1" NIdTipo="20"> -->
+<!-- 		</temailscontacto> -->
+		
+<!-- 		<ttelefonoscontactos VExtension="512" NIdTelefono="1" -->
+<!-- 			VLada="52" VNumero="55580922" NIdTipo="19" NIdPersona="1"> -->
+<!-- 		</ttelefonoscontactos> -->
+	</dataset>

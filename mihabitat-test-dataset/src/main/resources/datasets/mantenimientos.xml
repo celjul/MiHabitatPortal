@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<tmantenimientoscondominio NIdCondominio="1"
+		VDescripcion="Mantenimiento 1" NIdMantenimiento="1" NMonto="134.00" />
+	<tmantenimientoscondominio NIdCondominio="1"
+		VDescripcion="Mantenimiento 2" NIdMantenimiento="2" NMonto="1340.00" />
+	<tmantenimientoscondominio NIdCondominio="1"
+		VDescripcion="Mantenimiento 3" NIdMantenimiento="3" NMonto="13400.00" />
+</dataset>

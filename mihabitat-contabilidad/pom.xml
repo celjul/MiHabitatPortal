@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.bstmexico.mihabitat</groupId>
+		<artifactId>mihabitat-pom</artifactId>
+		<version>1.11-BETA</version>
+	</parent>
+
+	<groupId>com.bstmexico.mihabitat</groupId>
+	<artifactId>mihabitat-contabilidad</artifactId>
+	<version>${project-version}</version>
+
+	<name>mihabitat-contabilidad</name>
+
+	<properties>
+		<xmlbean.version>2.6.0</xmlbean.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.bstmexico.mihabitat</groupId>
+			<artifactId>mihabitat-comunes</artifactId>
+			<version>1.11-BETA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bstmexico.mihabitat</groupId>
+			<artifactId>mihabitat-condominios</artifactId>
+			<version>1.11-BETA</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ocpsoft.prettytime</groupId>
+			<artifactId>prettytime</artifactId>
+			<version>4.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>mx.gob.sat</groupId>
+			<artifactId>cfdi</artifactId>
+			<version>3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>${xmlbean.version}</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>	
+
+	<tinstalaciones NIdInstalacion="1" NIdCondominio="1" VNombre="Salón de Eventos"  
+		VDescripcion="Capacidad para 150 personas..." NMaximoReservaciones="1"
+		VReglamento="Hacer buen uso de él..." DCosto="1360.00" BImagen="" BActivo="1"
+		NIdUnidad="30" NIdCuenta="" />
+	
+	<tdisponibilidades NIdDisponibilidad="1" NIdDia="20" DHoraInicio="09:00:00" DHoraFin="18:00:00"
+		NIdInstalacion="1"/>
+</dataset>

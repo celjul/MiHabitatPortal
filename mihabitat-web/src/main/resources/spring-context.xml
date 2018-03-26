@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/util
+						http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:component-scan base-package="com.bstmexico.mihabitat" />
+
+	<context:property-placeholder location="classpath:configuration.properties"
+		order="1" ignore-unresolvable="true" />
+
+	<util:properties id="propertyConfigurer"
+		location="classpath:configuration.properties" />
+
+	<bean id="objectMapper"
+		class="com.bstmexico.mihabitat.web.util.HibernateAwareObjectMapper" />
+
+	<import resource="spring-security.xml" />
+	<import resource="spring-service.xml" />
+	<import resource="spring-dao.xml" />
+	<import resource="spring-email.xml" />
+	<import resource="spring-batch.xml" />
+
+	<import resource="classpath:/spring-websocket.xml" />
+
+</beans>

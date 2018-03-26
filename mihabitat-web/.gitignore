@@ -1,0 +1,10 @@
+/.settings/
+/target/
+/bin/
+/logs/
+.classpath
+.project
+.iml
+
+.DS_Store
+.DS_Store?

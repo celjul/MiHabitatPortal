@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/decorators">
+	<excludes>
+		<pattern>/*ajax=true*</pattern>
+	</excludes>
+	<decorator name="super-administador" page="super-administrador/decorator.jsp">
+		<pattern>/super-administrador/*</pattern>
+	</decorator>
+	<decorator name="administador" page="administrador/decorator.jsp">
+        <pattern>/administrador/*</pattern>
+    </decorator>
+    <decorator name="contacto" page="contacto/decorator.jsp">
+        <pattern>/contacto/*</pattern>
+    </decorator>
+    <decorator name="vigilante" page="vigilante/decorator.jsp">
+        <pattern>/vigilante/*</pattern>
+    </decorator>
+</decorators>

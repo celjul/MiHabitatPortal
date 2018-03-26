@@ -1,0 +1,17 @@
+<dataset>
+	<tcatalogos NIdCatalogo="1" VDescripcion="Opcion D Test" VTipo="test" />
+	<tcatalogos NIdCatalogo="2" VDescripcion="Opcion A Test" VTipo="test" />
+	<tcatalogos NIdCatalogo="3" VDescripcion="Opcion B Test" VTipo="test" />
+	
+	<tcatalogos NIdCatalogo="4" VDescripcion="Opcion 1 Otro Test" VTipo="test_otro" />
+	<tcatalogos NIdCatalogo="5" VDescripcion="Opcion 2 Otro Test" VTipo="test_otro" />
+	<tcatalogos NIdCatalogo="6" VDescripcion="Opcion 3 Otro Test" VTipo="test_otro" />
+	
+	<tcatalogos NIdCatalogo="7" VDescripcion="Personal" VTipo="email" />
+	<tcatalogos NIdCatalogo="8" VDescripcion="Trabajo" VTipo="email" />
+	
+	<tcatalogos NIdCatalogo="9" VDescripcion="Celular" VTipo="telefono" />
+	<tcatalogos NIdCatalogo="10" VDescripcion="Casa" VTipo="telefono" />
+	<tcatalogos NIdCatalogo="11" VDescripcion="Oficina" VTipo="telefono" />
+	
+</dataset>

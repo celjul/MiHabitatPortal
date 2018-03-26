@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.bstmexico.mihabitat</groupId>
+		<artifactId>mihabitat-pom</artifactId>
+		<version>1.11-BETA</version>
+	</parent>
+	
+  <groupId>com.bstmexico.mihabitat</groupId>
+  <artifactId>mihabitat_arrendamiento</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>mihabitat_arrendamiento</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+
+<dependencies>
+		<dependency>
+			<groupId>com.bstmexico.mihabitat</groupId>
+			<artifactId>mihabitat-comunes</artifactId>
+			<version>1.11-BETA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bstmexico.mihabitat</groupId>
+			<artifactId>mihabitat-condominios</artifactId>
+			<version>1.11-BETA</version>
+		</dependency>
+	</dependencies>
+
+</project>

@@ -1,0 +1,216 @@
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title>MiHábitat</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0
+		}
+
+		img {
+			max-width: 100%
+		}
+
+		body {
+			-webkit-font-smoothing: antialiased;
+			-webkit-text-size-adjust: none;
+			width: 100% !important;
+			height: 100%
+		}
+
+
+		table.head-wrap {
+			width: 100%
+		}
+
+		.header.container table td.logo {
+			padding: 15px
+		}
+
+		.header.container table td.label {
+			padding: 15px;
+			padding-left: 0
+		}
+
+		table.body-wrap {
+			width: 100%
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+			"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			line-height: 1.1;
+			margin-bottom: 15px;
+			color: #000
+		}
+
+		h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+			font-size: 60%;
+			color: #6f6f6f;
+			line-height: 0;
+			text-transform: none
+		}
+
+		h3 {
+			font-weight: 500;
+			font-size: 27px
+		}
+
+		p, ul {
+			margin-bottom: 10px;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 1.6
+		}
+
+		p.lead {
+			font-size: 17px
+		}
+
+		p.last {
+			margin-bottom: 0
+		}
+
+		.container {
+			display: block !important;
+			max-width: 600px !important;
+			margin: 0 auto !important;
+			clear: both !important
+		}
+
+		.content {
+			padding: 15px;
+			max-width: 600px;
+			margin: 0 auto;
+			display: block
+		}
+
+		.content table {
+			width: 100%
+		}
+
+		.column {
+			width: 300px;
+			float: left
+		}
+
+		.column tr td {
+			padding: 15px
+		}
+
+		.column table {
+			width: 100%
+		}
+
+		.social .column {
+			width: 280px;
+			min-width: 279px;
+			float: left
+		}
+
+		.clear {
+			display: block;
+			clear: both
+		}
+
+		div[class="column"] {
+			width: auto !important;
+			float: none !important
+		}
+
+		table.social div[class="column"] {
+			width: auto !important
+		}
+		.aviso {
+			color: #000;
+			font-size: 8px;
+			max-width: 700px;
+			position: relative;
+		}
+		.mensaje {
+			color: #000;
+			font-size: 12px;
+			max-width: 500px;
+			position: relative;
+		}
+	</style>
+</head>
+<body >
+<table border='0' cellpadding='0' cellspacing='0' width='100%' style='background-color: #1C1C24; text-align: center; font-size: 14px; font-family: verdana;'>
+	<tr>
+		<td colspan='2'>
+			<img src='${host}/recursos/img/mihabitat.png' align='center' width='200' />
+		</td>
+		<td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;' >&nbsp;</a><br />&nbsp;</td>
+		<td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;' >&nbsp;</a><br />&nbsp;</td>
+		<td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;'>&nbsp;</a><br />&nbsp;</td>
+	</tr>
+	<tr style='background-color: #FFFFFF;'>
+		<td colspan='5' align='center'>
+			<br />
+			<p style='color: #000; font-size: 30px;'>Nuevo Cobro</p>
+		</td>
+	</tr>
+	<tr style='background-color: #FFFFFF;'>
+		<td colspan='5' align='center'>
+			<br />
+			<p class="mensaje" style="text-align: left">
+				Buen día,<br><br>
+				Se registró un nuevo cobro para tu departamento
+				<strong>${departamento}</strong> en el condominio <strong>${condominio}</strong>.
+				<br /> <br />
+				Detalles:
+				<ul style="text-align: left">
+					<li><strong>Departamento:</strong> ${departamento}</li>
+					<li><strong>Concepto del Cargo:</strong> ${concepto}</li>
+					<li><strong>Fecha de Aplicación:</strong> ${fecha}</li>
+					<li><strong>Monto:</strong> ${monto}</li>
+					#if (${fechaDescuento} != "")
+					<li><strong>Descuento de ${montoDescuento} pagando antes de:</strong> ${fechaDescuento}</li>
+					#end
+					#if (${fechaRecargo}  != "")
+					<li><strong>Fecha límite de pago:</strong> ${fechaRecargo}</li>
+					<li><strong>Recargos por pago tardío:</strong> ${montoRecargo}</li>
+					#end
+				</ul>
+			</p>
+			<br />
+			<p class="mensaje">
+				Para ver el estado de cuenta en línea da click <a href="${host}/contacto/mis-estados-cuenta/consulta">Aquí</a>.
+				<br />
+				Para ingresar a MiHábitat: <a href="${host}/inicio">${host}/inicio</a>
+			</p>
+		</td>
+	</tr>
+	<tr style='background-color: #F2F2F2;'>
+		<td colspan='5' align='center'>
+			<br />
+			<p style="font-size: xx-small">AVISO DE PRIVACIDAD</p>
+			<p class='aviso' style="font-size: xx-small">Este mensaje y sus adjuntos se dirigen exclusivamente a su destinatario, puede contener información privilegiada
+				o confidencial y es para uso exclusivo de la persona o entidad de destino. Si no es usted el destinatario indicado,
+				queda notificado de que la lectura, utilización, divulgación y/o copia si autorización puede estar prohibida en
+				virtud de la legislación vigente. Si ha recibido este mensaje por error, le rogamos que nos lo comunique
+				inmediatamente a <a href='mailto:soporte@mihabitat.com' style='color: #000;text-decoration: none;'>soporte@mihabitat.com</a> y proceda a su destrucción.
+			</p>
+			<br /><br />
+		</td>
+	</tr>
+	<tr  style='background-color: #1C1C24;'>
+		<td colspan='5'>
+			<img src='${host}/recursos/img/imgMail/mailing.jpg' align='center' width='555' />
+		</td>
+	</tr>
+	<tr  style='background-color: #1C1C24;'>
+		<td colspan='5'>
+			<p style='color: #FFFFFF; font-size: 12px; text-align: center;'>
+				<br />
+				<a href='mailto:hola@mihabitat.com' style='color: #FFFFFF;text-decoration: none;'>hola@mihabitat.com</a>&nbsp;&nbsp; ·
+				&nbsp;&nbsp;&nbsp;<a href='https://www.mihabitat.com' target="_blank" style='color: #FFFFFF;text-decoration: none;'>www.mihabitat.com</a><br />
+				Un producto de BSTMéxico Tecnologías de Información &nbsp;&nbsp;|&nbsp;&nbsp; <a href='http://www.bstmexico.com/' style='color: #FFFFFF;text-decoration: none;' target='_blank'>www.bstmexico.com</a>
+				<br /><br />
+			</p>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

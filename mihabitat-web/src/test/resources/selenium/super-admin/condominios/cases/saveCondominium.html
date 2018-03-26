@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8070/" />
+<title>saveCondominium</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">saveCondominium</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luisangel</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Nuevo')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nombre</td>
+	<td>La Gloria</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=administradores</td>
+	<td>label=José Manuel Madrid</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-pais</td>
+	<td>label=México</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-estado &gt; option[value=&quot;20&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-estado</td>
+	<td>label=Hidalgo</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-municipio &gt; option[value=&quot;523&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-municipio</td>
+	<td>label=Tulancingo de Bravo</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#condominio-colonia &gt; option[value=&quot;59839&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=condominio-colonia</td>
+	<td>label=La Cañada</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-calle</td>
+	<td>Aurelio Marín</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-noExt</td>
+	<td>375</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=condominio-referencia</td>
+	<td>Frente a la carnicería &quot;La Lonja&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-guardar-condominio</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-12-07T19:09:08 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalle-concepto-cargo-aplicado" pageWidth="160" pageHeight="15" orientation="Landscape" columnWidth="160" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c7dfe747-27ab-443d-854c-d6b32c615c10">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="habitante" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[habitante]]></fieldDescription>
+	</field>
+	<field name="principal" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[principal]]></fieldDescription>
+	</field>
+	<field name="propietario" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[propietario]]></fieldDescription>
+	</field>
+	<field name="id" class="com.bstmexico.mihabitat.departamentos.model.ContactoDepartamentoId">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="160" height="15" uuid="b3b58bdd-5808-4f2a-9bd3-e4a7399e715a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{id}.getContacto().getNombre() + " " + $F{id}.getContacto().getApellidoPaterno() + " "  + $F{id}.getContacto().getApellidoMaterno()) + 
+"(" + ($F{principal}?"C,":"") + ($F{propietario}?"P,":"") + ($F{habitante}?"H,":"") + ")"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

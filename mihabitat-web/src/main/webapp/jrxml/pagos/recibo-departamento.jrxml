@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-11-28T18:02:53 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recibo-detalle" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ea4da3f-9fc0-4bd8-b904-027d8fe9ade2">
+	<property name="ireport.zoom" value="1.5000000000000007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="pagoCondomino" class="com.bstmexico.mihabitat.pagos.model.Pago">
+		<fieldDescription><![CDATA[pagoCondomino]]></fieldDescription>
+	</field>
+	<field name="departamento" class="com.bstmexico.mihabitat.departamentos.model.Departamento">
+		<fieldDescription><![CDATA[departamento]]></fieldDescription>
+	</field>
+	<field name="monto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[monto]]></fieldDescription>
+	</field>
+	<field name="movimientos" class="java.util.Collection">
+		<fieldDescription><![CDATA[movimientos]]></fieldDescription>
+	</field>
+	<field name="aplicadoCargos" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[aplicadoCargos]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="95" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement x="18" y="5" width="520" height="5" forecolor="#0A0918" backcolor="#0A0918" uuid="32c546c7-cc0c-4e4b-8392-45013372652d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<frame>
+				<reportElement x="0" y="10" width="555" height="50" uuid="dcb1e8a5-022b-4324-a0cd-39638042045a"/>
+				<staticText>
+					<reportElement x="340" y="3" width="130" height="15" uuid="60c5edc1-4539-4b0f-b738-92d63d46e1c4">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Monto:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
+					<reportElement x="470" y="27" width="80" height="15" uuid="55bbf30c-e761-48e8-9e7d-d58913122bdf">
+						<printWhenExpression><![CDATA[$F{monto}.subtract($F{aplicadoCargos}).compareTo(BigDecimal.ZERO) > 0]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{monto}.subtract($F{aplicadoCargos})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="3" width="110" height="15" uuid="9a452e8b-d02c-4878-afbd-a9fc16b8f915"/>
+					<box leftPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Departamento:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="110" y="3" width="223" height="15" uuid="f67fd828-19d8-4083-814a-387c99cff056"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{departamento}.getNombre()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="340" y="27" width="130" height="15" uuid="a21da471-0033-43d9-b0bd-aecc1babe0f1">
+						<printWhenExpression><![CDATA[$F{monto}.subtract($F{aplicadoCargos}).compareTo(BigDecimal.ZERO) > 0]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Aplicado a Saldo a Favor:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
+					<reportElement x="470" y="3" width="80" height="15" uuid="98178240-cbf4-4b36-9bef-582b3cb60b95">
+						<printWhenExpression><![CDATA[$F{monto} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="27" width="110" height="15" uuid="5a082662-79cf-4b0e-a2c9-232e9a217449">
+						<printWhenExpression><![CDATA[$F{monto} != null]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Torres y Etiquetas:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="110" y="27" width="223" height="15" uuid="ac38b10a-c0af-4fc7-888f-e84bdc40f4b7"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{departamento}.getStringGrupos()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="62" width="555" height="30" uuid="1ca5b70b-a530-4cfb-a471-e6390496afba"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{movimientos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "recibo-detalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

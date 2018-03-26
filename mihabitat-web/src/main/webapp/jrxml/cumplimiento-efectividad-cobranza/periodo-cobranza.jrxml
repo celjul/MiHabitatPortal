@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="periodo-cobranza" pageWidth="555" pageHeight="45" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ea4da3f-9fc0-4bd8-b904-027d8fe9ade2">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="zebra" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 1]]></conditionExpression>
+			<style backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FORMATO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="cobros" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[cobros]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Byte">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="pagosATiempo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[pagosATiempo]]></fieldDescription>
+	</field>
+	<field name="pagosExtemporaneos" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[pagosExtemporaneos]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[periodo]]></fieldDescription>
+	</field>
+	<field name="porCobrar" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[porCobrar]]></fieldDescription>
+	</field>
+	<field name="porcentajeCumplimiento" class="java.lang.Double">
+		<fieldDescription><![CDATA[porcentajeCumplimiento]]></fieldDescription>
+	</field>
+	<field name="porcentajeEfectividad" class="java.lang.Double">
+		<fieldDescription><![CDATA[porcentajeEfectividad]]></fieldDescription>
+	</field>
+	<field name="porcentajeMorosidad" class="java.lang.Double">
+		<fieldDescription><![CDATA[porcentajeMorosidad]]></fieldDescription>
+	</field>
+	<title>
+		<band height="30">
+			<staticText>
+				<reportElement x="350" y="0" width="75" height="30" uuid="1c29320e-6012-49d5-9532-480b6375a21a"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[% CUMPLIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="75" height="30" uuid="a5818cd3-0808-4441-a7a8-70e98204483f"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POR COBRAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="15" width="75" height="15" uuid="cbb09b91-fd4a-43f9-977b-701422f7850c"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXTEMPORANEO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="8688439e-91b4-4b70-b2c3-e9d8fef7b871"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERIODO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="75" height="30" uuid="bf1f9975-f6ea-41a6-9267-91c01fb90739"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COBROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="65" height="30" uuid="bcd987da-c01f-471f-af02-d9aaa0dba392"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[% MOROSIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="0" width="65" height="30" uuid="b37d015d-c36d-490f-89a1-582fe1219d68"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[% COBRANZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="15" width="75" height="15" uuid="7249ceef-a919-4ae6-9b3f-decf021e66aa"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A TIEMPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="150" height="15" uuid="b70ba5b7-93a6-41eb-bef9-498c08f39832"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COBRADO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="zebra" mode="Opaque" x="0" y="0" width="555" height="15" uuid="51b3226d-f31e-474c-9930-e8fca1f6cac8"/>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="125" y="0" width="75" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="2ecd7d4e-3c02-4aae-8172-c392cf8ac638"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pagosATiempo}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "$ #,##0.00" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="0" y="0" width="50" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="5f3a9b01-9754-4e6e-b747-0d37eea35304"/>
+					<box leftPadding="2" rightPadding="0">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="200" y="0" width="75" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="80eb3005-6496-459b-b1fa-6284e4c0182a"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pagosExtemporaneos}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "$ #,##0.00" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="275" y="0" width="75" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="8a6ab24c-ad5a-4474-affd-2987ed9aac6c"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{porCobrar}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "$ #,##0.00" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="350" y="0" width="75" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="a33c2725-248c-471b-9410-aaea253ed373"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{FORMATO}.equals("pdf") ? $F{porcentajeCumplimiento} / 100 : $F{porcentajeCumplimiento}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "#,##0.00 %" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="425" y="0" width="65" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="bacd6cde-8e2f-431c-9382-5d72b7209db5"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{FORMATO}.equals("pdf") ? $F{porcentajeEfectividad} / 100 : $F{porcentajeEfectividad}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "#,##0.00 %" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="490" y="0" width="65" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="e8bfd690-0c83-4843-8adf-dc0dca702287"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{FORMATO}.equals("pdf") ? $F{porcentajeMorosidad} / 100 : $F{porcentajeMorosidad}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "#,##0.00 %" : "#,##0.00"]]></patternExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="50" y="0" width="75" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="863048d5-336e-4292-b00a-11b4bf91b7c2"/>
+					<box rightPadding="2">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+						<topPen lineWidth="0.5" lineColor="#999999"/>
+						<leftPen lineWidth="0.5" lineColor="#999999"/>
+						<bottomPen lineWidth="0.5" lineColor="#999999"/>
+						<rightPen lineWidth="0.5" lineColor="#999999"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cobros}]]></textFieldExpression>
+					<patternExpression><![CDATA[$P{FORMATO}.equals("pdf") ? "$ #,##0.00" : "#,##0.00"]]></patternExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

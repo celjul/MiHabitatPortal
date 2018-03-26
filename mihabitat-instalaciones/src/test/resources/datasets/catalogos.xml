@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tcatalogos NIdCatalogo="20" VDescripcion="Lunes" VTipo="dia" />
+	<tcatalogos NIdCatalogo="21" VDescripcion="Martes" VTipo="dia" />
+	<tcatalogos NIdCatalogo="19" VDescripcion="Miercoles" VTipo="dia" />
+	<tcatalogos NIdCatalogo="18" VDescripcion="Jueves" VTipo="dia" />
+	<tcatalogos NIdCatalogo="17" VDescripcion="Viernes" VTipo="dia" />
+	<tcatalogos NIdCatalogo="16" VDescripcion="Sabado" VTipo="dia" />
+	<tcatalogos NIdCatalogo="15" VDescripcion="Domingo" VTipo="dia" />
+	
+	<tcatalogos NIdCatalogo="21" VDescripcion="Dias" VTipo="reservacion_cada" />
+	<tcatalogos NIdCatalogo="22" VDescripcion="Semanas" VTipo="reservacion_cada" />
+	<tcatalogos NIdCatalogo="23" VDescripcion="Meses" VTipo="reservacion_cada" />
+	<tcatalogos NIdCatalogo="24" VDescripcion="Años" VTipo="reservacion_cada" />
+	
+	<tcatalogos NIdCatalogo="25" VDescripcion="Diaria" VTipo="reservacion_recurrente" />
+	<tcatalogos NIdCatalogo="26" VDescripcion="Semanal" VTipo="reservacion_recurrente" />
+	<tcatalogos NIdCatalogo="27" VDescripcion="Mensual" VTipo="reservacion_recurrente" />
+	<tcatalogos NIdCatalogo="28" VDescripcion="Anual" VTipo="reservacion_recurrente" />
+	
+	<tcatalogos NIdCatalogo="29" VDescripcion="Hora" VTipo="unidad_instalacion" />
+	<tcatalogos NIdCatalogo="30" VDescripcion="Día" VTipo="unidad_instalacion" />
+</dataset>

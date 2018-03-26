@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<tgruposcondominio NIdCondominio="1" VDescripcion="Descripcion del grupo 1" NIdGrupo="1" />
+	<tgruposcondominio NIdCondominio="1" VDescripcion="Descripcion del grupo 2" NIdGrupo="2" />
+	<tgruposcondominio NIdCondominio="1" VDescripcion="Descripcion del grupo 3" NIdGrupo="3" />
+	<tgruposcondominio NIdCondominio="1" VDescripcion="Descripcion del grupo 4" NIdGrupo="4" />
+</dataset>

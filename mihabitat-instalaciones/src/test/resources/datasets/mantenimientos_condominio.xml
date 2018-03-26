@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<tmantenimientoscondominio NIdCondominio="1"
+		VDescripcion="Descripciion del grupo" NIdMantenimiento="1" NMonto="134.00" />
+</dataset>

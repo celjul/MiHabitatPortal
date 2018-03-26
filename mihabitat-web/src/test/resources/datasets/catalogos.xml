@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tcatalogos VTipo="email" NIdCatalogo="4" VDescripcion="Personal" />
+	<tcatalogos VTipo="email" NIdCatalogo="5" VDescripcion="Trabajo" />
+</dataset>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<access-denied-handler error-page="/403" />
+
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/zonaabierta/**" access="permitAll" />
+		<intercept-url pattern="/index" access="permitAll" />
+		<intercept-url pattern="/demo" access="permitAll" />
+		<intercept-url pattern="/activacion/**" access="permitAll" />
+		<intercept-url pattern="/personas/existe" access="permitAll" />
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/recuperar-password" access="permitAll" />
+		<intercept-url pattern="/password/recuperar/**" access="permitAll" />
+		<intercept-url pattern="/recursos/**" access="permitAll" />
+		<intercept-url pattern="/feenicia/**" access="permitAll" />
+		<intercept-url pattern="/comprobante/**" access="hasAnyRole('Administrador', 'Contacto')" />
+		<intercept-url pattern="/super-administador/**" access="hasRole('Super Administardor')" />
+		<intercept-url pattern="/administador/**" access="hasAnyRole('Super Administardor', 'Administrador')" />
+		<intercept-url pattern="/contacto/**" access="hasAnyRole('Super Administardor', 'Administrador', 'Contacto')" />
+
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+		<form-login login-page="/login" default-target-url="/inicio"
+			authentication-failure-url="/login?error=true"
+			always-use-default-target="true" />
+		<logout logout-success-url="/logout" invalidate-session="true"
+			delete-cookies="JSESSIONID" />
+<!-- 		<remember-me data-source-ref="dataSource" /> -->
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<password-encoder hash="md5" />
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT VUser, VPassword, BActivo FROM tusuarios WHERE VUser = ?;"
+				authorities-by-username-query="SELECT u.VUser, r.VDescripcion FROM tusuarios u, tusuarioroles ur, tcatalogos r WHERE u.NIdUsuario = ur.NIdUsuario AND ur.NIdCatalogo = r.NIdCatalogo AND u.VUser = ?;" />
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

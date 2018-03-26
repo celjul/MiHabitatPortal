@@ -1,0 +1,8 @@
+<dataset>
+	<tusuarios BActivo ="1" NIdUsuario="1" VPassword="202cb962ac59075b964b07152d234b70" 
+				VUser="user1" VEmail="usuario@dominio.com" NIdPersona="1"/>
+	<tusuarios BActivo="1" NIdUsuario="2" VPassword="202cb962ac59075b964b07152d234b70" 
+				 VUser="user2"  VEmail="usuario1@dominio.com" NIdPersona="2"/>
+	<tusuarios BActivo="1" NIdUsuario="3" VPassword="202cb962ac59075b964b07152d234b70" 
+				 VUser="user3"  VEmail="usuario2@dominio.com" NIdPersona="3"/>
+</dataset>

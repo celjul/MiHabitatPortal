@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.bstmexico.mihabitat</groupId>
+    <artifactId>mihabitat-pom</artifactId>
+    <version>1.11-BETA</version>
+  </parent>
+
+  <groupId>com.bstmexico.mihabitat</groupId>
+  <artifactId>mihabitat-comunicacion</artifactId>
+  <version>${project-version}</version>
+
+  <name>mihabitat-comunicacion</name>
+
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-comunes</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat-condominios</artifactId>
+      <version>1.11-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.7</version>
+    </dependency>
+  </dependencies>
+</project>

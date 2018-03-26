@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<testados NIdEstado="1" VNombre="Distrito Federal" NIdPais="1" />
+	<testados NIdEstado="2" VNombre="Guerrero" NIdPais="1" />
+	<testados NIdEstado="3" VNombre="Texas" NIdPais="2" />
+</dataset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<tdepartamentos BActivo="1" NIdCondominio="1"
+		NIdDepartamento="1" NIdMantenimiento="1" VNombre="NombreDepartamento"
+		VObservaciones="ObservacionesDepartamento" />
+
+	<tdepartamentocontactos BHabitante="1"
+		BPrincipal="1" BPropietario="0" NIdPersona="1" NIdDepartamento="1" />
+</dataset>

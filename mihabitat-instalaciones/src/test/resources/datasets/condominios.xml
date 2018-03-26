@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+
+
+	<tdireccioncondominio VCalle="calle 2"
+		NIdDireccion="1" NIdColonia="1" VNoExterior="15" VNoInterior="12"
+		VReferencias="cerca de un mercado">
+	</tdireccioncondominio>
+	<tdireccioncondominio VCalle="calle 3"
+		NIdDireccion="2" NIdColonia="1" VNoExterior="16" VNoInterior="16"
+		VReferencias="cerca de un mercado2">
+	</tdireccioncondominio>
+
+
+	<tcondominios VNombre="Condominio Polanco2" NIdCondominio="1"
+		NIdDireccion="1">
+	</tcondominios>
+	<tcondominios VNombre="Condominio Polanco3" NIdCondominio="2"
+		NIdDireccion="2">
+	</tcondominios>
+
+	<tcondominioadministradores NIdUsuario="1"
+		NIdCondominio="1" />
+		<tcondominioadministradores NIdUsuario="2"
+		NIdCondominio="1" />
+
+
+</dataset>

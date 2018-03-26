@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tcolonias VCodigoPostal="68274" NIdColonia="1"  NIdMunicipio="1" VNombre="Croc" />
+	<tcolonias VCodigoPostal="12340" NIdColonia="5" NIdMunicipio="1" VNombre="emilio " />
+	<tcolonias VCodigoPostal="68160" NIdColonia="2" NIdMunicipio="2" VNombre="Del Bosque" />
+	<tcolonias VCodigoPostal="68030" NIdColonia="3"  NIdMunicipio="3" VNombre="El Bajio" />
+	<tcolonias VCodigoPostal="68010" NIdColonia="4"  NIdMunicipio="4" VNombre="Emiliano Zapata " />	
+</dataset>

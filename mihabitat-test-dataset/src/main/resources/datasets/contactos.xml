@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tcontactos NIdContacto="1" BActivo="1" VApellidoMaterno="Ortiz" 
+		VApellidoPaterno="Cárdenas" VNombre="Luis Ángel" NIdCondominio="1" 
+		NIdPersona="1" />
+</dataset>

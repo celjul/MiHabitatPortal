@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2017-01-18T11:16:20 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estado-detalle" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ea4da3f-9fc0-4bd8-b904-027d8fe9ade2">
+	<property name="ireport.zoom" value="1.5000000000000007"/>
+	<property name="ireport.x" value="33"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA_REPORTE" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fecha" class="java.util.Date">
+		<fieldDescription><![CDATA[fecha]]></fieldDescription>
+	</field>
+	<field name="concepto" class="java.lang.String">
+		<fieldDescription><![CDATA[concepto]]></fieldDescription>
+	</field>
+	<field name="totalMonto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalMonto]]></fieldDescription>
+	</field>
+	<field name="totalPagado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalPagado]]></fieldDescription>
+	</field>
+	<field name="saldoPendiente" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[saldoPendiente]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="cargo" class="com.bstmexico.mihabitat.cargos.model.CargoDepartamento">
+		<fieldDescription><![CDATA[_THIS]]></fieldDescription>
+	</field>
+	<field name="descuento" class="com.bstmexico.mihabitat.cargos.model.DescuentoDepartamento">
+		<fieldDescription><![CDATA[descuento]]></fieldDescription>
+	</field>
+	<field name="recargo" class="com.bstmexico.mihabitat.cargos.model.RecargoDepartamento">
+		<fieldDescription><![CDATA[recargo]]></fieldDescription>
+	</field>
+	<sortField name="fecha"/>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="15" uuid="e4563aa2-c1a0-4d67-8924-12db448b8fc2"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="260" height="15" uuid="41c855b7-370e-49a5-be02-be7918f3510c"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Concepto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="80" height="15" uuid="7b2187e4-18d4-4b89-9313-cbcecbd0ccb4"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pagado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="135" height="15" uuid="b1032c9e-b58c-4371-bc90-ad248f8a6196"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adeudo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="15" uuid="e8fe68e1-5269-40d7-bd03-66b2d199dd69"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("yyyy/MM/dd").format($F{fecha})]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="340" y="0" width="80" height="15" uuid="80eb3005-6496-459b-b1fa-6284e4c0182a"/>
+				<box rightPadding="3">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPagado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="420" y="0" width="135" height="15" uuid="45c8e4c7-3dfb-4d4b-b95b-c4ef2fc2fac0"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + ($F{saldoPendiente}.setScale(2, BigDecimal.ROUND_HALF_UP)) + ( ( $F{descuento} != null && $F{descuento}.getId() != null
+	&& ($F{descuento}.getFecha().getTime() >= $P{FECHA_REPORTE}.getTime())
+) ? ( "<br><br> * $" + ( $F{saldoPendiente}.subtract(  $F{descuento}.getPorcentaje() ? 
+		$F{totalMonto}.multiply( $F{descuento}.getMonto() ). multiply(BigDecimal.valueOf(0.01)).setScale(2, BigDecimal.ROUND_HALF_UP) : $F{descuento}.getMonto()
+	) ) + " con Descuento de $" + (  $F{descuento}.getPorcentaje() ? 
+		$F{totalMonto}.multiply( $F{descuento}.getMonto() ). multiply(BigDecimal.valueOf(0.01)).setScale(2, BigDecimal.ROUND_HALF_UP) : $F{descuento}.getMonto()
+	)  + " pagando antes de " + new java.text.SimpleDateFormat("yyyy/MM/dd").format($F{descuento}.getFecha()) ) : ""
+)
+
++ ( ( $F{recargo} != null && $F{recargo}.getId() != null
+	&& ($F{recargo}.getFecha().getTime() >= $P{FECHA_REPORTE}.getTime())
+) ? ( "<br><br><strong> * $" + ( $F{saldoPendiente}.add(  $F{recargo}.getPorcentaje() ? 
+		$F{totalMonto}.multiply( $F{recargo}.getMonto() ). multiply(BigDecimal.valueOf(0.01)).setScale(2, BigDecimal.ROUND_HALF_UP) : $F{recargo}.getMonto()
+	) ) + " con Recargos de $" + (  $F{recargo}.getPorcentaje() ? 
+		$F{totalMonto}.multiply( $F{recargo}.getMonto() ). multiply(BigDecimal.valueOf(0.01)).setScale(2, BigDecimal.ROUND_HALF_UP) : $F{recargo}.getMonto()
+	)  + " pagando despues de " + new java.text.SimpleDateFormat("yyyy/MM/dd").format($F{recargo}.getFecha())  + "</strong>") : ""
+)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="260" height="15" uuid="50614c87-5ed2-4891-b76a-8171df11645d"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+					<topPen lineWidth="0.5" lineColor="#999999"/>
+					<leftPen lineWidth="0.5" lineColor="#999999"/>
+					<bottomPen lineWidth="0.5" lineColor="#999999"/>
+					<rightPen lineWidth="0.5" lineColor="#999999"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+					<paragraph lineSpacing="Single" firstLineIndent="0" leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{concepto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

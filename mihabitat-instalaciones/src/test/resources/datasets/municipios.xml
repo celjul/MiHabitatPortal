@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tmunicipios  NIdEstado="1" NIdMunicipio="1" VNombre="Abejones"/>
+	<tmunicipios  NIdEstado="2" NIdMunicipio="2" VNombre="Calihuala"/>
+	<tmunicipios  NIdEstado="3" NIdMunicipio="3" VNombre="La Compania"/>
+	<tmunicipios  				 NIdEstado="3" NIdMunicipio="4" VNombre="La Compania"/>
+</dataset>

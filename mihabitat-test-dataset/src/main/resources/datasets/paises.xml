@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<tpaises NIdPais="1" VNombre="México" />
+	<tpaises NIdPais="2" VNombre="Estados Unidos" />
+	<tpaises NIdPais="3" VNombre="Canadá" />
+</dataset>
