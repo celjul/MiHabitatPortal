@@ -18,8 +18,8 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/administrador/arrendamiento/nuevo">
-					<spring:message code="mihabitat.menu.nuevo"/>
+				<a href="#">
+					<spring:message code="mihabitat.menu.arrendatario.editar"/>
 				</a>
 			</li>
 		</ol>
@@ -123,7 +123,7 @@
 									</section>
 									<section class="col col-3">
 										<label class="label"><span class="error-required">*</span><spring:message code="mihabitat.menu.arremdamiento.condominio" /></label> 
-									  <input list="departamentos" class="form-control" name="chooseOption" required="required">
+									  <input list="departamentos" value="${arrendatarioActual.departamento.nombre}" class="form-control" name="chooseOption" required="required">
  										 <datalist id="departamentos">
 										<c:forEach var="item" items="${items}">
 										 	<option id="${item.id}" value="${item.nombre}"></option>
@@ -184,8 +184,8 @@
 										</label>
 								</section>
 								<section class="col col-md-3" class="form-group">
-									<label class="label"><span class="error-required">*</span><spring:message code="mihabitat.menu.arremdamiento.condominio" /></label> 
-									 <select name="id_status" id="id_status" required="required">
+									<label class="label"><span class="error-required">*</span><spring:message code="mihabitat.menu.arremdamiento.status" /></label> 
+									 <select name="id_status" class="form-control" id="id_status" required="required">
 									  	<option value="${arrendatarioActual.idStatus}">Seleccione </option>
 										<option value="803">Solicitado</option>
 										<option value="804">Cancelado</option>
@@ -210,6 +210,7 @@
 	</article>
 </div>
 <script type="text/javascript">
+
 function validateMyForm()
 {
 	var today = new Date();
@@ -242,6 +243,7 @@ $(function() {
 	
 
 $(document).ready(function(){
+	
 	if(${statusguardado==1}){
 	notificacionExito('Se actualizo con exito');}
 	else if(${statusguardado==2}){

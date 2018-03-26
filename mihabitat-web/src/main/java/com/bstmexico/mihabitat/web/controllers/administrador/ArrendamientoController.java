@@ -113,6 +113,8 @@ public class ArrendamientoController {
 		model.addAttribute("items", list);
 		Arrendatario arrendatario = new Arrendatario();
 		arrendatario = arrendatarioService.get(Long.valueOf(idArrendatario));
+		arrendatario.setFechaEntrada(arrendatario.getFechaEntrada().substring(0,10));
+		arrendatario.setFechaSalida(arrendatario.getFechaSalida().substring(0,10));
 		model.addAttribute("arrendatarioActual",arrendatario);
 		return "administrador/arrendamiento/editar";
 	}
