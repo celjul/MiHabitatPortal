@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.io.*" %> 
 <head>
-	<title><spring:message code="mihabitat.menu.arrendatario"/> | <spring:message code="mihabitat.nombre"/></title>
+	<title><spring:message code="mihabitat.menu.actualizar"/> | <spring:message code="mihabitat.nombre"/></title>
 </head>
 <body>
 	<div id="ribbon">
@@ -14,11 +14,11 @@
 			 </li>
 			<li>
 				<a href="#">
-					<spring:message code="mihabitat.menu.arrendatario"/>
+					<spring:message code="mihabitat.menu.actualizar"/>
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/administrador/arrendamiento/nuevo">
+				<a href="#">
 					<spring:message code="mihabitat.menu.nuevo"/>
 				</a>
 			</li>
@@ -40,7 +40,7 @@
 					<i class="fa fa-edit"></i>
 				</span>
 				<h2>
-					<spring:message code="mihabitat.menu.arrendatario" />
+					<spring:message code="mihabitat.menu.actualizar" />
 				</h2>
 			</header>
 			<div>
@@ -105,7 +105,7 @@
 							<section class="row">
 									<section class="col col-3">
 										<label class="label"><span class="error-required">*</span><spring:message code="mihabitat.menu.arremdamiento.condominio" /></label> 
-									  <input list="departamentos" class="form-control" name="chooseOption" required="required">
+									  <input list="departamentos" value="${visitanteActual.departamento.nombre}"class="form-control" name="chooseOption" required="required">
  										 <datalist id="departamentos">
 										<c:forEach var="item" items="${items}">
 										 	<option id="${item.id}" value="${item.nombre}"></option>
@@ -113,8 +113,7 @@
 									 </datalist>
 									 <input type="hidden" value="${visitanteActual.departamento.id}" name="id_departamento" id="id_departamento">
 									</section>
-							</section>
--							<section class="row">
+							
 								<section class="col col-md-2" class="form-group">
 									<label class="label">
 										<spring:message code="mihabitat.menu.arremdamiento.placas" />

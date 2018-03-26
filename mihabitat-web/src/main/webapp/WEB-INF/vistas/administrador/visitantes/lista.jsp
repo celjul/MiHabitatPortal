@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.io.*" %> 
 <head>
-	<title><spring:message code="mihabitat.menu.departamentos"/> | <spring:message code="mihabitat.nombre"/></title>
+	<title><spring:message code="mihabitat.menu.visitas.lista"/> | <spring:message code="mihabitat.nombre"/></title>
 	
 
 </head>
@@ -15,8 +15,8 @@
 			   </a>
 			 </li>
 			<li>
-			   <a href="${pageContext.request.contextPath}/administrador/departamentos/lista">
-				   <spring:message code="mihabitat.menu.departamentos"/>
+			   <a href="${pageContext.request.contextPath}/administrador/visitantes/lista">
+				   <spring:message code="mihabitat.menu.visitas.lista"/>
 			   </a>
 			</li>
 		</ol>
@@ -26,7 +26,7 @@
 		<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
 			<header>
 				<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-				<h2><spring:message code="mihabitat.menu.departamentos"/></h2>
+				<h2><spring:message code="mihabitat.menu.visitas.lista"/></h2>
 
 			</header>
 			<div>

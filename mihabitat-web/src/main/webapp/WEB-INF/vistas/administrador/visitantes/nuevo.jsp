@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.io.*" %> 
 <head>
-	<title><spring:message code="mihabitat.menu.arrendatario"/> | <spring:message code="mihabitat.nombre"/></title>
+	<title><spring:message code="mihabitat.menu.visitas"/> | <spring:message code="mihabitat.nombre"/></title>
 </head>
 <body>
 	<div id="ribbon">
@@ -14,11 +14,11 @@
 			 </li>
 			<li>
 				<a href="#">
-					<spring:message code="mihabitat.menu.arrendatario"/>
+					<spring:message code="mihabitat.menu.visitas"/>
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/administrador/arrendamiento/nuevo">
+				<a href="${pageContext.request.contextPath}/administrador/visitantes/nuevo">
 					<spring:message code="mihabitat.menu.nuevo"/>
 				</a>
 			</li>
@@ -40,7 +40,7 @@
 					<i class="fa fa-edit"></i>
 				</span>
 				<h2>
-					<spring:message code="mihabitat.menu.arrendatario" />
+					<spring:message code="mihabitat.menu.visitas" />
 				</h2>
 			</header>
 			<div>
