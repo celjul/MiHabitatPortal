@@ -36,7 +36,7 @@
 					<i class="fa fa-edit"></i>
 				</span>
 				<h2>
-					<spring:message code="mihabitat.menu.arrendatario" />
+					<spring:message code="mihabitat.menu.visitas" />
 				</h2>
 			</header>
 			<div>
@@ -101,7 +101,7 @@
 							<section class="row">
 									<section class="col col-3">
 										<label class="label"><span class="error-required">*</span><spring:message code="mihabitat.menu.arremdamiento.condominio" /></label> 
-									  <input class="form-control" list="departamentos" name="chooseOption" required="required">
+									  <input class="form-control" value="${visitanteActual.departamento.nombre }"list="departamentos" name="chooseOption" required="required">
  										 <datalist id="departamentos">
 										<c:forEach var="item" items="${items}">
 										 	<option id="${item.id}" value="${item.nombre}"></option>
@@ -109,8 +109,6 @@
 									 </datalist>
 									 <input type="hidden" value="${visitanteActual.departamento.id}" name="id_departamento" id="id_departamento">
 									</section>
-							</section>
--							<section class="row">
 								<section class="col col-md-2" class="form-group">
 									<label class="label">
 										<spring:message code="mihabitat.menu.arremdamiento.placas" />
