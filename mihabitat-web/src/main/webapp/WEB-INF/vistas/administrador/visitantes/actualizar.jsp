@@ -149,7 +149,7 @@
 function validateMyForm()
 {
 	var depa =document.getElementById('id_departamento').value;
-	if(depa==-1){ notificacionError("Departamento no valido");
+	if(depa==-1){ notificacionAdvertencia("Departamento no valido");
 	    return false;}
     return true;
 }

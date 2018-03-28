@@ -103,5 +103,7 @@ public class ArrendamientoDaoImpl extends GenericDaoImpl<Arrendatario, Long> imp
 			throw ex1;
 		}
     	
-	} 
+	}
+
+
 }

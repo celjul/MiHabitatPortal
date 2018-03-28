@@ -3,7 +3,6 @@ package com.bstmexico.mihabitat.mihabitat_arrendamiento.dao;
 import java.util.Collection;
 
 import com.bstmexico.mihabitat.comunes.dao.GenericDao;
-
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
 
 public interface ArrendamientoDao extends GenericDao<Arrendatario, Long> {

@@ -44,7 +44,8 @@ public class ArrendamientoContactoController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "nuevo")
 	public String nuevo(Model model, HttpSession session) {
-		 Condominio condominio = (Condominio) session.getAttribute("condominio");	
+		 Condominio condominio = (Condominio) session.getAttribute("condominio");
+		 Usuario usuario = (Usuario) session.getAttribute("usuario");
 		 List<Departamento> list  = departamentoService.searchByCond(condominio.getId());	 
 		model.addAttribute("departamentos", list);
 		return "contacto/arrendamiento/nuevo";

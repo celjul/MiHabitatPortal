@@ -345,4 +345,31 @@ public class DepartamentoDaoImpl extends GenericDaoImpl<Departamento, Long>
 		return list;
 	}
 	
+	@SuppressWarnings({ "unchecked" })
+	@Transactional(readOnly = true)
+	@Override
+	public List<Departamento> searchByPersona(Long id) {
+		List<Departamento> list = null;
+		try {
+			
+			Query query = sessionFactory.getCurrentSession().createQuery("from tdepartamentos left join tcondominios on tdepartamentos.NIdCondominio = tcondominios.NIdCondominio "
+					+ " left join tdepartamentocontactos on " + 
+					"	tdepartamentos.NIdDepartamento = tdepartamentocontactos.NIdDepartamento	Left join tcontactos " + 
+					"	on tdepartamentocontactos.NIdPersona = tcontactos.NIdContacto where tcondominios.NIdCondominio " + 
+					"	= tdepartamentos.NIdCondominio and tcontactos.NIdUsuario  =  "+id);
+			list = query.list();
+		}catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO004", ex,
+					getType().getSimpleName());
+			LOG.error(ex1.getMessage(), ex);
+			throw ex1;
+
+		} catch (HibernateException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO009", ex);
+			LOG.error(ex.getMessage(), ex);
+			throw ex1;
+		}
+		return list;
+	}
+	
 }

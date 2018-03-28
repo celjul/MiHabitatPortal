@@ -187,4 +187,14 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 			throw ex1;
 		}
 	}
+	
+	public List<Departamento> searchByPersona(Long id){
+		try {
+			return departamentoDao.searchByPersona(id);
+		} catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new ServiceException(ex.getMessage(), ex);
+			LOG.warn(ex1.getMessage(), ex);
+			throw ex1;
+		}
+	}
 }
