@@ -1,6 +1,7 @@
 package com.bstmexico.mihabitat.web.controllers.vigilante;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
@@ -79,9 +80,25 @@ public class VisitantesVigilanteController {
 		@SuppressWarnings("rawtypes")
 		@RequestMapping(method = RequestMethod.GET, value = "lista")
 		public String lista(WebRequest request, Model model, HttpSession session) {
-			 Collection coll = visitanteService.getAll();
-			 List listavisitantes = (List)coll;
-			model.addAttribute("items", listavisitantes);
+
+			Collection<Visitantes> coll = visitanteService.getAll();
+			 Condominio condominio = (Condominio) session.getAttribute("condominio");
+			 Long id_condomino = null;
+			 id_condomino = condominio.getId();
+			 List<Visitantes> listavisitantes = (List)coll;
+			 List<Visitantes> listaVisitantesCondominio = new ArrayList();
+			 
+			 int contador = 0;
+			 while(contador<listaVisitantesCondominio.size()) {
+				 Visitantes visitante = new Visitantes();
+				 visitante = (Visitantes) listavisitantes.get(contador);
+				 if(id_condomino == visitante.getCondominio().getId().longValue() ){
+					 listaVisitantesCondominio.add(visitante);
+				 }
+				 contador++;
+			 } 
+			 
+			model.addAttribute("items", listaVisitantesCondominio);
 			return "vigilante/visitantes/lista";
 		}
 		

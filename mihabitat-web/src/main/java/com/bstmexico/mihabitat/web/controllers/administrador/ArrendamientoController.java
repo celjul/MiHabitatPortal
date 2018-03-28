@@ -17,6 +17,8 @@ import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.CatalogoArrendamien
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
 
 import javax.servlet.http.HttpSession;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -98,10 +100,26 @@ public class ArrendamientoController {
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(method = RequestMethod.GET, value = "lista")
 	public String lista(WebRequest request, Model model, HttpSession session) {
-		 Collection coll = arrendatarioService.getAll();
-		 List listaarrendatarios = (List)coll;
-		model.addAttribute("items", listaarrendatarios);
+		 Collection<Arrendatario> coll = arrendatarioService.getAll();
+		 Condominio condominio = (Condominio) session.getAttribute("condominio");
+		 Long id_condomino = null;
+		 id_condomino = condominio.getId();
+		 
+		List<Arrendatario> listaarrendatarios = (List)coll;
+
+		 List<Arrendatario> listaarrendatariosCondominio = new ArrayList();
+		 int contador = 0;
+		 while(contador<listaarrendatarios.size()) {
+			 Arrendatario arrendador = new Arrendatario();
+			 arrendador = (Arrendatario) listaarrendatarios.get(contador);
+			 if(id_condomino == arrendador.getCondominio().getId().longValue() ){
+				 listaarrendatariosCondominio.add(arrendador);
+			 }
+			 contador++;
+		 } 
+		model.addAttribute("items", listaarrendatariosCondominio);
 		return "administrador/arrendamiento/lista";
+		
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "actualizar" )
