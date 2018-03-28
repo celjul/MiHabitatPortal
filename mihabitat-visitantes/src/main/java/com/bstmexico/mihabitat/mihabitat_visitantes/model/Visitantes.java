@@ -16,6 +16,7 @@ import com.bstmexico.mihabitat.comunes.usuarios.model.Usuario;
 import com.bstmexico.mihabitat.condominios.model.Condominio;
 import com.bstmexico.mihabitat.departamentos.model.Departamento;
 
+
 @Entity
 @Table(name = "tvisitas")
 public class Visitantes implements Serializable {
@@ -26,7 +27,6 @@ private static final long serialVersionUID = -6578717662400663493L;
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "NIdVisitas", nullable = false, unique = true)
 	private Long nIdVisitas;
-	
 	
 	@Column(name = "VNombre")
 	private String vNombre;

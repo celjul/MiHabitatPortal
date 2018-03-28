@@ -94,8 +94,21 @@ public class VisitantesVigilanteController {
 			model.addAttribute("items", list);
 			Visitantes visitante = new Visitantes();
 			visitante = visitanteService.get(Long.valueOf(idVisitante));
-			model.addAttribute("visitanteActual",visitante);
-			return "vigilante/visitantes/actualizar";
+			CatalogoVisitas catalogo = new CatalogoVisitas();
+			catalogo.setNIdCatalogo(Long.valueOf(810));
+			visitante.setIdStatus(catalogo);
+			String localDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+			visitante.setFechaSalida(localDate);
+			visitanteService.update(visitante);
+			//model.addAttribute("visitanteActual",visitante);
+			//return "vigilante/visitantes/actualizar";
+			
+			 Collection coll = visitanteService.getAll();
+			 List listavisitantes = (List)coll;
+			model.addAttribute("items", listavisitantes);
+			return "vigilante/visitantes/lista";
+			
+			
 		}
 		
 		@SuppressWarnings({ "rawtypes", "static-access" })
