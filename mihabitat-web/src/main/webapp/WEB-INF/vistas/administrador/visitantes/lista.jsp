@@ -90,6 +90,7 @@
 								<td><label> ${item.placas}</label></td>
 								<td><label> ${item.idStatus.VDescripcion}</label></td>
 								<td style="text-align: center;">
+								<input hidden="true" type="text" id="${item.nombre} ${item.apPaterno} ${item.apMaterno}">
 									<button class="btn btn-success btn-xs">
 										<i class="fa fa-pencil"></i> Editar </button>
 									<input hidden="true" type="text"  id="${item.idArrendador}">
@@ -105,6 +106,7 @@
 	</div>
 	<form name="myform" id="myform" action="${pageContext.request.contextPath}/administrador/visitantes/actualizar" method = "POST">
 <input type="hidden" id="idVisitante" name="idVisitante" value="0" />
+<input type="hidden" id="nombreCompleto" name="nombreCompleto" value="0"/>
 <input type="submit" hidden="true">
 </form>
 
@@ -119,10 +121,15 @@
 		});
 	
 	$('button').on('click', function(){
-		  var myform = document.getElementById('myform');
+		
+		  var nombre = $(this).prev('input').attr('id');
 		  var id= $(this).next('input').attr('id');
+		  document.getElementById('nombreCompleto').value = nombre;
 	      document.getElementById('idVisitante').value = id;
-	      myform.submit();
+	      if (confirm("Desea registrar Salida de "+nombre)) {
+	    	  var myform = document.getElementById('myform');
+		      myform.submit();
+	    	}  
 	                
 	});
 	</script>

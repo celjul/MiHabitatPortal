@@ -97,8 +97,20 @@ public class VisitantesController {
 		model.addAttribute("items", list);
 		Visitantes visitante = new Visitantes();
 		visitante = visitanteService.get(Long.valueOf(idVisitante));
+		CatalogoVisitas catalogo = new CatalogoVisitas();
+		catalogo.setNIdCatalogo(Long.valueOf(810));
+		visitante.setIdStatus(catalogo);
+		String localDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+		visitante.setFechaSalida(localDate);
+		visitanteService.update(visitante);
+
+		 Collection coll = visitanteService.getAll();
+		 List listavisitantes = (List)coll;
+		model.addAttribute("items", listavisitantes);
+		return "administrador/visitantes/lista";
+		/*
 		model.addAttribute("visitanteActual",visitante);
-		return "administrador/visitantes/actualizar";
+		return "administrador/visitantes/actualizar";*/
 	}
 	
 	@SuppressWarnings({ "rawtypes", "static-access" })
