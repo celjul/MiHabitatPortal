@@ -91,7 +91,7 @@ public class VisitantesController {
 		 List<Visitantes> listaVisitantesCondominio = new ArrayList();
 		 
 		 int contador = 0;
-		 while(contador<listaVisitantesCondominio.size()) {
+		 while(contador<listavisitantes.size()) {
 			 Visitantes visitante = new Visitantes();
 			 visitante = (Visitantes) listavisitantes.get(contador);
 			 if(id_condomino == visitante.getCondominio().getId().longValue() ){
