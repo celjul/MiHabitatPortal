@@ -46,8 +46,9 @@ public class ArrendamientoContactoController {
 	public String nuevo(Model model, HttpSession session) {
 		 Condominio condominio = (Condominio) session.getAttribute("condominio");
 		 Usuario usuario = (Usuario) session.getAttribute("usuario");
-		 List<Departamento> list  = departamentoService.searchByCond(condominio.getId());	 
-		model.addAttribute("departamentos", list);
+		 //List<Departamento> list  = departamentoService.searchByCond(condominio.getId());	 
+		List<Departamento> list = departamentoService.searchByPersona(usuario.getPersona().getId());
+		 model.addAttribute("departamentos", list);
 		return "contacto/arrendamiento/nuevo";
 	}
 

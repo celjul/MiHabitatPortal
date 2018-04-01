@@ -119,10 +119,24 @@ public class VisitantesVigilanteController {
 			visitanteService.update(visitante);
 			//model.addAttribute("visitanteActual",visitante);
 			//return "vigilante/visitantes/actualizar";
-			
+
 			 Collection coll = visitanteService.getAll();
 			 List listavisitantes = (List)coll;
-			model.addAttribute("items", listavisitantes);
+			List<Visitantes> listaVisitantesCondominio = new ArrayList();
+			 Long id_condomino = null;
+			 id_condomino = condominio.getId();
+			 int contador = 0;
+			 while(contador<listavisitantes.size()) {
+				 Visitantes visitante2 = new Visitantes();
+				 visitante2 = (Visitantes) listavisitantes.get(contador);
+				 if(id_condomino == visitante2.getCondominio().getId().longValue() ){
+					 listaVisitantesCondominio.add(visitante2);
+				 }
+				 contador++;
+			 } 
+			 
+			model.addAttribute("items", listaVisitantesCondominio);
+			
 			return "vigilante/visitantes/lista";
 			
 			
