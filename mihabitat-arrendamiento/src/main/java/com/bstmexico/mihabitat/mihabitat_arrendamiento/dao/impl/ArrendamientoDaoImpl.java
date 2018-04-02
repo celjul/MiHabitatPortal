@@ -10,6 +10,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -104,6 +105,26 @@ public class ArrendamientoDaoImpl extends GenericDaoImpl<Arrendatario, Long> imp
 		}
     	
 	}
-
+	
+	
+	@Transactional
+	@Override
+	public List<Arrendatario> getByContacto(Long id) {
+		List<Arrendatario> arrendatarios;
+    	try {
+    		Query queryDepartamentosId = sessionFactory.getCurrentSession().createQuery(" from Arrendatario where NIdDepartamento ="+id);
+    		arrendatarios= queryDepartamentosId.list();
+		} catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO004", ex,
+					getType().getSimpleName());
+			LOG.error(ex.getMessage(), ex);
+			throw ex1;
+		} catch (HibernateException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO009", ex);
+			LOG.error(ex.getMessage(), ex);
+			throw ex1;
+		}
+    	return arrendatarios;
+	} 
 
 }

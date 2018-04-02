@@ -22,4 +22,6 @@ public interface DepartamentoDao extends GenericDao<Departamento, Long> {
 	List<Departamento> searchByCond(Long id);
 	
 	List<Departamento> searchByPersona(Long id);
+
+	Departamento searchByid(Long id);
 }

@@ -349,11 +349,28 @@ public class DepartamentoDaoImpl extends GenericDaoImpl<Departamento, Long>
 	@Transactional(readOnly = true)
 	@Override
 	public List<Departamento> searchByPersona(Long id) {
-		List<Departamento> list = null;
+		List<Departamento> list = new ArrayList<>();
 		try {
-//			Query query = sessionFactory.getCurrentSession().createQuery("from Departamento where NIdDepartamento in (select NIdDepartamento from ContactoDepartamento where NIdPersona in(1,229))");
-			Query query = sessionFactory.getCurrentSession().createQuery("from Departamento depa left join ContactoDepartamento on depa.NIdDepartamento = ContactoDepartamento.NIdDepartamento where NIdPersona in (1,229)");
- 			list = query.list();
+			List<Contacto> NidContactos = null;
+			Query queryContacto = sessionFactory.getCurrentSession().createQuery("from Contacto where NIdUsuario ="+id);
+			NidContactos = queryContacto.list();
+			int contadorContactos = 0 ;
+			
+			while(contadorContactos<NidContactos.size()) {
+				List<ContactoDepartamento> idDepartamentos = null;
+				Query queryDepartamentosId = sessionFactory.getCurrentSession().createQuery(" from ContactoDepartamento where NIdPersona ="+NidContactos.get(contadorContactos).getId());
+				idDepartamentos= queryDepartamentosId.list();
+					int cont =0 ;
+					while(cont<idDepartamentos.size()) {
+						Departamento depa = new Departamento();
+						depa.setNombre(idDepartamentos.get(cont).getDepartamento().getNombre()); ;
+						depa.setId(idDepartamentos.get(cont).getDepartamento().getId());
+						list.add(depa);
+						cont++;
+					} 
+				contadorContactos++;
+			}
+
 		}catch (IllegalArgumentException ex) {
 			ApplicationException ex1 = new DataAccessException("DAO004", ex,
 					getType().getSimpleName());
@@ -366,6 +383,34 @@ public class DepartamentoDaoImpl extends GenericDaoImpl<Departamento, Long>
 			throw ex1;
 		}
 		return list;
+	}
+	
+	@SuppressWarnings({ "unchecked" })
+	@Transactional(readOnly = true)
+	@Override
+	public Departamento searchByid(Long id) {
+		Departamento depa = new Departamento();
+		try {
+				List<Departamento> depas = null;
+				Query queryDepartamentosId = sessionFactory.getCurrentSession().createQuery(" from Departamento where NIdDepartamento ="+id);
+				depas= queryDepartamentosId.list();
+				Condominio condo = new Condominio();
+				condo.setId(depas.get(0).getCondominio().getId());
+				depa.setCondominio(condo);
+				depa= depas.get(0);
+
+		}catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO004", ex,
+					getType().getSimpleName());
+			LOG.error(ex1.getMessage(), ex);
+			throw ex1;
+
+		} catch (HibernateException ex) {
+			ApplicationException ex1 = new DataAccessException("DAO009", ex);
+			LOG.error(ex.getMessage(), ex);
+			throw ex1;
+		}
+		return depa;
 	}
 	
 }

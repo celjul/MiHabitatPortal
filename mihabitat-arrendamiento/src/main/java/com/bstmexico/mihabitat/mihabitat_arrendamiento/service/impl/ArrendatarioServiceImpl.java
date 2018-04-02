@@ -82,5 +82,16 @@ public class ArrendatarioServiceImpl implements ArrendatarioService {
 			throw ex1;
 		}
 	}
+	
+	@Override
+	public List<Arrendatario> getByContacto(Long id) {
+		try {
+			return arrendamientoDao.getByContacto(id);
+		} catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new ServiceException(ex.getMessage(), ex);
+			LOG.warn(ex1.getMessage(), ex);
+			throw ex1;
+		}
+	}
 
 }

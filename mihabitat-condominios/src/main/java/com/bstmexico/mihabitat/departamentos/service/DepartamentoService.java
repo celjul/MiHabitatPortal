@@ -31,4 +31,6 @@ public interface DepartamentoService {
 	List<Departamento> searchByCond(Long id);
 	
 	List<Departamento> searchByPersona(Long id);
+	
+	Departamento searchByid(Long id);
 }
