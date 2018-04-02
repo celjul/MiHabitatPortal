@@ -25,3 +25,4 @@ mihabitat-test-dataset/target/*
 
 *MANIFEST.MF
 /bin/
+/WebContent/

@@ -16,6 +16,7 @@ import com.bstmexico.mihabitat.comunes.usuarios.model.Usuario;
 import com.bstmexico.mihabitat.condominios.model.Condominio;
 import com.bstmexico.mihabitat.departamentos.model.Departamento;
 
+
 @Entity
 @Table(name = "tvisitas")
 public class Visitantes implements Serializable {
@@ -26,7 +27,6 @@ private static final long serialVersionUID = -6578717662400663493L;
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "NIdVisitas", nullable = false, unique = true)
 	private Long nIdVisitas;
-	
 	
 	@Column(name = "VNombre")
 	private String vNombre;
@@ -47,19 +47,19 @@ private static final long serialVersionUID = -6578717662400663493L;
 	private String vPlacas;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = CatalogoVisitas.class)
-	@JoinColumn(name = "NIdCatalogo", nullable = false, unique = true)
+	@JoinColumn(name = "NIdCatalogo", nullable = false)
 	private CatalogoVisitas nIdCatalogo;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Departamento.class)
-	@JoinColumn(name = "NIdDepartamento", nullable = false, unique = true)
+	@JoinColumn(name = "NIdDepartamento", nullable = false)
 	private Departamento nIdDepartamento;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Condominio.class)
-	@JoinColumn(name = "NIdCondominio", nullable = false, unique = true)
+	@JoinColumn(name = "NIdCondominio", nullable = false)
 	private Condominio nIdCondominio;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Usuario.class)
-	@JoinColumn(name = "NIdUsuario", nullable = false, unique = true)
+	@JoinColumn(name = "NIdUsuario", nullable = false)
 	private Usuario nIdUsuario;
 
 	public Long getIdArrendador() {

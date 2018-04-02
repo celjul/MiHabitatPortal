@@ -26,6 +26,7 @@ import com.bstmexico.mihabitat.condominios.service.CondominioService;
 import com.bstmexico.mihabitat.contactos.service.ContactoService;
 import com.bstmexico.mihabitat.departamentos.factory.DepartamentoFactory;
 import com.bstmexico.mihabitat.departamentos.service.DepartamentoService;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
 import com.bstmexico.mihabitat.web.util.SessionEnum;
 
@@ -142,9 +143,25 @@ public class LoginController {
 					condominios.size() > 0 ? condominios.iterator().next()
 							: null);
 		}
-		Collection coll = arrendatarioService.getAll();
-		List listaarrendatarios = (List)coll;
-		model.addAttribute("items", listaarrendatarios);	
+		 Collection<Arrendatario> coll = arrendatarioService.getAll();
+		 Condominio condominioid = (Condominio) session.getAttribute("condominio");
+		 Long id_condomino = null;
+		 id_condomino = condominioid.getId();
+		 List<Arrendatario> listaarrendatarios = (List)coll;
+
+		 List<Arrendatario> listaarrendatariosCondominio = new ArrayList();
+		 int contador = 0;
+		 while(contador<listaarrendatarios.size()) {
+			 Arrendatario arrendador = new Arrendatario();
+			 arrendador = (Arrendatario) listaarrendatarios.get(contador);
+			 if(id_condomino == arrendador.getCondominio().getId().longValue() ){
+				 listaarrendatariosCondominio.add(arrendador);
+			 }
+			 contador++;
+		 } 
+		
+		model.addAttribute("items", listaarrendatariosCondominio);
+
 		return "vigilante/inicio";
 	}
 

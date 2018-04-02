@@ -1,6 +1,7 @@
 package com.bstmexico.mihabitat.web.controllers.administrador;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
@@ -82,9 +83,24 @@ public class VisitantesController {
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(method = RequestMethod.GET, value = "lista")
 	public String lista(WebRequest request, Model model, HttpSession session) {
-		 Collection coll = visitanteService.getAll();
-		 List listavisitantes = (List)coll;
-		model.addAttribute("items", listavisitantes);
+		 Collection<Visitantes> coll = visitanteService.getAll();
+		 Condominio condominio = (Condominio) session.getAttribute("condominio");
+		 Long id_condomino = null;
+		 id_condomino = condominio.getId();
+		 List<Visitantes> listavisitantes = (List)coll;
+		 List<Visitantes> listaVisitantesCondominio = new ArrayList();
+		 
+		 int contador = 0;
+		 while(contador<listavisitantes.size()) {
+			 Visitantes visitante = new Visitantes();
+			 visitante = (Visitantes) listavisitantes.get(contador);
+			 if(id_condomino == visitante.getCondominio().getId().longValue() ){
+				 listaVisitantesCondominio.add(visitante);
+			 }
+			 contador++;
+		 } 
+		 
+		model.addAttribute("items", listaVisitantesCondominio);
 		return "administrador/visitantes/lista";
 	}
 	
@@ -97,8 +113,34 @@ public class VisitantesController {
 		model.addAttribute("items", list);
 		Visitantes visitante = new Visitantes();
 		visitante = visitanteService.get(Long.valueOf(idVisitante));
-		model.addAttribute("visitanteActual",visitante);
-		return "administrador/visitantes/actualizar";
+		CatalogoVisitas catalogo = new CatalogoVisitas();
+		catalogo.setNIdCatalogo(Long.valueOf(810));
+		visitante.setIdStatus(catalogo);
+		String localDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+		visitante.setFechaSalida(localDate);
+		visitanteService.update(visitante);
+
+		 Collection coll = visitanteService.getAll();
+		 List listavisitantes = (List)coll;
+		 
+
+		List<Visitantes> listaVisitantesCondominio = new ArrayList();
+		 Long id_condomino = null;
+		 id_condomino = condominio.getId();
+		 int contador = 0;
+		 while(contador<listavisitantes.size()) {
+			 Visitantes visitante2 = new Visitantes();
+			 visitante2 = (Visitantes) listavisitantes.get(contador);
+			 if(id_condomino == visitante2.getCondominio().getId().longValue() ){
+				 listaVisitantesCondominio.add(visitante2);
+			 }
+			 contador++;
+		 } 
+		 
+		model.addAttribute("items", listaVisitantesCondominio);
+
+		return "administrador/visitantes/lista";
+
 	}
 	
 	@SuppressWarnings({ "rawtypes", "static-access" })
