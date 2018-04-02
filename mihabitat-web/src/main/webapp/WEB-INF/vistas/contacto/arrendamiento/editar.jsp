@@ -212,21 +212,23 @@
 function validateMyForm()
 {
 	var today = new Date();
+	var hoy = new Date();
+	hoy.setDate(hoy.getDate()-1);
 	var dateA = document.getElementById("fechaSalida").value;
 	var dateB = document.getElementById("fechaEntrada").value;
 	var depa =document.getElementById('id_departamento').value;
 	var inputSalida = new Date(dateA);
 	var inputEntrada = new Date(dateB);
 	if (inputSalida < today) {
-		  notificacionError("Fecha de salida debe ser mayor a hoy");
+		notificacionAdvertencia("Fecha de salida debe ser mayor a hoy");
 		    return false;
-	} else if (inputEntrada < today) {
-		  notificacionError("Fecha de entrada debe ser mayor a hoy");
+	} else if (inputEntrada < hoy) {
+		notificacionAdvertencia("Fecha de entrada debe ser mayor a hoy");
 		    return false;
 	  } else if ( inputEntrada > inputSalida) {
-		  notificacionError("Fecha de salida debe ser mayor a fecha entrada");
+		  notificacionAdvertencia("Fecha de salida debe ser mayor a fecha entrada");
 		    return false;
-	  }else if(depa==-1){ notificacionError("Departamento no valido");
+	  }else if(depa==-1){ notificacionAdvertencia("Departamento no valido");
 	    return false;}
     return true;
 }

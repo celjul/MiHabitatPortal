@@ -29,4 +29,8 @@ public interface DepartamentoService {
 	Collection<Condominio> search(Usuario usuario);
 	
 	List<Departamento> searchByCond(Long id);
+	
+	List<Departamento> searchByPersona(Long id);
+	
+	Departamento searchByid(Long id);
 }

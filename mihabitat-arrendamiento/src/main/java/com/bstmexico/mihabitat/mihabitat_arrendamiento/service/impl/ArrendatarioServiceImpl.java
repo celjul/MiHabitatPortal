@@ -3,6 +3,7 @@ package com.bstmexico.mihabitat.mihabitat_arrendamiento.service.impl;
 
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.validation.Validator;
 
@@ -15,6 +16,7 @@ import org.springframework.util.Assert;
 import com.bstmexico.mihabitat.comunes.exceptions.ApplicationException;
 import com.bstmexico.mihabitat.comunes.exceptions.service.ServiceException;
 import com.bstmexico.mihabitat.comunes.usuarios.model.Usuario;
+import com.bstmexico.mihabitat.departamentos.model.Departamento;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.dao.ArrendamientoDao;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
@@ -80,4 +82,16 @@ public class ArrendatarioServiceImpl implements ArrendatarioService {
 			throw ex1;
 		}
 	}
+	
+	@Override
+	public List<Arrendatario> getByContacto(Long id) {
+		try {
+			return arrendamientoDao.getByContacto(id);
+		} catch (IllegalArgumentException ex) {
+			ApplicationException ex1 = new ServiceException(ex.getMessage(), ex);
+			LOG.warn(ex1.getMessage(), ex);
+			throw ex1;
+		}
+	}
+
 }

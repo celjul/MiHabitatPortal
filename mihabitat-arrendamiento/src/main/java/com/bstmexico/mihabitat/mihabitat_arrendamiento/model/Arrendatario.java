@@ -25,37 +25,37 @@ public class Arrendatario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idArrendador", nullable = false, unique = true)
+	@Column(name = "idArrendador" ,nullable = false, unique = true )
 	private Long idArrendador;
 	
-	@Column(name = "nombre")
+	@Column(name = "nombre", nullable = false)
 	private String nombre;
 	
-	@Column(name = "apPaterno")
+	@Column(name = "apPaterno", nullable = false)
 	private String apPaterno;
 		
-	@Column(name = "apMaterno")
+	@Column(name = "apMaterno" )
 	private String apMaterno;
 	
-	@Column(name = "fecharegistro")
+	@Column(name = "fecharegistro", nullable = false)
 	private String fechaRegistro;
 	
-	@Column(name = "fechaentrada")
+	@Column(name = "fechaentrada", nullable = false)
 	private String fechaEntrada;
 	
-	@Column(name = "fechasalida")
+	@Column(name = "fechasalida", nullable = false)
 	private String fechaSalida;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Condominio.class)
-	@JoinColumn(name = "NIdCondominio", nullable = false, unique = true)
+	@JoinColumn(name = "NIdCondominio", nullable = false)
 	private Condominio condominio;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = CatalogoArrendamiento.class)
-	@JoinColumn(name = "NIdCatalogo", nullable = false, unique = true)
+	@JoinColumn(name = "NIdCatalogo", nullable = false)
 	private CatalogoArrendamiento idStatus;
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Departamento.class)
-	@JoinColumn(name = "NIdDepartamento", nullable = false, unique = true)
+	@JoinColumn(name = "NIdDepartamento", nullable = false)
 	private Departamento departamento;
 	
 	@Column(name = "numAdultos")
@@ -70,7 +70,7 @@ public class Arrendatario implements Serializable {
 	
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Usuario.class)
-	@JoinColumn(name = "NIdUsuario", nullable = false, unique = true)
+	@JoinColumn(name = "NIdUsuario", nullable = false)
 	private Usuario administrador;	
 
 
