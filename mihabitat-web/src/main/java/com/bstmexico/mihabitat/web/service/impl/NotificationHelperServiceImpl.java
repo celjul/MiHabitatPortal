@@ -1230,10 +1230,11 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 					}
 				}
 			}
-		//PARA EL ENVIO DE EMAIL
-		if(emails != null && !org.springframework.util.CollectionUtils.isEmpty(emails)) {
 
 			final Map mapVelocity = new HashMap();
+		//PARA EL ENViO DE EMAIL
+		if(emails != null && !org.springframework.util.CollectionUtils.isEmpty(emails)) {
+
 			mapVelocity.put("usuario", temaObj.getPrimerPost().getUsuario().getPersona().getNombreCompleto());
 			mapVelocity.put("fecha", FORMATO_HORA.format(temaObj.getPrimerPost().getFecha().toDate()));
 			mapVelocity.put("titulo", temaObj.getNombre());
@@ -1242,15 +1243,12 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 			mapVelocity.put("host", configurationServiceImpl.getHost());
 
 			Notification notification = null;
-			if(temaObj instanceof TemaEvento) {
-				notification = NotificationFactory.newInstance(NuevoTemaNotification.class);
-				notification.setCondominio(condominio);
-				((NuevoTemaNotification)notification).setTema(temaObj);
-				mapVelocity.put("fechaInicio",
-						FORMATO_HORA.format(((TemaEvento) temaObj).getFechaInicio().toDate()));
-				mapVelocity.put("fechaFin",
-						FORMATO_HORA.format(((TemaEvento) temaObj).getFechaFin().toDate()));
-			} 
+			notification = NotificationFactory.newInstance(NuevoTemaNotification.class);
+			notification.setCondominio(condominio);
+			((NuevoTemaNotification)notification).setTema(temaObj);
+			mapVelocity.put("fechaInicio",FORMATO_HORA.format(((TemaEvento) temaObj).getFechaInicio().toDate()));
+			mapVelocity.put("fechaFin",	FORMATO_HORA.format(((TemaEvento) temaObj).getFechaFin().toDate()));
+			
 			final String asunto = notification.getTitulo();
 			final String templateEmail = notification.getEmailTemplate();
 			final String nombreCondominio = condominio.getNombre();
