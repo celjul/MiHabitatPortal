@@ -102,8 +102,21 @@ public class ArrendamientoContactoController {
 		arrendatario.setFechaRegistro(localDate.now().toString());
 		//insertar datos a bdd
 		arrendatarioService.save(arrendatario);
-		 List<Departamento> list  = departamentoService.searchByCond(condominio.getId());	 
-		model.addAttribute("departamentos", list);
+			 Long idcondominio = condominio.getId();
+		List<Departamento> list = departamentoService.searchByPersona(usuario.getPersona().getId());
+		List<Departamento> lista = new ArrayList<>();
+		int contador =0;
+		while(list.size()>contador) {
+			Departamento depa = new Departamento();
+			depa = departamentoService.searchByid(list.get(contador).getId());
+			Long iddepaCondominio = depa.getCondominio().getId();
+			if(iddepaCondominio==idcondominio) {
+				lista.add(depa);
+			}
+			contador++;
+		}
+ 
+		model.addAttribute("departamentos", lista);
 		model.addAttribute("statusguardado",1);
 		return "contacto/arrendamiento/nuevo";
 	}
@@ -200,9 +213,35 @@ public class ArrendamientoContactoController {
 		LocalDate localDate = LocalDate.now();
 		arrendatario.setFechaRegistro(localDate.now().toString());
 		arrendatarioService.update(arrendatario);
-		
-		 Collection coll = arrendatarioService.getAll();
-		 List listaarrendatarios = (List)coll;
+
+		 List<Arrendatario> listaarrendatarios = new ArrayList();
+		 Long idcondominio = condominio.getId();
+			List<Departamento> list = departamentoService.searchByPersona(usuario.getPersona().getId());
+			List<Departamento> lista = new ArrayList<>();
+			int contador =0;
+			while(list.size()>contador) {
+				Departamento depa = new Departamento();
+				depa = departamentoService.searchByid(list.get(contador).getId());
+				Long iddepaCondominio = depa.getCondominio().getId();
+				if(iddepaCondominio==idcondominio) {
+					lista.add(depa);
+				}
+				contador++;
+			}
+			int cont = 0;
+			while(lista.size()>cont) {
+				List<Arrendatario> listaarrendadores = null; 
+				listaarrendadores = arrendatarioService.getByContacto(lista.get(cont).getId());
+				int contArrend = 0;
+					while(contArrend<listaarrendadores.size()){
+						Arrendatario arrendador = new Arrendatario();
+						arrendador= listaarrendadores.get(contArrend);
+						listaarrendatarios.add(arrendador);
+						contArrend++;
+					}
+				 cont++;
+			}
+			
 		model.addAttribute("items", listaarrendatarios);
 		return "contacto/arrendamiento/lista";
 	}
