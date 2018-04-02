@@ -9,6 +9,7 @@ import com.bstmexico.mihabitat.comunicacion.blogs.model.Tema;
 import com.bstmexico.mihabitat.condominios.model.Condominio;
 import com.bstmexico.mihabitat.departamentos.model.Departamento;
 import com.bstmexico.mihabitat.instalaciones.model.Reservacion;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
 import com.bstmexico.mihabitat.notificaciones.model.Notification;
 import com.bstmexico.mihabitat.movimientos.model.MovimientoCargo;
 import com.bstmexico.mihabitat.pagos.model.Pago;
@@ -48,4 +49,6 @@ public interface NotificationHelperService {
 	Collection<Notification> listarNotificacionesContacto(Condominio condominio, Usuario usuario);
 
 	void enviarNotificacionNuevoMovimiento(MovimientoCargo movimientoCargo);
+	
+	void enviarNotificacionNuevoArrendador(Arrendatario arrendatario);
 }

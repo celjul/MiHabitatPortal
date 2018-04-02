@@ -28,6 +28,8 @@ import com.bstmexico.mihabitat.notificaciones.factory.NotificationFactory;
 import com.bstmexico.mihabitat.instalaciones.model.CatalogoEstatusReservacion;
 import com.bstmexico.mihabitat.instalaciones.model.Reservacion;
 import com.bstmexico.mihabitat.instalaciones.service.ReservacionService;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
 import com.bstmexico.mihabitat.notificaciones.model.*;
 import com.bstmexico.mihabitat.movimientos.model.MovimientoCargo;
 import com.bstmexico.mihabitat.movimientos.service.MovimientoService;
@@ -107,6 +109,9 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 
 	@Autowired
 	private TemaService temaService;
+	
+	@Autowired
+	private ArrendatarioService arrendatarioService;
 
 	@Autowired
 	private CatalogoService catalogoService;
@@ -1205,4 +1210,61 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 		}
 		return notificationesTodas;
 	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void enviarNotificacionNuevoArrendador(Arrendatario arrendatario) {
+		Arrendatario arrendatarioObj = arrendatarioService.get(arrendatario.getIdArrendador());
+		Condominio condominio = condominioService.get(arrendatarioObj.getCondominio().getId());
+
+		//Definir los usuarios a los que se enviara¡ la notificacion
+		//En esta parte se obtienen los objetos Usuario para mandar la notificacion en el sistema 
+		// y los correos para los Emails.
+		Collection<Usuario> usuarios = new HashSet<>();
+		final Map<String, String> emails = new HashMap();
+			if (condominio!=null) {
+				if(!org.springframework.util.CollectionUtils.isEmpty(condominio.getAdministradores())) {
+					for(Usuario usuario : condominio.getAdministradores()) {
+							usuarios.add(usuario);
+							emails.put(usuario.getEmail(), usuario.getPersona().getNombreCompleto());					
+					}
+				}
+			}
+		//PARA EL ENVIO DE EMAIL
+		if(emails != null && !org.springframework.util.CollectionUtils.isEmpty(emails)) {
+
+			final Map mapVelocity = new HashMap();
+			mapVelocity.put("usuario", temaObj.getPrimerPost().getUsuario().getPersona().getNombreCompleto());
+			mapVelocity.put("fecha", FORMATO_HORA.format(temaObj.getPrimerPost().getFecha().toDate()));
+			mapVelocity.put("titulo", temaObj.getNombre());
+			mapVelocity.put("comentario", temaObj.getPrimerPost().getComentario().replaceAll("(\r\n|\n)", "<br />"));
+			mapVelocity.put("idTema", temaObj.getId());
+			mapVelocity.put("host", configurationServiceImpl.getHost());
+
+			Notification notification = null;
+			if(temaObj instanceof TemaEvento) {
+				notification = NotificationFactory.newInstance(NuevoTemaNotification.class);
+				notification.setCondominio(condominio);
+				((NuevoTemaNotification)notification).setTema(temaObj);
+				mapVelocity.put("fechaInicio",
+						FORMATO_HORA.format(((TemaEvento) temaObj).getFechaInicio().toDate()));
+				mapVelocity.put("fechaFin",
+						FORMATO_HORA.format(((TemaEvento) temaObj).getFechaFin().toDate()));
+			} 
+			final String asunto = notification.getTitulo();
+			final String templateEmail = notification.getEmailTemplate();
+			final String nombreCondominio = condominio.getNombre();
+
+
+			new Thread(new Runnable() {
+				@SuppressWarnings("unchecked")
+				@Override
+				public void run() {
+					emailingService.sendEmail(emails, asunto,
+							templateEmail, mapVelocity, null, nombreCondominio);
+				}
+			}).start();
+		}
+	}
+	
 }

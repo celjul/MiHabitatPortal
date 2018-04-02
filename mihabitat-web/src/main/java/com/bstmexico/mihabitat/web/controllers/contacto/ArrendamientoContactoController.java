@@ -14,6 +14,7 @@ import com.bstmexico.mihabitat.departamentos.service.DepartamentoService;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.CatalogoArrendamiento;
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
+import com.bstmexico.mihabitat.web.service.NotificationHelperService;
 
 import javax.servlet.http.HttpSession;
 
@@ -41,6 +42,9 @@ public class ArrendamientoContactoController {
 	@Autowired
 	private ArrendatarioService arrendatarioService;
 	
+	 @Autowired
+    private NotificationHelperService notificationHelperService;
+
     
 	//Carga en la pagina de nuevos los departamentos y redirigue a pagin nuevos desde el menu
 
@@ -102,6 +106,7 @@ public class ArrendamientoContactoController {
 		arrendatario.setFechaRegistro(localDate.now().toString());
 		//insertar datos a bdd
 		arrendatarioService.save(arrendatario);
+		notificationHelperService.enviarNotificacionNuevoArrendador(arrendatario);
 			 Long idcondominio = condominio.getId();
 		List<Departamento> list = departamentoService.searchByPersona(usuario.getPersona().getId());
 		List<Departamento> lista = new ArrayList<>();
