@@ -106,7 +106,7 @@ public class ArrendamientoContactoController {
 		arrendatario.setFechaRegistro(localDate.now().toString());
 		//insertar datos a bdd
 		arrendatarioService.save(arrendatario);
-		notificationHelperService.enviarNotificacionNuevoArrendador(arrendatario);
+		notificationHelperService.enviarNotificacionNuevoArrendatario(arrendatario);
 			 Long idcondominio = condominio.getId();
 		List<Departamento> list = departamentoService.searchByPersona(usuario.getPersona().getId());
 		List<Departamento> lista = new ArrayList<>();

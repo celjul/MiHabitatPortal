@@ -46,5 +46,10 @@
       <artifactId>mihabitat-comunicacion</artifactId>
       <version>1.11-BETA</version>
     </dependency>
+    <dependency>
+      <groupId>com.bstmexico.mihabitat</groupId>
+      <artifactId>mihabitat_arrendamiento</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

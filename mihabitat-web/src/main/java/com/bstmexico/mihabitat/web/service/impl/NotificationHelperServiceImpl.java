@@ -1213,56 +1213,42 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public void enviarNotificacionNuevoArrendador(Arrendatario arrendatario) {
+	public void enviarNotificacionNuevoArrendatario(Arrendatario arrendatario) {
+		
 		Arrendatario arrendatarioObj = arrendatarioService.get(arrendatario.getIdArrendador());
 		Condominio condominio = condominioService.get(arrendatarioObj.getCondominio().getId());
-
-		//Definir los usuarios a los que se enviara¡ la notificacion
-		//En esta parte se obtienen los objetos Usuario para mandar la notificacion en el sistema 
-		// y los correos para los Emails.
-		Collection<Usuario> usuarios = new HashSet<>();
-		final Map<String, String> emails = new HashMap();
-			if (condominio!=null) {
-				if(!org.springframework.util.CollectionUtils.isEmpty(condominio.getAdministradores())) {
-					for(Usuario usuario : condominio.getAdministradores()) {
-							usuarios.add(usuario);
-							emails.put(usuario.getEmail(), usuario.getPersona().getNombreCompleto());					
-					}
-				}
+		
+		ArrendatarioNuevoNotificacion notification = NotificationFactory.newInstance(ArrendatarioNuevoNotificacion.class);
+		notification.setCondominio(condominio);
+		notification.setArrendatario(arrendatario);
+		final Map<String, String> emailsAdmins = new HashMap<>();
+		if (!org.springframework.util.CollectionUtils.isEmpty(condominio.getAdministradores())) {
+			for (Usuario usuario : condominio.getAdministradores()) {
+				emailsAdmins.put(usuario.getEmail(), usuario.getPersona().getNombreCompleto());
 			}
-
+		}
+		if(!org.springframework.util.CollectionUtils.isEmpty(emailsAdmins)) {
 			final Map mapVelocity = new HashMap();
-		//PARA EL ENViO DE EMAIL
-		if(emails != null && !org.springframework.util.CollectionUtils.isEmpty(emails)) {
-
-			mapVelocity.put("usuario", temaObj.getPrimerPost().getUsuario().getPersona().getNombreCompleto());
-			mapVelocity.put("fecha", FORMATO_HORA.format(temaObj.getPrimerPost().getFecha().toDate()));
-			mapVelocity.put("titulo", temaObj.getNombre());
-			mapVelocity.put("comentario", temaObj.getPrimerPost().getComentario().replaceAll("(\r\n|\n)", "<br />"));
-			mapVelocity.put("idTema", temaObj.getId());
+			mapVelocity.put("titulo", "Se hizo una solicitud de arrendamiento del Condominio "+condominio.getNombre());
+			mapVelocity.put("comentario", "El departamento "+arrendatario.getDepartamento().getNombre()+
+					" hizo una solicitud para arrendar registro el dia: "+arrendatario.getFechaRegistro()+" para que arrende la persona "+arrendatario.getApPaterno()+" "+
+					arrendatario.getApMaterno()+" "+arrendatario.getNombre());
 			mapVelocity.put("host", configurationServiceImpl.getHost());
 
-			Notification notification = null;
-			notification = NotificationFactory.newInstance(NuevoTemaNotification.class);
-			notification.setCondominio(condominio);
-			((NuevoTemaNotification)notification).setTema(temaObj);
-			mapVelocity.put("fechaInicio",FORMATO_HORA.format(((TemaEvento) temaObj).getFechaInicio().toDate()));
-			mapVelocity.put("fechaFin",	FORMATO_HORA.format(((TemaEvento) temaObj).getFechaFin().toDate()));
-			
-			final String asunto = notification.getTitulo();
 			final String templateEmail = notification.getEmailTemplate();
 			final String nombreCondominio = condominio.getNombre();
-
+			final String asunto = notification.getTitulo();
 
 			new Thread(new Runnable() {
 				@SuppressWarnings("unchecked")
 				@Override
 				public void run() {
-					emailingService.sendEmail(emails, asunto,
+					emailingService.sendEmail(emailsAdmins, asunto,
 							templateEmail, mapVelocity, null, nombreCondominio);
 				}
 			}).start();
 		}
+
 	}
 	
 }

@@ -16,8 +16,13 @@
         <span id="logo"> <img src="${pageContext.request.contextPath}/recursos/img/logo.png"
                               alt="<spring:message code="mihabitat.nombre" />"> </span>
     </div>
-     <div> 
-     <input list="browsers" name="chooseOptions" class="form-control-2">
+     <div id="hide-menu" class="btn-header pull-left">
+            <span> <a href="javascript:void(0);" data-action="toggleMenu"
+                      title="<spring:message code="mihabitat.menu.colapasar" />"><i
+                    class="fa fa-reorder"></i></a> </span>
+    </div>
+     <div style="padding-left:15px;"> 
+     <input list="browsers" placeholder="¿Que desea Buscar?(Menu)" style="width:350px;  padding:12px;" name="chooseOptions" class="form-control-2">
 	<datalist id="browsers">
   		<option id="administrador/mantenimientos/lista" value="<spring:message code="mihabitat.menu.mantenimientos" />">
   		<option id="administrador/grupos/lista" value="<spring:message code="mihabitat.menu.grupos" />">
@@ -82,11 +87,7 @@
   		  
 	</datalist>
 	</div>
-    <div id="hide-menu" class="btn-header pull-left">
-            <span> <a href="javascript:void(0);" data-action="toggleMenu"
-                      title="<spring:message code="mihabitat.menu.colapasar" />"><i
-                    class="fa fa-reorder"></i></a> </span>
-    </div>
+   
     <div class="pull-right">
 
         <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">

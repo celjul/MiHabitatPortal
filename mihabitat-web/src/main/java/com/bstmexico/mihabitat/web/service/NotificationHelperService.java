@@ -50,5 +50,5 @@ public interface NotificationHelperService {
 
 	void enviarNotificacionNuevoMovimiento(MovimientoCargo movimientoCargo);
 	
-	void enviarNotificacionNuevoArrendador(Arrendatario arrendatario);
+	void enviarNotificacionNuevoArrendatario(Arrendatario arrendatario);
 }
