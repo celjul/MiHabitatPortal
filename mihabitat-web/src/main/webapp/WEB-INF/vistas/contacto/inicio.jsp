@@ -111,15 +111,17 @@
 													<div class="ibox-title" style="background-color: #353D4B; color: #FFF">
 														<h5 style="background-color: #353D4B; color: #FFF"> <i class="fa fa-warning"></i> Notificaciones Importantes </h5>
 													</div>
-													<div class="ibox-content" style="height: 150px; overflow-y: auto; padding: 0px" id="inicioNotContacto">
+													<div class="ibox-content" style="height: 350px; overflow-y: auto; " id="inicioNotContacto">
 
 													</div>
 												</div>
+											</div>
+											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="ibox float-e-margins">
 													<div class="ibox-title" style="background-color: #353D4B; color: #FFF">
 														<h5 style="color: #FFF"><i class="fa fa-comments"></i> Actividad en Foros</h5>
 													</div>
-													<div class="ibox-content" style="height: 150px; overflow-y: auto">
+													<div class="ibox-content" style="height: 350px; overflow-y: auto">
 
 														<div>
 															<div class="feed-activity-list" data-bind="foreach : { data: $root.actividadPosts }">
@@ -153,8 +155,8 @@
 												</div>
 											</div>
 
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<!-- new widget -->
+											<!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+												new widget
 												<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-31" style="margin: 0px"
 													 data-widget-colorbutton="false"
 													 data-widget-editbutton="false"
@@ -165,7 +167,7 @@
 													 data-widget-sortable="false"
 														>
 
-													<!-- widget options:
+													widget options:
                                                     usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
                                                     data-widget-colorbutton="false"
@@ -177,12 +179,12 @@
                                                     data-widget-collapsed="true"
                                                     data-widget-sortable="false"
 
-                                                    -->
+                                                   
 													<header>
 														<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
 														<h2> Agenda </h2>
 														<div class="widget-toolbar">
-															<!-- add: non-hidden - to disable auto hide -->
+															add: non-hidden - to disable auto hide
 															<div class="btn-group">
 																<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
 																	Mostrar <i class="fa fa-caret-down"></i>
@@ -202,28 +204,30 @@
 														</div>
 													</header>
 
-													<!-- widget div-->
+													widget div
 													<div >
-														<!-- widget edit box -->
+														widget edit box
 														<div class="jarviswidget-editbox">
 
 															<input class="form-control" type="text">
 
 														</div>
-														<!-- end widget edit box -->
+														end widget edit box
 
 														<div class="widget-body no-padding" style="margin-top: 10px">
 
 															<div id="calendar" ></div>
 
-															<!-- end content -->
+															end content
 														</div>
 
 													</div>
-													<!-- end widget div -->
+													end widget div
 												</div>
-												<!-- end widget -->
-											</div>
+												end widget
+											</div> -->
+										
+										
 										</div>
 									</div>
 									<!-- end s1 tab pane -->

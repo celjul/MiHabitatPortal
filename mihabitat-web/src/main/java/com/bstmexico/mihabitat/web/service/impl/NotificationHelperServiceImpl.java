@@ -28,6 +28,8 @@ import com.bstmexico.mihabitat.notificaciones.factory.NotificationFactory;
 import com.bstmexico.mihabitat.instalaciones.model.CatalogoEstatusReservacion;
 import com.bstmexico.mihabitat.instalaciones.model.Reservacion;
 import com.bstmexico.mihabitat.instalaciones.service.ReservacionService;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.Arrendatario;
+import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
 import com.bstmexico.mihabitat.notificaciones.model.*;
 import com.bstmexico.mihabitat.movimientos.model.MovimientoCargo;
 import com.bstmexico.mihabitat.movimientos.service.MovimientoService;
@@ -107,6 +109,9 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 
 	@Autowired
 	private TemaService temaService;
+	
+	@Autowired
+	private ArrendatarioService arrendatarioService;
 
 	@Autowired
 	private CatalogoService catalogoService;
@@ -1205,4 +1210,45 @@ public class NotificationHelperServiceImpl implements NotificationHelperService 
 		}
 		return notificationesTodas;
 	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void enviarNotificacionNuevoArrendatario(Arrendatario arrendatario) {
+		
+		Arrendatario arrendatarioObj = arrendatarioService.get(arrendatario.getIdArrendador());
+		Condominio condominio = condominioService.get(arrendatarioObj.getCondominio().getId());
+		
+		ArrendatarioNuevoNotificacion notification = NotificationFactory.newInstance(ArrendatarioNuevoNotificacion.class);
+		notification.setCondominio(condominio);
+		notification.setArrendatario(arrendatario);
+		final Map<String, String> emailsAdmins = new HashMap<>();
+		if (!org.springframework.util.CollectionUtils.isEmpty(condominio.getAdministradores())) {
+			for (Usuario usuario : condominio.getAdministradores()) {
+				emailsAdmins.put(usuario.getEmail(), usuario.getPersona().getNombreCompleto());
+			}
+		}
+		if(!org.springframework.util.CollectionUtils.isEmpty(emailsAdmins)) {
+			final Map mapVelocity = new HashMap();
+			mapVelocity.put("titulo", "Se hizo una solicitud de arrendamiento del Condominio "+condominio.getNombre());
+			mapVelocity.put("comentario", "El departamento "+arrendatario.getDepartamento().getNombre()+
+					" hizo una solicitud para arrendar registro el dia: "+arrendatario.getFechaRegistro()+" para que arrende la persona "+arrendatario.getApPaterno()+" "+
+					arrendatario.getApMaterno()+" "+arrendatario.getNombre());
+			mapVelocity.put("host", configurationServiceImpl.getHost());
+
+			final String templateEmail = notification.getEmailTemplate();
+			final String nombreCondominio = condominio.getNombre();
+			final String asunto = notification.getTitulo();
+
+			new Thread(new Runnable() {
+				@SuppressWarnings("unchecked")
+				@Override
+				public void run() {
+					emailingService.sendEmail(emailsAdmins, asunto,
+							templateEmail, mapVelocity, null, nombreCondominio);
+				}
+			}).start();
+		}
+
+	}
+	
 }
