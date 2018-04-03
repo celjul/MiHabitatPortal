@@ -21,8 +21,8 @@
                       title="<spring:message code="mihabitat.menu.colapasar" />"><i
                     class="fa fa-reorder"></i></a> </span>
     </div>
-	<div>
-	<input list="browsers" name="chooseOptions" class="form-control-2">
+	<div style="padding-left:15px;">
+	<input placeholder="¿Que desea Buscar?(Menu)"  style="width:350px;  padding:12px;" list="browsers" name="chooseOptions" class="form-control-2">
 
 <datalist id="browsers">
   <option id="vigilante/visitantes/lista" value="<spring:message code="mihabitat.menu.visitas.lista" />">

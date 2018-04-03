@@ -14,7 +14,7 @@
             <div id="logo-group">
                 <span id="logo"> <img src="${pageContext.request.contextPath}/recursos/img/logo.png" alt="<spring:message code="mihabitat.nombre" />"> </span>
             </div>
-           <div> <input list="browsers" name="chooseOptions" class="form-control-2">
+           <div style="padding-left:15px;"> <input list="browsers" placeholder="¿Que desea Buscar?(Menu)" style="width:350px;  padding:12px;" name="chooseOptions" class="form-control-2">
 
 <datalist id="browsers">
   <option id="contacto/mis-pagos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.pagos" />">

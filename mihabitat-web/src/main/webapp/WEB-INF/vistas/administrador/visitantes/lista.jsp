@@ -92,7 +92,7 @@
 								<td style="text-align: center;">
 								<input hidden="true" type="text" id="${item.nombre} ${item.apPaterno} ${item.apMaterno}">
 									<button class="btn btn-success btn-xs">
-										<i class="fa fa-pencil"></i> Editar </button>
+										<i class="fa fa-pencil"></i> Registrar Salida </button>
 									<input hidden="true" type="text"  id="${item.idArrendador}">
 								</td>
 																

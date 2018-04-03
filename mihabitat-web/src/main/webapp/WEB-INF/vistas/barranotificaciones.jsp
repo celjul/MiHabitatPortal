@@ -269,10 +269,12 @@
     <div class="notification-group">
         <!-- Note: The activity badge color changes when clicked and resets the number to 0
           Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-          <span id="mensajesActivity" class="activity-dropdown activity">
-              <i class="fa fa-envelope"></i>
-              <%--<b class="badgeBST" id="conteoPendientes"> 21 </b>--%>
-          </span>
+          <!--  
+	          <span id="mensajesActivity" class="activity-dropdown activity">
+	              <i class="fa fa-envelope"></i>
+	              <%--<b class="badgeBST" id="conteoPendientes"> 21 </b>--%>
+	          </span>
+          -->
 
         <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
         <div class="ajax-dropdown">
@@ -318,11 +320,11 @@
     <div class="notification-group">
         <!-- Note: The activity badge color changes when clicked and resets the number to 0
           Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-          <span id="calendarioActivity" class="activity-dropdown activity">
+         <%--  <span id="calendarioActivity" class="activity-dropdown activity">
               <i class="fa fa-calendar"></i>
-              <%--<b class="badgeBST" id="conteoPendientes"> 21 </b>--%>
+              <b class="badgeBST" id="conteoPendientes"> 21 </b>
           </span>
-
+ --%>
         <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
         <div class="ajax-dropdown">
 
