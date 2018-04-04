@@ -206,12 +206,12 @@
 						<header role="heading">
 							<ul class="nav nav-tabs pull-left in">
 								<li class="active">
-									<a data-toggle="tab" href="#hr1" data-bind="click: function() {$root.obtenerEstadoDeCuenta()}"
+									<a data-toggle="tab" style="background-color:#7DCEA0;" href="#hr1" data-bind="click: function() {$root.obtenerEstadoDeCuenta()}"
 									   aria-expanded="false"> <i class="fa fa-lg fa-calendar"></i>
 										<span class="hidden-mobile hidden-tablet"> Detalle de Movimientos por Mes </span> </a>
 								</li>
 								<li class="">
-									<a data-toggle="tab" href="#hr2" data-bind="click: function() {$root.obtenerAvisoDeCobro()}"																 aria-expanded="true">
+									<a data-toggle="tab" style="background-color:#85C1E9;" href="#hr2" data-bind="click: function() {$root.obtenerAvisoDeCobro()}"																 aria-expanded="true">
 										<i class="fa fa-lg fa-warning"></i>
 										<sec:authorize access="hasRole('Administrador')">
 											<span class="hidden-mobile hidden-tablet"> Aviso de Cobro</span>
@@ -222,12 +222,12 @@
                                     </a>
 								</li>
 								<li class="">
-									<a data-toggle="tab" href="#hr3" data-bind="click: function() {$root.obtenerCargos()}"																 aria-expanded="true">
+									<a data-toggle="tab" style="background-color:#D7BDE2;" href="#hr3" data-bind="click: function() {$root.obtenerCargos()}"																 aria-expanded="true">
 										<i class="fa fa-lg fa-minus-circle"></i>
 										<span class="hidden-mobile hidden-tablet"> Historial de Cargos </span> </a>
 								</li>
 								<li class="">
-									<a data-toggle="tab" href="#hr4" data-bind="click: function() {$root.obtenerAbonos()}"																 aria-expanded="true">
+									<a data-toggle="tab" style="background-color:#F5CBA7;" href="#hr4" data-bind="click: function() {$root.obtenerAbonos()}"																 aria-expanded="true">
 										<i class="fa fa-lg fa-plus-circle"></i>
 										<span class="hidden-mobile hidden-tablet"> Historial de Abonos </span> </a>
 								</li>
