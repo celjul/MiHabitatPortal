@@ -59,23 +59,23 @@
   	<option id="administrador/instalaciones/nuevo" value="<spring:message code="mihabitat.menu.nuevo.instalaciones" />">
   	<option id="administrador/proveedores/nuevo" value="<spring:message code="mihabitat.menu.nuevo.proveedores" />">
   	<option id="administrador/proveedores/lista" value="<spring:message code="mihabitat.menu.lista.proveedores" />">
-  	<option id="administrador/reportes/ingresos-egresos" value="<spring:message code="mihabitat.reportes.ingresosyegresos" />">
- 	<option id="administrador/reportes/cuenta-detalle" value="<spring:message code="mihabitat.reportes.cuentadetalle" />">
-  	<option id="administrador/reportes/resumen-cargos" value="<spring:message code="mihabitat.reportes.resumencargos" />">
- 	<option id="administrador/reportes/resumen-abonos" value="<spring:message code="mihabitat.reportes.resumenabonos" />">
- 	<option id="administrador/reportes/cuentas-cobrar" value="<spring:message code="mihabitat.reportes.cuentasporcobrar" />">
- 	<option id="administrador/reportes/saldo-departamento" value="<spring:message code="mihabitat.reportes.saldodepartamento" />">
- 	<option id="administrador/reportes/antiguedad-cuentas-cobrar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporcobrar" />">
- 	<option id="administrador/reportes/morosidad" value="<spring:message code="mihabitat.reportes.morosidad" />">
- 	<option id="administrador/reportes/cumplimiento-efectividad-cobranza" value="<spring:message code="mihabitat.reportes.cumplimiento.efectividad.cobranza" />">
-  	<option id="administrador/reportes/bancos-cajas" value="<spring:message code="mihabitat.reportes.bancos.cajas" />">
-   	<option id="administrador/reportes/balanza-comprobacion" value="<spring:message code="mihabitat.reportes.balanza.comprobacion" />">
- 	<option id="administrador/reportes/pagos-contacto" value="<spring:message code="mihabitat.reportes.pagos.contacto" />"> 
-  	<option id="administrador/reportes/pagos-departamento" value="<spring:message code="mihabitat.reportes.pagos.departamento" />">
- 	<option id="administrador/reportes/saldo-favor" value="<spring:message code="mihabitat.reportes.saldofavor" />">
- 	<option id="administrador/reportes/cuentas-pagar" value="<spring:message code="mihabitat.reportes.cuentasporpagar" />"> 
- 	<option id="administrador/reportes/antiguedad-cuentas-pagar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporpagar" />"> 
-	<option id="administrador/reportes/reporteegresos" value="<spring:message code="mihabitat.reportes.gastos" />">  		  		  			
+  	<option id="administrador/reportes/ingresos-egresos/" value="<spring:message code="mihabitat.reportes.ingresosyegresos" />">
+ 	<option id="administrador/reportes/cuenta-detalle/" value="<spring:message code="mihabitat.reportes.cuentadetalle" />">
+  	<option id="administrador/reportes/resumen-cargos/" value="<spring:message code="mihabitat.reportes.resumencargos" />">
+ 	<option id="administrador/reportes/resumen-abonos/" value="<spring:message code="mihabitat.reportes.resumenabonos" />">
+ 	<option id="administrador/reportes/cuentas-cobrar/" value="<spring:message code="mihabitat.reportes.cuentasporcobrar" />">
+ 	<option id="administrador/reportes/saldo-departamento/" value="<spring:message code="mihabitat.reportes.saldodepartamento" />">
+ 	<option id="administrador/reportes/antiguedad-cuentas-cobrar/" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporcobrar" />">
+ 	<option id="administrador/reportes/morosidad/" value="<spring:message code="mihabitat.reportes.morosidad" />">
+ 	<option id="administrador/reportes/cumplimiento-efectividad-cobranza/" value="<spring:message code="mihabitat.reportes.cumplimiento.efectividad.cobranza" />">
+  	<option id="administrador/reportes/bancos-cajas/" value="<spring:message code="mihabitat.reportes.bancos.cajas" />">
+   	<option id="administrador/reportes/balanza-comprobacion/" value="<spring:message code="mihabitat.reportes.balanza.comprobacion" />">
+ 	<option id="administrador/reportes/pagos-contacto/" value="<spring:message code="mihabitat.reportes.pagos.contacto" />"> 
+  	<option id="administrador/reportes/pagos-departamento/" value="<spring:message code="mihabitat.reportes.pagos.departamento" />">
+ 	<option id="administrador/reportes/saldo-favor/" value="<spring:message code="mihabitat.reportes.saldofavor" />">
+ 	<option id="administrador/reportes/cuentas-pagar/" value="<spring:message code="mihabitat.reportes.cuentasporpagar" />"> 
+ 	<option id="administrador/reportes/antiguedad-cuentas-pagar/" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporpagar" />"> 
+	<option id="administrador/reportes/reporteegresos/" value="<spring:message code="mihabitat.reportes.gastos" />">  		  		  			
  	<option id="administrador/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.incidencias" />"> 
   	<option id="administrador/blogs/4/temas/lista" value="<spring:message code="mihabitat.menu.blogs.avisos" />"> 
  	<option id="administrador/directorio/lista" value="<spring:message code="mihabitat.menu.directorio" />"> 
