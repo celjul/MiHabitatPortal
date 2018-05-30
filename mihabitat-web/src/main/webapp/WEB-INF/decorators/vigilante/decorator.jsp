@@ -21,13 +21,22 @@
                       title="<spring:message code="mihabitat.menu.colapasar" />"><i
                     class="fa fa-reorder"></i></a> </span>
     </div>
-	<div style="padding-left:15px;">
-	<input placeholder="¿Que desea Buscar?(Menu)"  style="width:350px;  padding:12px;" list="browsers" name="chooseOptions" class="form-control-2">
+	<div>
+	<input list="browsers" placeholder="Buscar en el menú" name="chooseOptions" class="form-control-2">
 
 <datalist id="browsers">
-  <option id="vigilante/visitantes/lista" value="<spring:message code="mihabitat.menu.visitas.lista" />">
-  <option id="vigilante/visitantes/nuevo" value="<spring:message code="mihabitat.menu.visitas.nuevo" />">
+  
   <option id="vigilante/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.lista" />">
+    <option id="vigilante/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.buscar" />">
+  
+  <option id="vigilante/visitantes/lista" value="<spring:message code="mihabitat.menu.visitas.lista" />">
+  <option id="vigilante/visitantes/lista" value="<spring:message code="mihabitat.menu.vigilante.buscarvisitante" />">
+  <option id="vigilante/visitantes/nuevo" value="<spring:message code="mihabitat.menu.filtro.visitante" />">
+  <option id="vigilante/visitantes/lista" value="<spring:message code="mihabitat.menu.filtro.visitante.salida" />">
+  
+  
+  
+  
 </datalist>
 	</div>
     <div class="pull-right">
