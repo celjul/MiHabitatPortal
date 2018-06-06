@@ -126,6 +126,9 @@
 	                              <li>
 	                                  <a href="${pageContext.request.contextPath}/contacto/mis-pagos/lista"><spring:message code="mihabitat.menu.lista.pagos"/></a>
 	                              </li>
+	                                <li>
+	                                  <a href="${pageContext.request.contextPath}/contacto/pagoOpenPay/nuevo">Pagos con TDC</a>
+	                              </li>
 	                          </ul>
 	                      </li>
                         <li>
