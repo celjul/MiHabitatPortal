@@ -121,6 +121,9 @@
 	                              <li>
 	                                  <a href="${pageContext.request.contextPath}/contacto/mis-pagos/lista"><spring:message code="mihabitat.menu.lista.pagos"/></a>
 	                              </li>
+	                              <li>
+	                                  <a href="${pageContext.request.contextPath}/contacto/pagoOpenPay/nuevo"><spring:message code="mihabitat.menu.pagostdc.nuevo"/></a>
+	                              </li>
 	                          </ul>
 	                      </li>
                         <li>

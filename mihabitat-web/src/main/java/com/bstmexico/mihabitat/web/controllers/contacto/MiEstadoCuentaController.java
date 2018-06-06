@@ -35,18 +35,15 @@ public class MiEstadoCuentaController {
 	@Autowired
 	private ContactoService contactoService;
 
-	@Autowired
-	private EstadoCuentaService estadoCuentaService;
+
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(method = RequestMethod.GET, value = "consulta")
 	public String consultar(Model model, HttpSession session) {
-		model.addAttribute("periodos",
-				mapper.writeValueAsString(DateUtils.getPeriodos()));
+		model.addAttribute("periodos", mapper.writeValueAsString(DateUtils.getPeriodos()));
 		Map map = new HashMap();
 		map.put("condominio", (Condominio) session.getAttribute("condominio"));
-		map.put("usuario",
-				(Usuario) session.getAttribute(SessionEnum.USUARIO.getValue()));
+		map.put("usuario", (Usuario) session.getAttribute(SessionEnum.USUARIO.getValue()));
 		Contacto contacto = contactoService.search(map).iterator().next();
 		model.addAttribute("contacto", mapper.writeValueAsString(contacto));
 		return "contacto/estado-cuenta/consulta";

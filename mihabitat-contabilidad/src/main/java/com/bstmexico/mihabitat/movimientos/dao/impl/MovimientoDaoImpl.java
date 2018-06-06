@@ -284,16 +284,19 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
 	@Override
-	public Collection<Movimiento> getMovimientos(Departamento departamento,
-			Date inicio, Date fin) {
+	public Collection<Movimiento> getMovimientos(Departamento departamento,	Date inicio, Date fin) {
 		try {
+			//Movimiento viene de tabla tovimiento 
 			List<Movimiento> movimientos = new ArrayList<Movimiento>();
-
 			Collection<Movimiento> cargos = new ArrayList<Movimiento>();
-			Criteria criteriaCargos = sessionFactory.getCurrentSession()
-					.createCriteria(MovimientoCargo.class);
+			
+			//Obtiene conexion con la clase Movimiento Cargo que es hija de Movimiento
+			Criteria criteriaCargos = sessionFactory.getCurrentSession().createCriteria(MovimientoCargo.class);
+
+			//Restringe que los movimientos de Movmientos cargo sean solo del departamento
 			criteriaCargos.createAlias("cargo", "c");
 			criteriaCargos.add(Restrictions.eq("c.departamento", departamento));
+			
 			if (inicio != null) {
 				criteriaCargos.add(Restrictions.between("fecha", inicio, fin));
 			} else {
@@ -301,11 +304,7 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 			}
 			cargos = criteriaCargos.list();
 
-
-
-
-			Criteria criteriaPagoDepartamento = sessionFactory.getCurrentSession()
-					.createCriteria(PagoDepartamento.class);
+			Criteria criteriaPagoDepartamento = sessionFactory.getCurrentSession().createCriteria(PagoDepartamento.class);
 			criteriaPagoDepartamento.add(Restrictions.eq("departamento", departamento));
 			if (inicio != null) {
 				criteriaPagoDepartamento.createAlias("pagoCondomino", "pc");
@@ -314,6 +313,7 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 				criteriaPagoDepartamento.createAlias("pagoCondomino", "pc");
 				criteriaPagoDepartamento.add(Restrictions.lt("pc.fecha", fin));
 			}
+			
 			Collection<PagoDepartamento>  pds = criteriaPagoDepartamento.list();
 			Collection<Movimiento> tempMcas = new ArrayList<>();
 			for(PagoDepartamento pd : pds) {
@@ -329,19 +329,18 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 						nvoMca.setCuenta(null);
 						nvoMca.setImprimible(Boolean.TRUE);
 						nvoMca.setMovimientoCargo((MovimientoCargo) MovimientoFactory.newInstance(MovimientoCargo.class));
-							nvoMca.getMovimientoCargo().setCargo((CargoDepartamento) CargoFactory.newInstance(CargoDepartamento.class));
-							nvoMca.getMovimientoCargo().getCargo().setConcepto("Gracias por su Pago");
+						nvoMca.getMovimientoCargo().setCargo((CargoDepartamento) CargoFactory.newInstance(CargoDepartamento.class));
+						nvoMca.getMovimientoCargo().getCargo().setConcepto("Gracias por su Pago");
 						nvoMca.setPago(null);
 						nvoMca.setPagoDepartamento(pd);
 						nvoMca.setTipo((CatalogoTipoMovimiento) CatalogoFactory.newInstance(CatalogoTipoMovimiento.class, Long.valueOf(cfg.getProperty("pagocargo"))));
-							nvoMca.getTipo().setDescripcion("Abono");
+						nvoMca.getTipo().setDescripcion("Abono");
 						nvoMca.setDebe(null);
 						nvoMca.setFecha(pd.getPagoCondomino().getFecha());
 						nvoMca.setHaber(pd.getAplicadoCargos());
 						tempMcas.add(nvoMca);
 					}
-					if(!pd.getPagoCondomino().getMetodoPago().getId().equals(Long.valueOf(cfg.getProperty("saldoafavor")))
-							&& (pd.getMonto().subtract(pd.getAplicadoCargos()).compareTo(BigDecimal.ZERO) > 0)) {
+					if(!pd.getPagoCondomino().getMetodoPago().getId().equals(Long.valueOf(cfg.getProperty("saldoafavor"))) && (pd.getMonto().subtract(pd.getAplicadoCargos()).compareTo(BigDecimal.ZERO) > 0)) {
 						MovimientoSaldo movSaldo = MovimientoFactory.newInstance(MovimientoSaldo.class, pd.getId());
 						movSaldo.setCuenta(null);
 						movSaldo.setPago(null);
@@ -350,7 +349,7 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 						movSaldo.setFecha(pd.getPagoCondomino().getFecha());
 						movSaldo.setHaber(pd.getMonto().subtract(pd.getAplicadoCargos()));
 						movSaldo.setTipo((CatalogoTipoMovimiento) CatalogoFactory.newInstance(CatalogoTipoMovimiento.class, Long.valueOf(cfg.getProperty("saldoafavorgenerado"))));
-							movSaldo.getTipo().setDescripcion("Saldo a Favor Generado");
+						movSaldo.getTipo().setDescripcion("Saldo a Favor Generado");
 						tempMcas.add(movSaldo);
 					} else if (pd.getPagoCondomino().getMetodoPago().getId().equals(Long.valueOf(cfg.getProperty("saldoafavor")))) {
 						MovimientoSaldo movSaldo = MovimientoFactory.newInstance(MovimientoSaldo.class, pd.getId());
@@ -361,7 +360,7 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 						movSaldo.setFecha(pd.getPagoCondomino().getFecha());
 						movSaldo.setHaber(pd.getMonto());
 						movSaldo.setTipo((CatalogoTipoMovimiento) CatalogoFactory.newInstance(CatalogoTipoMovimiento.class, Long.valueOf(cfg.getProperty("aplicaciondesaldoafavor"))));
-							movSaldo.getTipo().setDescripcion("Aplicaci?n de Saldo a Favor");
+						movSaldo.getTipo().setDescripcion("Aplicacion de Saldo a Favor");
 						tempMcas.add(movSaldo);
 					}
 				}
@@ -369,7 +368,6 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 
 			movimientos.addAll(cargos);
 			movimientos.addAll(tempMcas);
-			/*movimientos.addAll(saldos);*/
 
 			Collections.sort(movimientos);
 			return movimientos;
@@ -379,6 +377,7 @@ public class MovimientoDaoImpl extends GenericDaoImpl<Movimiento, Long>
 			throw ex1;
 		}
 	}
+	
 
 	@Transactional(readOnly = true)
 	@Override

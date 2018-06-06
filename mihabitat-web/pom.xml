@@ -262,6 +262,11 @@
   				<artifactId>mihabitat_visitantes</artifactId>
   				<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>mx.openpay</groupId>
+			<artifactId>openpay-api-client</artifactId>
+			<version>1.0.8</version>
+		</dependency>
 	</dependencies>
 
 	<build>

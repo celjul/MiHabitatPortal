@@ -88,11 +88,7 @@ public class EstadoCuenta {
 		if (!CollectionUtils.isEmpty(getMovimientos())) {
 			for (Movimiento movimiento : getMovimientos()) {
 				if (movimiento instanceof MovimientoCargo) {
-					if (((MovimientoCargo) movimiento)
-							.getTipo()
-							.getId()
-							.equals(Long.valueOf(properties
-									.getProperty("movimiento.tipo.cargo")))) {
+					if (((MovimientoCargo) movimiento).getTipo().getId().equals(Long.valueOf(properties.getProperty("movimiento.tipo.cargo")))) {
 						totalCargos = totalCargos.add(movimiento.getDebe());
 					}
 					if (((MovimientoCargo) movimiento)
@@ -189,8 +185,9 @@ public class EstadoCuenta {
 	}
 
 	public BigDecimal getTotal() {
-		total = getTotalCargos().add(getTotalRecargos()).subtract(
-				getTotalDescuentos());
+		total = getTotalCargos()
+				.add(getTotalRecargos())
+				.subtract(getTotalDescuentos());
 		return total;
 	}
 
@@ -266,8 +263,11 @@ public class EstadoCuenta {
 	}
 
 	public BigDecimal getSaldoDeudor() {
-		saldoDeudor = getSaldoAnterior().add(getTotal()).subtract(
-				getTotalPagos()).add(getSaldoFavor()).subtract(getSaldoFavorAnterior());
+		saldoDeudor = getSaldoAnterior()
+				.add(getTotal())
+				.subtract(getTotalPagos())
+				.add(getSaldoFavor())
+				.subtract(getSaldoFavorAnterior());
 		return saldoDeudor;
 	}
 

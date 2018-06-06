@@ -78,18 +78,18 @@ public class EstadoCuentaServiceImpl implements EstadoCuentaService {
 	private ConfigurationServiceImpl configurationServiceImpl;
 
 	@Override
-	public EstadoCuenta getEstadoCuenta(Condominio condominio,
-			Departamento departamento, Date inicio, Date fin, Contacto contacto) {
+	public EstadoCuenta getEstadoCuenta(Condominio condominio,Departamento departamento, Date inicio, Date fin, Contacto contacto) {
+		
 		EstadoCuenta estado = new EstadoCuenta();
-		/*estado.setMovimientos(movimientoService.getMovimientos(departamento,
-				inicio, getFinal(inicio)));*/
-		estado.setMovimientos(movimientoService.getMovimientos(departamento,
-				inicio, fin));
+		
+		estado.setMovimientos(movimientoService.getMovimientos(departamento,inicio, fin));
+		
 		departamento = departamentoService.get(departamento.getId());
+		
 		if (contacto != null && contacto.getId() != null) {
 			estado.setSaldoFavor(movimientoService.getSaldoFavorPorDepartamento(departamento, null, fin));
 			estado.setSaldoFavorAlDia(movimientoService.getSaldoFavorPorDepartamento(departamento));
-		} else {
+		}else{
 			contacto = departamento.obtenerPrincipal().getContacto();
 			estado.setSaldoFavor(movimientoService.getSaldoFavorPorDepartamento(departamento, null, fin));
 			estado.setSaldoFavorAlDia(movimientoService.getSaldoFavorPorDepartamento(departamento));
@@ -99,15 +99,14 @@ public class EstadoCuentaServiceImpl implements EstadoCuentaService {
 		estado.getDepartamento().setCondominio(condominio);
 		estado.setInicio(inicio);
 		estado.setFin(fin);
-		/*estado.setPeriodo((new SimpleDateFormat("MMMM-yyyy", new Locale("es", "ES"))
-				.format(inicio)).toUpperCase());*/
+
 		Map map = new HashMap();
 		map.put("departamento", departamento);
 		estado.setCargos(cargoService.search(map, CargoDepartamento.class, false));
 
 		EstadoCuenta anterior = new EstadoCuenta();
-		anterior.setMovimientos(movimientoService.getMovimientos(departamento,
-				null, inicio));
+		
+		anterior.setMovimientos(movimientoService.getMovimientos(departamento, null, inicio));
 		anterior.setSaldoFavor(movimientoService.getSaldoFavorPorDepartamento(departamento, null, inicio));
 		estado.setSaldoAnterior(anterior.getSaldoDeudor());
 		estado.setSaldoFavorAnterior(anterior.getSaldoFavor());

@@ -60,11 +60,6 @@ import com.bstmexico.mihabitat.web.util.DateUtils;
 import com.bstmexico.mihabitat.web.util.HibernateAwareObjectMapper;
 import com.bstmexico.mihabitat.web.util.SessionEnum;
 
-/**
- * @author Pablo Cruz Santos
- * @version 1.0
- * @since 2015
- */
 @Controller
 @RequestMapping(value = "administrador/estado-cuenta")
 public class EstadoCuentaController extends GenericController {
@@ -104,8 +99,6 @@ public class EstadoCuentaController extends GenericController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "individual")
 	public String getIndividual(Model model) {
-		/*model.addAttribute("periodos",
-				mapper.writeValueAsString(DateUtils.getPeriodos()));*/
 		model.addAttribute("idDepartamento", 0);
 		model.addAttribute("idContacto", 0);
 		return "administrador/estado-cuenta/individual";
@@ -113,8 +106,7 @@ public class EstadoCuentaController extends GenericController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "individual/{idDepartamento}/{idContacto}")
 	public String getIndividualConId(Model model, @PathVariable Long idDepartamento, @PathVariable Long idContacto) {
-		/*model.addAttribute("periodos",
-				mapper.writeValueAsString(DateUtils.getPeriodos()));*/
+
 		model.addAttribute("idDepartamento", idDepartamento);
 		model.addAttribute("idContacto", idContacto);
 		return "administrador/estado-cuenta/individual";
@@ -272,18 +264,6 @@ public class EstadoCuentaController extends GenericController {
 			@RequestParam(value = "emails[]") String[] emails,
 			@RequestParam String mensaje, HttpSession session) {
 
-		/*Condominio condominio = (Condominio) session
-				.getAttribute(SessionEnum.CONDOMINIO.getValue());
-		ByteArrayResource resource = new ByteArrayResource(
-				estadoCuentaService.getEstadoCuenta(estadoCuentaService.getEstado(condominio,
-						idDepartamento, inicio, fin, idContacto)));
-
-		Departamento dpto = departamentoService.get(idDepartamento);
-
-		final String asunto = "Estado de Cuenta " + dpto.getNombre();
-		estadoCuentaService.sendEstadoCuenta(new Adjunto("estado_cuenta_"
-				+ idDepartamento + ".pdf", resource), mensaje, condominio, asunto, emails);*/
-
 		estadoCuentaService.sendEstadoCuenta((Condominio) session
 				.getAttribute(SessionEnum.CONDOMINIO.getValue()), mensaje, idDepartamento, idContacto, inicio, fin, emails);
 
@@ -301,25 +281,11 @@ public class EstadoCuentaController extends GenericController {
 		avisoDeCobroService.sendAvisoDeCobro((Condominio) session
 				.getAttribute(SessionEnum.CONDOMINIO.getValue()),mensaje, idDepartamento, idContacto, fin,emails);
 
-		/*Condominio condominio = (Condominio) session
-				.getAttribute(SessionEnum.CONDOMINIO.getValue());
-		AvisoDeCobro ac = getAvisoDeCobro(condominio,
-				idDepartamento, fin, idContacto);
-		ByteArrayResource resource = new ByteArrayResource(
-				avisoDeCobroService.getAvisoDeCobro(ac));
-
-		Departamento dpto = departamentoService.get(idDepartamento);
-
-		final String asunto = "Aviso de Cobro " + dpto.getNombre();
-		avisoDeCobroService.sendAvisoDeCobro(new Adjunto("aviso_cobro_"
-				+ idDepartamento + ".pdf", resource), mensaje, condominio, asunto, emails);*/
 		return Boolean.TRUE;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "masivo")
 	public String getMasivo(Model model, HttpSession session) {
-		/*model.addAttribute("periodos",
-				mapper.writeValueAsString(DateUtils.getPeriodos()));*/
 		return "administrador/estado-cuenta/masivo";
 	}
 
@@ -363,32 +329,6 @@ public class EstadoCuentaController extends GenericController {
 
 		Condominio condominio = (Condominio) session
 				.getAttribute(SessionEnum.CONDOMINIO.getValue());
-		/*Map map = new HashMap();
-		map.put("condominio", condominio);
-
-		for (Long idDepartamento : ids) {
-			Departamento departamento = departamentoService.get(idDepartamento);
-			Contacto contacto = contactoService.get(departamento.obtenerPrincipal().getContacto().getId());
-			EstadoCuenta estadoCuenta = estadoCuentaService.getEstado(condominio, idDepartamento,
-					inicio, fin, contacto.getId());
-
-			Collection<String> emails = new ArrayList<String>();
-			if (contacto != null && !CollectionUtils.isEmpty(contacto
-					.getEmails())) {
-				for (Email email : contacto.getEmails()) {
-					emails.add(email.getDireccion());
-				}
-			}
-			if(emails != null && !emails.isEmpty()){
-				ByteArrayResource resource = new ByteArrayResource(
-						estadoCuentaService.getEstadoCuenta(estadoCuenta));
-				final String asunto = "Estado de Cuenta " + departamento.getNombre();
-
-				estadoCuentaService.sendEstadoCuenta(new Adjunto("estado_cuenta_"
-								+ departamento.getId() + ".pdf", resource), "", condominio, asunto,
-						emails.toArray(new String[emails.size()]));
-			}
-		}*/
 		return Boolean.TRUE;
 	}
 
@@ -419,36 +359,9 @@ public class EstadoCuentaController extends GenericController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
 		String filename = "estados_cuenta_" + condominio.getNombre() + "_" + (new SimpleDateFormat("yyyyMM")).format(fin) + "."+ formato;
-		//headers.setContentType(MediaType.parseMediaType("application/pdf"));
 		reportUtils.setHttpHeaders(headers, formato);
 		headers.setContentDispositionFormData(filename, filename);
 		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
 	}
 
-	/*private EstadoCuenta getEstado(Condominio condominio, Long idDepartamento,
-			Date inicio, Date fin, Long idContacto) {
-		Contacto contacto = null;
-		if(idContacto != null) {
-			contacto = contactoService.get(idContacto);
-		} else {
-			contacto = ContactoFactory.newInstance();
-		}
-		return estadoCuentaService.getEstadoCuenta(condominio,
-				DepartamentoFactory.newInstance(idDepartamento), inicio, fin,
-				contacto);
-	}*/
-
-	/*private AvisoDeCobro getAvisoDeCobro(Condominio condominio, Long idDepartamento,
-										 Date fin, Long idContacto) {
-		Contacto contacto = null;
-		if(idContacto != null) {
-			contacto = contactoService.get(idContacto);
-		} else {
-			contacto = ContactoFactory.newInstance();
-		}
-
-		return avisoDeCobroService.getAvisoDeCobro(condominio,
-				DepartamentoFactory.newInstance(idDepartamento),
-				contacto, fin);
-	}*/
 }
