@@ -14,19 +14,24 @@
             <div id="logo-group">
                 <span id="logo"> <img src="${pageContext.request.contextPath}/recursos/img/logo.png" alt="<spring:message code="mihabitat.nombre" />"> </span>
             </div>
-           <div style="padding-left:15px;"> <input list="browsers" placeholder="¿Que desea Buscar?(Menu)" style="width:350px;  padding:12px;" name="chooseOptions" class="form-control-2">
+           <div> <input list="browsers" placeholder= "Buscar en el menú" name="chooseOptions" class="form-control-2">
 
 <datalist id="browsers">
   <option id="contacto/mis-pagos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.pagos" />">
-  <option id="contacto/mis-pagos/lista" value="<spring:message code="mihabitat.menu.lista.pagos" />">
-  <option id="contacto/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.lista" />">
-   <option id="contacto/mis-reservaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones" />">
-  <option id="contacto/mis-estados-cuenta/consulta" value="<spring:message code="mihabitat.menu.estadocuenta.consulta" />">
-  <option id="contacto/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.incidencias" />">
-   <option id="contacto/blogs/4/temas/lista" value="<spring:message code="mihabitat.menu.blogs.avisos" />">
+  <option id="contacto/mis-pagos/nuevo" value="<spring:message code="mihabitat.menu.contacto.abonos.pagar" />">
+  <option id="contacto/mis-pagos/lista" value="<spring:message code="mihabitat.menu.contacto.abonos.ver" />">
+  <option id="contacto/mis-pagos/lista" value="<spring:message code="mihabitat.menu.contacto.abonos.listade.pagos" />">
+   <option id="contacto/mis-reservaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.lista" />">
+   <option id="contacto/mis-reservaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.reservar" />">
+  <option id="contacto/mis-estados-cuenta/consulta" value="<spring:message code="mihabitat.menu.contacto.estadodecuenta.ver" />">
+  <option id="contacto/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.listadeproyectose.incidencias" />">
+  <option id="contacto/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevoproyecto.incidencia" />">
+  <option id="contacto/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevotema" />">
+  <option id="contacto/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevo.evento" />">
+   <option id="contacto/blogs/4/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.aviso.verlista" />">
   <option id="contacto/directorio/lista" value="<spring:message code="mihabitat.menu.directorio" />">
   <option id="contacto/blogs/lista" value="<spring:message code="mihabitat.menu.blogs" />">
-  <option id="contacto/arrendamiento/nuevo" value="<spring:message code="mihabitat.menu.arrendatario.nuevo" />">
+    <option id="contacto/arrendamiento/lista" value="<spring:message code="mihabitat.menu.filtro.registrarnuevo.arrendatario" />">
   <option id="contacto/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.lista" />">
   
 </datalist></div>
@@ -120,9 +125,6 @@
 	                              </li>
 	                              <li>
 	                                  <a href="${pageContext.request.contextPath}/contacto/mis-pagos/lista"><spring:message code="mihabitat.menu.lista.pagos"/></a>
-	                              </li>
-	                              <li>
-	                                  <a href="${pageContext.request.contextPath}/contacto/pagoOpenPay/nuevo"><spring:message code="mihabitat.menu.pagostdc.nuevo"/></a>
 	                              </li>
 	                          </ul>
 	                      </li>

@@ -36,7 +36,7 @@
 						<thead>
 							<tr>
 							   <th class="hasinput" style="width: 15%;">
-								   <input type="text" class="form-control" placeholder="<spring:message code="mihabitat.menu.arremdamiento.nombre" />" />
+								   <input type="text" class="form-control" placeholder="<spring:message code="mihabitat.menu.visitas.nombre" />" />
 							   </th>
 							   <th class="hasinput" style="width: 15%;">
 								   <input type="text" class="form-control" placeholder="<spring:message code="mihabitat.menu.arrendamiento.fechaentrada" />" />
@@ -58,7 +58,7 @@
 							</tr>					  
 							<tr>
 								<th data-class="expand">
-								   <spring:message code="mihabitat.menu.arremdamiento.nombre" />
+								   <spring:message code="mihabitat.menu.visitas.nombre" />
 								</th>
 								<th data-class="expand">
 								   <spring:message code="mihabitat.menu.arrendamiento.fechaentrada" />
@@ -92,7 +92,7 @@
 								<td style="text-align: center;">
 								<input hidden="true" type="text" id="${item.nombre} ${item.apPaterno} ${item.apMaterno}">
 									<button class="btn btn-success btn-xs">
-										<i class="fa fa-pencil"></i> Registrar Salida </button>
+										<i class="fa fa-pencil"></i> Editar </button>
 									<input hidden="true" type="text"  id="${item.idArrendador}">
 								</td>
 																
@@ -126,7 +126,7 @@
 		  var id= $(this).next('input').attr('id');
 		  document.getElementById('nombreCompleto').value = nombre;
 	      document.getElementById('idVisitante').value = id;
-	      if (confirm("Desea registrar Salida de "+nombre)) {
+	      if (confirm("¿Desea registrar Salida de "+nombre +"?")) {
 	    	  var myform = document.getElementById('myform');
 		      myform.submit();
 	    	}  
