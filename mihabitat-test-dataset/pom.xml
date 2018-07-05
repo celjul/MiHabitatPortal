@@ -9,7 +9,7 @@
   </parent>-->
   <groupId>com.bstmexico.mihabitat</groupId>
   <artifactId>mihabitat-test-dataset</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.11-BETA</version>
   <name>mihabitat-test-dataset</name>
   <url>http://maven.apache.org</url>
   <properties>

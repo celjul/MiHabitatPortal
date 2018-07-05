@@ -74,6 +74,10 @@ public class ArrendamientoDaoImpl extends GenericDaoImpl<Arrendatario, Long> imp
 		Arrendatario arrendatarios;
     	try {
     		arrendatarios = super.get(idArrendador);
+    		arrendatarios.getDepartamento().getStringGrupos();
+
+			arrendatarios.getDepartamento().getContactos().size();
+
 		} catch (IllegalArgumentException ex) {
 			ApplicationException ex1 = new DataAccessException("DAO004", ex,
 					getType().getSimpleName());

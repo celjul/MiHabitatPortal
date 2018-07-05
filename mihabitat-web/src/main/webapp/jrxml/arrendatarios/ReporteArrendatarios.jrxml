@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-07-04T12:37:58 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteArrendatarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ac382a2-ee24-4eac-ab17-94d775b42b63">
+	<parameter name="IMAGEN" class="java.awt.Image" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FORMATO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apPaterno" class="java.lang.String"/>
+	<field name="apMaterno" class="java.lang.String"/>
+	<field name="fechaRegistro" class="java.lang.String"/>
+	<field name="fechaEntrada" class="java.lang.String"/>
+	<field name="fechaSalida" class="java.lang.String"/>
+	<field name="condominio" class="com.bstmexico.mihabitat.condominios.model.Condominio"/>
+	<field name="idStatus" class="java.lang.String"/>
+	<field name="departamento" class="com.bstmexico.mihabitat.departamentos.model.Departamento"/>
+	<field name="numAdultos" class="java.lang.Integer"/>
+	<field name="numNinos" class="java.lang.Integer"/>
+	<field name="placas" class="java.lang.String"/>
+	<field name="administrador" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="87">
+			<textField>
+				<reportElement x="93" y="53" width="444" height="25" uuid="95ae7db4-ee7c-4916-9ae9-15208e32b81d"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{condominio}.getDireccion().getCalle() + " " +
+$F{condominio}.getDireccion().getNoExterior() + ", " +
+$F{condominio}.getDireccion().getColonia().getNombre() + ", C.P. " +
+$F{condominio}.getDireccion().getColonia().getCodigoPostal() + ", " +
+$F{condominio}.getDireccion().getColonia().getMunicipio().getNombre() + ", " +
+$F{condominio}.getDireccion().getColonia().getMunicipio().getEstado().getNombre()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="24" y="30" width="62" height="50" uuid="d4711cb6-8dfb-416a-8e68-b1c97c656577">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{IMAGEN}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="93" y="22" width="292" height="28" uuid="c42dfe05-aef2-4da9-89b2-c13051551190"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{condominio}.getNombre()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="668">
+			<staticText>
+				<reportElement x="88" y="273" width="100" height="23" uuid="1bed7ec5-09d0-4ae8-888f-96a1162b2924"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Adultos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="9" width="324" height="23" uuid="bb1c9cbe-b17b-419c-b6e0-a8388ca95720"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yy-MM-dd").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="74" width="320" height="23" uuid="91421282-00af-4405-8aff-cf98efad6538"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{departamento}.getNombre()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="128" y="303" width="60" height="23" uuid="95de711e-8d6a-4d28-961c-1529e8416f32"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Placas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="206" width="319" height="23" uuid="e81fc6ea-0e00-4dac-b0b5-1131548eb7e8"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaSalida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="174" width="148" height="23" uuid="f682bb7a-90a2-4c6f-ae51-bd59eb4044a2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Fecha de entrada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="107" width="70" height="23" uuid="1496a026-2d13-44ec-a0fd-22764090978d"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Torre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="206" width="122" height="23" uuid="b518d86f-a48c-46e9-b071-fcb52f027864"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Fecha de salida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="274" width="119" height="23" uuid="da3aeff6-6dc5-48fc-a2ac-4b02e9c23504"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numAdultos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="338" y="275" width="53" height="23" uuid="799676d5-ec3b-4acf-be3f-f3739ce37824"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Niños:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="303" width="320" height="23" uuid="472f8d22-80a2-461b-90d0-3df9d937f584"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="274" width="113" height="23" uuid="b8132986-8b33-4777-9efc-f9fb3a9a98a2"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numNinos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="9" width="54" height="23" uuid="c133b6b4-78b0-474e-91de-0730c07e0be8"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="75" width="53" height="23" uuid="cd0472db-f5ce-40f7-ab35-88c396950dc0"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Casa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="107" width="320" height="23" uuid="1dd2c3b5-ff6e-42d7-b333-1e33701c9138"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{departamento}.getStringGrupos()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="174" width="319" height="23" uuid="3bb7a461-fc0c-426b-99a8-cf40c56118b6"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEntrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="41" width="98" height="23" uuid="6eb99332-5462-4788-badf-55ea1c6a7e3d"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Arrendatario:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="334" width="90" height="21" uuid="1f8e9527-d3ac-4517-b302-4e5944f1541d"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Notas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="141" width="145" height="23" uuid="5be838bb-8234-4b59-9f10-dce21cb108e2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Confirmado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="187" y="569" width="200" height="22" uuid="1ed851ee-f492-40ad-80e6-14c30166b78c"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Autoriza:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="601" width="291" height="23" uuid="e3de963a-d151-4b94-9a62-341b158a1cbf"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{administrador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="368" width="500" height="189" uuid="a73fdf09-7ab5-46af-ad7e-dd462144d3ad"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[1. Deberá presentar la autorización en caseta para su ingreso. 
+2. Deberá dejar identificación en caseta a la entrada y recoger a la salida. 
+3. En caso de llevar más de un auto, ocupar los lugares de estacionamiento establecidos de la casa o departamento y el resto en el área de visitas, por cada departamento se permitirá el acceso a un máximo de 2 autos y de casa 3 autos. 
+4. Sólo tendrán acceso el número de personas autorizadas en el presente documento. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="192" y="634" width="200" height="20" uuid="0c359905-4803-4852-bf45-8781785a334b"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Administrador]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="41" width="320" height="23" uuid="aff6f2e4-4b72-473e-bedc-f1151ea9f0a3"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apPaterno}+" "+$F{apMaterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="139" width="319" height="23" uuid="117d2647-02f9-4760-9ae8-07bf08e24900"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{departamento}.getContactos().iterator().next().getContacto().getNombreCompleto()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="128" y="240" width="60" height="23" uuid="61594054-3dce-4a51-a3f7-88b7536636cf"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="16"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<text><![CDATA[Estatus:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="240" width="319" height="23" uuid="562fd1bd-2556-4505-83ee-9ec7c5c1a27a"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idStatus}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="678">
+			<staticText>
+				<reportElement x="11" y="6" width="536" height="576" uuid="110b76f0-2309-4d92-8a58-79bfab4bc73e"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[					REGLAS DE USO GENERAL 
+1. No se pueden estacionar en doble fila u ocupar cajones ajenos.
+2. Respetar el sentido de las calles, no hay doble sentido. 
+3. Circular a 20 km/hr 
+4. No se permite tomar o dormir dentro de los autos. 
+5. La música en terrazas debe tener un volumen moderado y no más tarde de las 11:00 PM 
+6. Se tiene prohibido hacer carne asada en terrazas de departamentos y áreas comunes, sólo en el roof garden. 
+7. El uso del gimnasio es uso exclusivo para los residentes. (En caso de rentas por menos de 3 meses) 
+8. Prohibido tocar el claxon a cualquier hora del día y de la noche. 
+9. En caso de pedir el servicio de la camioneta estar a tiempo, sólo podrá esperar 5 minutos, si no salen el operador se retirará y no regresará para dar el servicio. 
+10. Las mascotas deben de estar dentro de la propiedad, no pueden pernoctar en las terrazas o patios, pueden pasearlos con sus correas  y deberán recoger sus desechos. 
+11. Las mascotas quedan prohibidas en el área de la alberca y áreas verdes. 
+12. Queda estrictamente prohibido colgar ropa, sábanas, toallas o cualquier prenda en barandales de las terrazas. 
+13. Uso de la alberca es de 7:00 AM a 8:00 PM de martes a domingo, el lunes no podrá utilizarse por limpieza general y tratamiento con productos químicos. 
+14. Para el uso de la alberca sólo será con traje de baño, los niños pequeños deberán usar pañal de agua para evitar contaminar la alberca.
+15. Todos los niños menores de 12 años deberán estar bajo la supervisión de un adulto en todo momento. 
+16. Queda estrictamente prohibido introducir objetos de cristal en toda el área de la alberca al igual que comer o beber dentro de esta. 
+17. El área de las mesas deberá quedar limpio después de su uso, por lo que se solicita no dejar ningún tipo de basura. 
+18. El volumen de la música en el área de la alberca deberá ser moderado. 
+19. Los usuarios de la alberca están obligados a guardar la compostura necesaria y las buenas costumbres. 
+20. La administración no se hace responsable de objetos perdidos. 
+21. El uso de la alberca es responsabilidad exclusiva de las personas que la utilicen por lo tanto en caso de accidente no se responsabiliza el comité de vigilancia, ni el administrador. 
+22. Las toallas permitidas para el área de la alberca tienen que ser de color blanco. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="583" width="540" height="90" uuid="431a44ad-13f0-4f79-8333-aa85cdf54afa"/>
+				<textElement>
+					<font size="12.4" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Si algún incidente no está estipulado en el presente reglamento, pero afecta la tranquilidad, la convivencia o la integridad de los que habitan el fraccionamiento, se tratará de manera inmediata con mesa directiva para tomar una decisión. En caso de infringir el presente reglamento la administración tiene la facultad de solicitar el desalojo de los visitantes en el momento que sea conveniente, sin reembolsos por parte del propietario. ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

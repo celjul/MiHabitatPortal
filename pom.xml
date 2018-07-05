@@ -175,6 +175,11 @@
 			<version>${springockito.version}</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>mx.openpay</groupId>
+            <artifactId>openpay-api-client</artifactId>
+            <version>1.0.8</version>
+        </dependency>
 	</dependencies>
 
 	<!--<build>
@@ -305,7 +310,7 @@
 				<email.direccion.origen.nombre>Mi Hábitat</email.direccion.origen.nombre>
 
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-				<jdbc.url>jdbc:mysql://localhost/mihabitat</jdbc.url>
+				<jdbc.url>jdbc:mysql://localhost/mihabitatlocal</jdbc.url>
 				<jdbc.user>root</jdbc.user>
 				<jdbc.pass>root</jdbc.pass>
 				<!--<jdbc.url>jdbc:mysql://localhost/mihabitat</jdbc.url>

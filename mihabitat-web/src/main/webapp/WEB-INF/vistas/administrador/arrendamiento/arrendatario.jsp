@@ -202,8 +202,9 @@ $(function() {
 	});
 	
 $(document).ready(function(){
-	if(${statusguardado==1}){notificacionExito('Se registro con exito');}
+	if(${statusguardado==1}){notificacionExito('Se registró con exito');}
 	else if(${statusguardado==2}){notificacionError('Hubo un error al guardar el registro');}
 	
 });
+
 </script>

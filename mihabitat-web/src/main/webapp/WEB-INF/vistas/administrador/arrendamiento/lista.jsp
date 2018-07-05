@@ -90,9 +90,26 @@
 								<td><label> ${item.placas}</label></td>
 								<td><label> ${item.idStatus.VDescripcion}</label></td>
 								<td style="text-align: center;">
-									<button class="btn btn-success btn-xs">
-										<i class="fa fa-pencil"></i> Editar </button>
-									<input hidden="true" type="text"  id="${item.idArrendador}">
+
+
+
+									<div class="btn-group">
+										<a class="btn btn-default btn-xs" href="javascript:void(0);"><i class="fa fa-cog"></i></a>
+										<a class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" href="javascript:void(0);"><span class="caret"></span></a>
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li>
+												<button class="btn btn-link">
+													<i class="fa fa-pencil"></i> Editar </button>
+												<input hidden="false" type="text"  id="actualizarbutton" idArrendamiento="${item.idArrendador}">
+											</li>
+											<li>
+												<button class="btn btn-link">
+													<i class="fa fa-print"></i>Imprimir </button>
+												<input hidden="false" type="text"  id="imprimirbutton" idArrendamiento="${item.idArrendador}">
+											</li>
+										</ul>
+									</div>
+
 								</td>
 																
 							</tr>	
@@ -106,8 +123,11 @@
 	<form name="myform" id="myform" action="${pageContext.request.contextPath}/administrador/arrendamiento/actualizar" method = "POST">
 <input type="hidden" id="idArrendatario" name="idArrendatario" value="0" />
 <input type="submit" hidden="true">
-</form>
 
+</form>
+	<form name="imprimir" id="imprimir" action="${pageContext.request.contextPath}/administrador/arrendamiento/imprimir" method = "get" target="_blank">
+		<input type="hidden" id="idArrendatarioImpresion" name="idArrendatarioImpresion" value="0" />
+		<input type="submit" hidden="true">
 	<script type="text/javascript">
 	$('.form-control').keyup(function(){
 		 var val=$(this).val();    
@@ -119,11 +139,24 @@
 		});
 	
 	$('button').on('click', function(){
-		  var myform = document.getElementById('myform');
-		  var id= $(this).next('input').attr('id');
-	      document.getElementById('idArrendatario').value = id;
-	      myform.submit();
-	                
+        var id= $(this).next('input').attr('id');
+        var idArrendamiento = $(this).next('input').attr('idArrendamiento');
+        if (id!='imprimirbutton') {
+            var myform = document.getElementById('myform');
+            document.getElementById('idArrendatario').value = idArrendamiento;
+            myform.submit();
+
+        } else{
+            var imprimir = document.getElementById('imprimir');
+            document.getElementById('idArrendatarioImpresion').value = idArrendamiento;
+            imprimir.submit();
+
+        }
+
+
+
+
 	});
 	</script>
+	</form>
 </body>

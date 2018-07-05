@@ -234,7 +234,7 @@ var FuncionalidadNotificacionApp = function(idList) {
         var spanGeneral = document.createElement("span");
         $(spanGeneral).addClass("padding-10");
         $(spanGeneral).addClass("text-justify");
-        $(spanGeneral).click(function(e){ vistoNotificacion(notificacion.id, true);window.location=notificacion.link;e.stopPropagation();});
+        $(spanGeneral).click(function(e){ vistoNotificacion(notificacion.id, true);window.location=contextPath+notificacion.link;e.stopPropagation();});
         $(spanGeneral).attr("link", notificacion.link);
         $(spanGeneral).attr("idReferencia", notificacion.id);
         /*$(spanGeneral).attr("onclick", "window.location='" + notificacion.link + "'");*/

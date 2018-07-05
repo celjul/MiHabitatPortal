@@ -1,11 +1,24 @@
 package com.bstmexico.mihabitat.web.controllers.administrador;
 
+import com.bstmexico.mihabitat.condominios.service.CondominioService;
+import com.bstmexico.mihabitat.configuration.ConfigurationServiceImpl;
+import com.bstmexico.mihabitat.web.dto.reportes.ReporteArrendatarios;
+
+import com.mysql.jdbc.log.Log;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.joda.time.LocalDate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 
 import com.bstmexico.mihabitat.comunes.usuarios.model.Usuario;
@@ -17,11 +30,14 @@ import com.bstmexico.mihabitat.mihabitat_arrendamiento.model.CatalogoArrendamien
 import com.bstmexico.mihabitat.mihabitat_arrendamiento.service.ArrendatarioService;
 import com.bstmexico.mihabitat.web.service.NotificationHelperService;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+import com.bstmexico.mihabitat.web.util.ReportUtils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.*;
 
 
 /**
@@ -35,7 +51,21 @@ import java.util.List;
 @RequestMapping(value = "administrador/arrendamiento")
 public class ArrendamientoController {
 
-	
+	@Autowired
+	private ReportUtils reportUtils;
+	private static final Logger LOG = LoggerFactory
+			.getLogger(DepartamentoController.class);
+
+	@Autowired
+	private ConfigurationServiceImpl configurationServiceImpl;
+
+	@Autowired
+	private ServletContext context;
+
+
+	@Autowired
+	private CondominioService condominioService;
+
     @Autowired
     private DepartamentoService departamentoService;
 	
@@ -201,4 +231,108 @@ public class ArrendamientoController {
 
 		return "administrador/arrendamiento/lista";
 	}
+
+	//////////////////////////////////////////////////////////
+
+
+
+
+	@RequestMapping(method = RequestMethod.GET, value = "imprimir")
+	//@RequestMapping(method = RequestMethod.GET, value = "arrendamiento/{idArrendatario}")
+	public ResponseEntity<byte[]> imprimir(
+            @RequestParam Long idArrendatarioImpresion,
+			HttpSession session) {
+	    byte[] bytes = getReporte((Condominio) session.getAttribute("condominio"), idArrendatarioImpresion);
+		HttpHeaders headers = new HttpHeaders();
+		headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
+		String filename = "ReporteArrendatarios.pdf";
+
+		reportUtils.setHttpHeaders(headers, "pdf");
+		headers.setContentDispositionFormData(filename, filename);
+		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
+	}
+	private byte[] getReporte(Condominio condominio, Long idArrendatario) {
+		ReporteArrendatarios reporte = new ReporteArrendatarios();
+
+		JRDataSource  jrDataSource = null;
+
+		String contexto = context.getRealPath("/");
+		String directorio = contexto + "jrxml" + File.separator
+				+ "arrendatarios"+ File.separator;
+
+		Map map = new HashMap();
+		map.put("SUBREPORT_DIR", directorio);
+		map.put("FORMATO","pdf");
+
+		Map mapParaBusqueda = new HashMap();
+		mapParaBusqueda.put("condominio", condominio);
+
+		Arrendatario arrendatario = arrendatarioService.get(idArrendatario);
+		condominio = condominioService.readConImagen(condominio.getId());
+
+
+
+
+
+		if (condominio.getLogoCondominio() != null) {
+			InputStream is = new ByteArrayInputStream(condominio.getLogoCondominio().getBytes());
+			try {
+				BufferedImage image = ImageIO.read(is);
+				map.put("IMAGEN", image);
+			} catch (IOException ioe) {
+				LOG.error("Error leyendo logo del Condominio, se colocar? el de MH");
+				File initialFile = new File(contexto + "recursos" + File.separator + "img"
+						+ File.separator + configurationServiceImpl.getLogo());
+				try {
+					is = new FileInputStream(initialFile);
+					BufferedImage image = ImageIO.read(is);
+					map.put("IMAGEN", image);
+				} catch (IOException ioedos) {
+					LOG.error("No se encontr? el logo de MiHabitat");
+				}
+			}
+
+		} else {
+			LOG.warn("No se encontr? logo del Condominio, se colocar? el de MH");
+			File initialFile = new File(contexto + "recursos" + File.separator + "img"
+					+ File.separator + configurationServiceImpl.getLogo());
+			try {
+				InputStream is = new FileInputStream(initialFile);
+				BufferedImage image = ImageIO.read(is);
+				map.put("IMAGEN", image);
+			} catch (IOException ioedos) {
+				LOG.error("No se encontr? el logo de MiHabitat");
+			}
+		}
+
+
+
+        reporte.setAdministrador(arrendatario.getAdministrador().getPersona().getNombreCompleto());
+        reporte.setNombre(arrendatario.getNombre());
+        reporte.setApMaterno(arrendatario.getApMaterno());
+        reporte.setApPaterno(arrendatario.getApPaterno());
+        reporte.setCondominio(arrendatario.getCondominio());
+        reporte.setDepartamento(arrendatario.getDepartamento());
+        reporte.setFechaSalida(arrendatario.getFechaSalida());
+        reporte.setFechaEntrada(arrendatario.getFechaEntrada());
+        reporte.setIdStatus(arrendatario.getIdStatus().getVDescripcion());
+        reporte.setNumNinos(arrendatario.getNumNinos());
+        reporte.setNumAdultos(arrendatario.getNumAdultos());
+        reporte.setPlacas(arrendatario.getPlacas());
+        reporte.setTorre(arrendatario.getDepartamento().getStringGrupos());
+
+
+		Collection collection = new ArrayList();
+		collection.add(reporte);
+		jrDataSource = new JRBeanCollectionDataSource(collection);
+
+		String sourceFile = directorio + "ReporteArrendatarios.jasper";
+		return reportUtils.export("pdf", sourceFile, map, jrDataSource);
+
+
+
+
+	}
+
+
 }

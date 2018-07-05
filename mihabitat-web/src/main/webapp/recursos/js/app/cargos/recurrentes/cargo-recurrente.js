@@ -265,7 +265,7 @@ var CargoRecurrente = function( data ) {
         if (self.tipo.id()) {
             if (self.tipo.id() == AppConfig.catalogos.cargo.tipos.mantenimiento) {
                 self.mantenimientoDepartamento(false);
-                self.tipoRecurrente('com.bstmexico.mihabitat.cargos.model.CargoRecurrenteMantenimiento');
+                self.tipoRecurrente('departamento');
             }
             if (self.tipo.id() == AppConfig.catalogos.cargo.tipos.instalacion) {
                 self.mantenimientoDepartamento(false);

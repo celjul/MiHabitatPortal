@@ -63,7 +63,6 @@ public class Arrendatario implements Serializable {
 	
 	@Column(name = "numNinos")
 	private int numNinos;
-	
 
 	@Column(name = "placas")
 	private String placas;
@@ -71,11 +70,14 @@ public class Arrendatario implements Serializable {
 	
 	@OneToOne(fetch = FetchType.EAGER, targetEntity = Usuario.class)
 	@JoinColumn(name = "NIdUsuario", nullable = false)
-	private Usuario administrador;	
+	private Usuario administrador;
 
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public String getNombre() {
+    public String getNombre() {
 		return nombre;
 	}
 
