@@ -189,7 +189,7 @@
             <a href="${pageContext.request.contextPath}/#servicios" title="Servicios">Características </a><br />
             <a href="${pageContext.request.contextPath}/#clientes"  title="Nuestros clientes">Nuestros clientes</a><br />
             <a href="${pageContext.request.contextPath}/#contacto"  title="Contacto">Contacto</a><br />
-            <a href="http://www.mihabitat.com.mx/" class="sesion" title="Iniciar sesion" >Iniciar Sesion </a><br />
+            <a href="http://www.mihabitat.com/" class="sesion" title="Iniciar sesion" >Iniciar Sesion </a><br />
 
         </div>
     </div>

@@ -31,7 +31,7 @@ var PagosDepartamentoViewModel = function() {
     
     self.imprimir = function(formato) {
         if (self.valida()) {
-            var url = contextPath + "/administrador/reportes/pagos-departamento/imprimir"
+            var url = "/administrador/reportes/pagos-departamento/imprimir"
                 + "?formato=" + formato
                 + "&anio=" + self.reporte.anio();
             window.open(contextPath + url, '_blank');

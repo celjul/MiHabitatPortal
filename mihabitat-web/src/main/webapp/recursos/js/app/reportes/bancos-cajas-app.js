@@ -25,7 +25,7 @@ var BancosCajasViewModel = function(data) {
     
     self.imprimir = function(formato) {
         if (self.valida()) {
-            var url = contextPath + "/administrador/reportes/bancos-cajas/imprimir"
+            var url = "/administrador/reportes/bancos-cajas/imprimir"
                 + "?formato=" + formato 
                 + "&detalle=" + self.reporte.detalle()
                 + "&inicio=" + self.reporte.inicio()

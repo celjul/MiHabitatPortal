@@ -87,7 +87,7 @@ var CumplimientoEfectividadCobranzaViewModel = function() {
     
     self.imprimir = function(formato) {
         if (self.valida()) {
-            var url = contextPath + "/administrador/reportes/cumplimiento-efectividad-cobranza/imprimir"
+            var url = "/administrador/reportes/cumplimiento-efectividad-cobranza/imprimir"
                 + "?formato=" + formato 
                 + "&tipo=" + self.tipo()
                 + (self.reporte.anio() ? "&anio=" + self.reporte.anio() : "")

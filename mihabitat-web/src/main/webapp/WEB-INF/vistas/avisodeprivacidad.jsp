@@ -127,7 +127,7 @@
 
                 <p><b>Privacidad del Visitante</b><br />
                     Ser&aacute; de aplicaci&oacute;n sobre la Privacidad del Visitante lo estipulado en el siguiente<br />
-                    link: http://www.mihabitat.com.mx/avisodeprivacidad.html</p>
+                    link: https://www.mihabitat.com.mx/avisodeprivacidad.html</p>
 
                 <p><b>Datos personales</b><br />
                     Datos personales es cualquier informaci&oacute;n que permite identificar a un individuo.<br />

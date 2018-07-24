@@ -96,7 +96,7 @@ var AntiguedadCuentasCobrarViewModel = function() {
     
     self.imprimir = function(formato) {
         if (self.valida()) {
-            var url = contextPath + "/administrador/reportes/antiguedad-cuentas-cobrar/imprimir?formato=" + formato 
+            var url = "/administrador/reportes/antiguedad-cuentas-cobrar/imprimir?formato=" + formato
                 + "&tipo=" + self.tipo()
                 + (self.reporte.fin() ? "&fin=" + self.reporte.fin() : "")
                 + (self.reporte.anio() ? "&anio=" + self.reporte.anio() : "")
