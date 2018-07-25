@@ -250,7 +250,6 @@ var FuncionalidadNotificacionApp = function(idList) {
         var iEliminar = document.createElement("i");
         var aVisto = document.createElement("a");
         var iVisto = document.createElement("i");
-
         if(notificacion.subtipo == "pago-pendiente"){
             $(em).addClass("badge padding-5 no-border-radius bg-color-orange txt-color-white pull-left margin-right-5");
             $(i).addClass("fa fa-fw fa-dollar fa-2x");
@@ -271,7 +270,6 @@ var FuncionalidadNotificacionApp = function(idList) {
             $(aVisto).attr("visto", notificacion.visto);
             $(aVisto).click(function(e){ vistoNotificacion(notificacion.id, notificacion.visto);e.stopPropagation();});
             $(aVisto).append($(iVisto));
-
             $(iEliminar).addClass("fa fa-fw fa-times txt-color-red");
             $(aEliminar).addClass("btn btn-default btn-xs pull-right aeliminar");
             $(aEliminar).attr("visto", notificacion.visto);
