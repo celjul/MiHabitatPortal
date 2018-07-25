@@ -16,122 +16,122 @@
         <span id="logo"> <img src="${pageContext.request.contextPath}/recursos/img/logo.png"
                               alt="<spring:message code="mihabitat.nombre" />"> </span>
     </div>
-     <div> 
-     <input list="browsers" placeholder ="Buscar en el menú" name="chooseOptions" class="form-control-2">
-	<datalist id="browsers">
-  		<option id="administrador/mantenimientos/lista" value="<spring:message code="mihabitat.menu.mantenimientos" />">
-  		<option id="administrador/grupos/lista" value="<spring:message code="mihabitat.menu.grupos" />">
-  		<option id="administrador/cuentas/lista" value="<spring:message code="mihabitat.menu.cuentas" />">
-   	<option id="administrador/consumos/lista" value="<spring:message code="mihabitat.menu.consumos" />">
-  	<option id="administrador/condominios/configuracion" value="<spring:message code="mihabitat.menu.configuracion.condominio.mensajespdf" />">
-  	<option id="administrador/confnotificaciones/lista" value="<spring:message code="mihabitat.menu.notificaciones.configuracion" />">
-   	<option id="administrador/departamentos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.departamento" />">
-  	<option id="administrador/departamentos/lista" value="<spring:message code="mihabitat.menu.lista.departamentos" />">
-  	<option id="administrador/contactos/lista" value="<spring:message code="mihabitat.menu.lista.contactos" />">
-  	<option id="administrador/cargos-departamentos/nuevo" value="<spring:message code="mihabitat.menu.cargos.nuevo" />">
-  	<option id="administrador/cargos-departamentos/lista" value="<spring:message code="mihabitat.menu.cargos.lista" />">
-  	<!--- <option id="administrador/mantenimientos/lista" value="<spring:message code="mihabitat.menu.cargos.lista" />"> -->
-  	<option id="administrador/cargos-recurrentes/lista" value="<spring:message code="mihabitat.menu.cargos.recurrentes" />">
-  	<option id="administrador/pagos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.pagos" />">
-  	<option id="administrador/pagos/lista" value="<spring:message code="mihabitat.menu.lista.pagos" />"> 
-  	<option id="administrador/otrosingresos/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrar.otrosingresos" />">
-  	<option id="administrador/otrosingresos/lista" value="<spring:message code="mihabitat.menu.lista.otrosingresos" />">
-  	
-  	<option id="administrador/ingresosnoidentificados/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrarnuevo.ingreso.noidentificado" />">
-  	<option id="administrador/ingresosnoidentificados/lista" value="<spring:message code="mihabitat.menu.filtro.listadeingresosnoidentidficados" />">
-  	<option id="administrador/facturasporpagar/nuevo" value="<spring:message code="mihabitat.menu.nuevo.facturasporpagar" />">
-  	<option id="administrador/facturasporpagar/cargar" value="<spring:message code="mihabitat.menu.cargar.facturasporpagar" />">
-  	<option id="administrador/facturasporpagar/lista" value="<spring:message code="mihabitat.menu.lista.facturasporpagar" />">
-  	<option id="administrador/pago-proveedores/nuevo" value="<spring:message code="mihabitat.menu.proveedores.pagos" />">
-  	<option id="administrador/gastos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.gastos" />">
-  	<option id="administrador/gastos/lista" value="<spring:message code="mihabitat.menu.lista.gastos" />">
-  	<option id="administrador/transferencias/nuevo" value="<spring:message code="mihabitat.transferencia.nuevo" />">
-  	<option id="administrador/transferencias/lista" value="<spring:message code="mihabitat.transferencia.lista" />">
-  	<option id="administrador/aviso-cobro/individual" value="<spring:message code="mihabitat.menu.avisodecobro.ver" />">
-  	<option id="administrador/aviso-cobro/masivo" value="<spring:message code="mihabitat.menu.avisodecobro.observar" />">
-  	<option id="administrador/estado-cuenta/individual" value="<spring:message code="mihabitat.estadocuenta.menu.depto" />">
-  	<option id="administrador/estado-cuenta/masivo" value="<spring:message code="mihabitat.estadocuenta.menu.deptos" />">
-  	<option id="administrador/cobranza/consulta" value="<spring:message code="mihabitat.menu.cobranza" />">
-  	<option id="administrador/instalaciones/nuevo" value="<spring:message code="mihabitat.menu.instalaciones.nueva" />">
-  	  	<option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.reservar" />">
-  	  	<option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.editar" />">
-  	  	<option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.lista" />">
-  	
-  	<option id="administrador/proveedores/nuevo" value="<spring:message code="mihabitat.menu.proveedor.registrarnuevo" />">
-  	<option id="administrador/proveedores/lista" value="<spring:message code="mihabitat.menu.lista.proveedores" />">
-  	<option id="administrador/reportes/ingresos-egresos" value="<spring:message code="mihabitat.reportes.ingresosyegresos" />">
-  	<option id="administrador/reportes/ingresos-egresos" value="<spring:message code="mihabitat.menu.reporte.estadocuenta.condominio" />">
-  	
- 	<option id="administrador/reportes/cuenta-detalle" value="<spring:message code="mihabitat.reportes.cuentadetalle" />">
- 	<option id="administrador/reportes/cuenta-detalle" value="<spring:message code="mihabitat.menu.reporte.movimientoporcuenta.detalle" />">
- 	
-  	<option id="administrador/reportes/resumen-cargos" value="<spring:message code="mihabitat.reportes.resumencargos" />">
-  	<option id="administrador/reportes/resumen-cargos" value="<spring:message code="mihabitat.menu.reporte.detalledecargos" />">
-  	
- 	<option id="administrador/reportes/resumen-abonos" value="<spring:message code="mihabitat.reportes.resumenabonos" />">
- 	 	<option id="administrador/reportes/resumen-abonos" value="<spring:message code="mihabitat.menu.reporte.detalledeabonos" />">
- 	
- 	<option id="administrador/reportes/cuentas-cobrar" value="<spring:message code="mihabitat.reportes.cuentasporcobrar" />">
- 	<option id="administrador/reportes/cuentas-cobrar" value="<spring:message code="mihabitat.menu.reporte.cuentasporcobrar" />">
- 	
- 	<option id="administrador/reportes/saldo-departamento" value="<spring:message code="mihabitat.reportes.saldodepartamento" />">
- 	 	<option id="administrador/reportes/saldo-departamento" value="<spring:message code="mihabitat.menu.reporte.saldopordepartamento" />">
- 	
- 	<option id="administrador/reportes/antiguedad-cuentas-cobrar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporcobrar" />">
- 	 	<option id="administrador/reportes/antiguedad-cuentas-cobrar" value="<spring:message code="mihabitat.menu.reporte.antiguedaddecuentasporcobrar" />">
- 	
- 	<option id="administrador/reportes/morosidad" value="<spring:message code="mihabitat.reportes.morosidad" />">
- 		<option id="administrador/reportes/morosidad" value="<spring:message code="mihabitat.menu.reporte.morosidad" />">
- 	
- 	<option id="administrador/reportes/cumplimiento-efectividad-cobranza" value="<spring:message code="mihabitat.reportes.cumplimiento.efectividad.cobranza" />">
- 		<option id="administrador/reportes/cumplimiento-efectividad-cobranza" value="<spring:message code="mihabitat.menu.reporte.efectividaddecobranza" />">
-  	
-  	<option id="administrador/reportes/bancos-cajas" value="<spring:message code="mihabitat.reportes.bancos.cajas" />">
-  	  	<option id="administrador/reportes/bancos-cajas" value="<spring:message code="mihabitat.menu.reporte.debancosycajas" />">
-  	
-   	<option id="administrador/reportes/balanza-comprobacion" value="<spring:message code="mihabitat.reportes.balanza.comprobacion" />">
-   		<option id="administrador/reportes/balanza-comprobacion" value="<spring:message code="mihabitat.menu.reporte.balanzadecomprobación" />">
-   		
- 	<option id="administrador/reportes/pagos-contacto" value="<spring:message code="mihabitat.reportes.pagos.contacto" />"> 
- 		<option id="administrador/reportes/pagos-contacto" value="<spring:message code="mihabitat.menu.reporte.abonosxcondomino" />">
- 		
-  	<option id="administrador/reportes/pagos-departamento" value="<spring:message code="mihabitat.reportes.pagos.departamento" />">
-  		<option id="administrador/reportes/pagos-departamento" value="<spring:message code="mihabitat.menu.reporte.abonosxdepto" />">
-  		
- 	<option id="administrador/reportes/saldo-favor" value="<spring:message code="mihabitat.reportes.saldofavor" />">
- 		<option id="administrador/reportes/saldo-favor" value="<spring:message code="mihabitat.menu.reporte.saldoafavor" />">
- 	
- 	<option id="administrador/reportes/cuentas-pagar" value="<spring:message code="mihabitat.reportes.cuentasporpagar" />">
- 	 	<option id="administrador/reportes/cuentas-pagar" value="<spring:message code="mihabitat.menu.reporte.cuentasxpagar" />"> 
- 	 
- 	<option id="administrador/reportes/antiguedad-cuentas-pagar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporpagar" />"> 
- 		<option id="administrador/reportes/antiguedad-cuentas-pagar" value="<spring:message code="mihabitat.menu.reporte.antiguedaddecuentasporpagar" />">
- 		 
-	<option id="administrador/reportes/reporteegresos" value="<spring:message code="mihabitat.reportes.gastos" />">  		  		  			
-		<option id="administrador/reportes/reporteegresos" value="<spring:message code="mihabitat.menu.reporte.degastos" />">
-		
- 	<option id="administrador/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.incidencias" />">
-	 	<option id="administrador/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.listadeproyectose.incidencias" />"> 
- 		<option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevoproyecto.incidencia" />">
- 		<option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevotema" />">
- 		<option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevo.evento" />">
- 		
-  	<option id="administrador/blogs/4/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.aviso" />">
-  	<option id="administrador/blogs/4/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.aviso.verlista" />">
-  	 
- 	<option id="administrador/directorio/lista" value="<spring:message code="mihabitat.menu.directorio" />"> 
-  	<option id="administrador/blogs/lista" value="<spring:message code="mihabitat.menu.blogs" />"> 
-   	<option id="administrador/arrendamiento/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrarnuevo.arrendatario" />"> 
-   	<option id="administrador/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.lista" />"> 			  	
- 	<option id="administrador/visitantes/nuevo" value="<spring:message code="mihabitat.menu.visitas.nuevo" />">
- 	<option id="administrador/visitantes/nuevo" value="<spring:message code="mihabitat.menu.filtro.visitante" />"> 
- 	<option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.visitas.lista" />">
- 	
- 	<!--- <option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.votaciones.lista" />"> -->
- 	<!--- <option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.votaciones.nueva" />"> -->
-  		  
-	</datalist>
-	</div>
+    <div>
+        <input list="browsers" placeholder ="Buscar en el menú" name="chooseOptions" class="form-control-2">
+        <datalist id="browsers">
+            <option id="administrador/mantenimientos/lista" value="<spring:message code="mihabitat.menu.mantenimientos" />">
+            <option id="administrador/grupos/lista" value="<spring:message code="mihabitat.menu.grupos" />">
+            <option id="administrador/cuentas/lista" value="<spring:message code="mihabitat.menu.cuentas" />">
+            <option id="administrador/consumos/lista" value="<spring:message code="mihabitat.menu.consumos" />">
+            <option id="administrador/condominios/configuracion" value="<spring:message code="mihabitat.menu.configuracion.condominio.mensajespdf" />">
+            <option id="administrador/confnotificaciones/lista" value="<spring:message code="mihabitat.menu.notificaciones.configuracion" />">
+            <option id="administrador/departamentos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.departamento" />">
+            <option id="administrador/departamentos/lista" value="<spring:message code="mihabitat.menu.lista.departamentos" />">
+            <option id="administrador/contactos/lista" value="<spring:message code="mihabitat.menu.lista.contactos" />">
+            <option id="administrador/cargos-departamentos/nuevo" value="<spring:message code="mihabitat.menu.cargos.nuevo" />">
+            <option id="administrador/cargos-departamentos/lista" value="<spring:message code="mihabitat.menu.cargos.lista" />">
+                <!--- <option id="administrador/mantenimientos/lista" value="<spring:message code="mihabitat.menu.cargos.lista" />"> -->
+            <option id="administrador/cargos-recurrentes/lista" value="<spring:message code="mihabitat.menu.cargos.recurrentes" />">
+            <option id="administrador/pagos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.pagos" />">
+            <option id="administrador/pagos/lista" value="<spring:message code="mihabitat.menu.lista.pagos" />">
+            <option id="administrador/otrosingresos/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrar.otrosingresos" />">
+            <option id="administrador/otrosingresos/lista" value="<spring:message code="mihabitat.menu.lista.otrosingresos" />">
+
+            <option id="administrador/ingresosnoidentificados/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrarnuevo.ingreso.noidentificado" />">
+            <option id="administrador/ingresosnoidentificados/lista" value="<spring:message code="mihabitat.menu.filtro.listadeingresosnoidentidficados" />">
+            <option id="administrador/facturasporpagar/nuevo" value="<spring:message code="mihabitat.menu.nuevo.facturasporpagar" />">
+            <option id="administrador/facturasporpagar/cargar" value="<spring:message code="mihabitat.menu.cargar.facturasporpagar" />">
+            <option id="administrador/facturasporpagar/lista" value="<spring:message code="mihabitat.menu.lista.facturasporpagar" />">
+            <option id="administrador/pago-proveedores/nuevo" value="<spring:message code="mihabitat.menu.proveedores.pagos" />">
+            <option id="administrador/gastos/nuevo" value="<spring:message code="mihabitat.menu.nuevo.gastos" />">
+            <option id="administrador/gastos/lista" value="<spring:message code="mihabitat.menu.lista.gastos" />">
+            <option id="administrador/transferencias/nuevo" value="<spring:message code="mihabitat.transferencia.nuevo" />">
+            <option id="administrador/transferencias/lista" value="<spring:message code="mihabitat.transferencia.lista" />">
+            <option id="administrador/aviso-cobro/individual" value="<spring:message code="mihabitat.menu.avisodecobro.ver" />">
+            <option id="administrador/aviso-cobro/masivo" value="<spring:message code="mihabitat.menu.avisodecobro.observar" />">
+            <option id="administrador/estado-cuenta/individual" value="<spring:message code="mihabitat.estadocuenta.menu.depto" />">
+            <option id="administrador/estado-cuenta/masivo" value="<spring:message code="mihabitat.estadocuenta.menu.deptos" />">
+            <option id="administrador/cobranza/consulta" value="<spring:message code="mihabitat.menu.cobranza" />">
+            <option id="administrador/instalaciones/nuevo" value="<spring:message code="mihabitat.menu.instalaciones.nueva" />">
+            <option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.reservar" />">
+            <option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.editar" />">
+            <option id="administrador/instalaciones/lista" value="<spring:message code="mihabitat.menu.instalaciones.lista" />">
+
+            <option id="administrador/proveedores/nuevo" value="<spring:message code="mihabitat.menu.proveedor.registrarnuevo" />">
+            <option id="administrador/proveedores/lista" value="<spring:message code="mihabitat.menu.lista.proveedores" />">
+            <option id="administrador/reportes/ingresos-egresos" value="<spring:message code="mihabitat.reportes.ingresosyegresos" />">
+            <option id="administrador/reportes/ingresos-egresos" value="<spring:message code="mihabitat.menu.reporte.estadocuenta.condominio" />">
+
+            <option id="administrador/reportes/cuenta-detalle" value="<spring:message code="mihabitat.reportes.cuentadetalle" />">
+            <option id="administrador/reportes/cuenta-detalle" value="<spring:message code="mihabitat.menu.reporte.movimientoporcuenta.detalle" />">
+
+            <option id="administrador/reportes/resumen-cargos" value="<spring:message code="mihabitat.reportes.resumencargos" />">
+            <option id="administrador/reportes/resumen-cargos" value="<spring:message code="mihabitat.menu.reporte.detalledecargos" />">
+
+            <option id="administrador/reportes/resumen-abonos" value="<spring:message code="mihabitat.reportes.resumenabonos" />">
+            <option id="administrador/reportes/resumen-abonos" value="<spring:message code="mihabitat.menu.reporte.detalledeabonos" />">
+
+            <option id="administrador/reportes/cuentas-cobrar" value="<spring:message code="mihabitat.reportes.cuentasporcobrar" />">
+            <option id="administrador/reportes/cuentas-cobrar" value="<spring:message code="mihabitat.menu.reporte.cuentasporcobrar" />">
+
+            <option id="administrador/reportes/saldo-departamento" value="<spring:message code="mihabitat.reportes.saldodepartamento" />">
+            <option id="administrador/reportes/saldo-departamento" value="<spring:message code="mihabitat.menu.reporte.saldopordepartamento" />">
+
+            <option id="administrador/reportes/antiguedad-cuentas-cobrar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporcobrar" />">
+            <option id="administrador/reportes/antiguedad-cuentas-cobrar" value="<spring:message code="mihabitat.menu.reporte.antiguedaddecuentasporcobrar" />">
+
+            <option id="administrador/reportes/morosidad" value="<spring:message code="mihabitat.reportes.morosidad" />">
+            <option id="administrador/reportes/morosidad" value="<spring:message code="mihabitat.menu.reporte.morosidad" />">
+
+            <option id="administrador/reportes/cumplimiento-efectividad-cobranza" value="<spring:message code="mihabitat.reportes.cumplimiento.efectividad.cobranza" />">
+            <option id="administrador/reportes/cumplimiento-efectividad-cobranza" value="<spring:message code="mihabitat.menu.reporte.efectividaddecobranza" />">
+
+            <option id="administrador/reportes/bancos-cajas" value="<spring:message code="mihabitat.reportes.bancos.cajas" />">
+            <option id="administrador/reportes/bancos-cajas" value="<spring:message code="mihabitat.menu.reporte.debancosycajas" />">
+
+            <option id="administrador/reportes/balanza-comprobacion" value="<spring:message code="mihabitat.reportes.balanza.comprobacion" />">
+            <option id="administrador/reportes/balanza-comprobacion" value="<spring:message code="mihabitat.menu.reporte.balanzadecomprobación" />">
+
+            <option id="administrador/reportes/pagos-contacto" value="<spring:message code="mihabitat.reportes.pagos.contacto" />">
+            <option id="administrador/reportes/pagos-contacto" value="<spring:message code="mihabitat.menu.reporte.abonosxcondomino" />">
+
+            <option id="administrador/reportes/pagos-departamento" value="<spring:message code="mihabitat.reportes.pagos.departamento" />">
+            <option id="administrador/reportes/pagos-departamento" value="<spring:message code="mihabitat.menu.reporte.abonosxdepto" />">
+
+            <option id="administrador/reportes/saldo-favor" value="<spring:message code="mihabitat.reportes.saldofavor" />">
+            <option id="administrador/reportes/saldo-favor" value="<spring:message code="mihabitat.menu.reporte.saldoafavor" />">
+
+            <option id="administrador/reportes/cuentas-pagar" value="<spring:message code="mihabitat.reportes.cuentasporpagar" />">
+            <option id="administrador/reportes/cuentas-pagar" value="<spring:message code="mihabitat.menu.reporte.cuentasxpagar" />">
+
+            <option id="administrador/reportes/antiguedad-cuentas-pagar" value="<spring:message code="mihabitat.reportes.antiguedadcuentasporpagar" />">
+            <option id="administrador/reportes/antiguedad-cuentas-pagar" value="<spring:message code="mihabitat.menu.reporte.antiguedaddecuentasporpagar" />">
+
+            <option id="administrador/reportes/reporteegresos" value="<spring:message code="mihabitat.reportes.gastos" />">
+            <option id="administrador/reportes/reporteegresos" value="<spring:message code="mihabitat.menu.reporte.degastos" />">
+
+            <option id="administrador/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.incidencias" />">
+            <option id="administrador/blogs/7/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.listadeproyectose.incidencias" />">
+            <option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevoproyecto.incidencia" />">
+            <option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevotema" />">
+            <option id="administrador/blogs/7/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.registrarnuevo.evento" />">
+
+            <option id="administrador/blogs/4/temas/nuevo" value="<spring:message code="mihabitat.menu.comunicacion.aviso" />">
+            <option id="administrador/blogs/4/temas/lista" value="<spring:message code="mihabitat.menu.comunicacion.aviso.verlista" />">
+
+            <option id="administrador/directorio/lista" value="<spring:message code="mihabitat.menu.directorio" />">
+            <option id="administrador/blogs/lista" value="<spring:message code="mihabitat.menu.blogs" />">
+            <option id="administrador/arrendamiento/nuevo" value="<spring:message code="mihabitat.menu.filtro.registrarnuevo.arrendatario" />">
+            <option id="administrador/arrendamiento/lista" value="<spring:message code="mihabitat.menu.arrendatario.lista" />">
+            <option id="administrador/visitantes/nuevo" value="<spring:message code="mihabitat.menu.visitas.nuevo" />">
+            <option id="administrador/visitantes/nuevo" value="<spring:message code="mihabitat.menu.filtro.visitante" />">
+            <option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.visitas.lista" />">
+
+                <!--- <option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.votaciones.lista" />"> -->
+                <!--- <option id="administrador/visitantes/lista" value="<spring:message code="mihabitat.menu.votaciones.nueva" />"> -->
+
+        </datalist>
+    </div>
     <div id="hide-menu" class="btn-header pull-left">
             <span> <a href="javascript:void(0);" data-action="toggleMenu"
                       title="<spring:message code="mihabitat.menu.colapasar" />"><i
@@ -630,7 +630,7 @@
                                     <spring:message code="mihabitat.menu.directorio"/>
                                 </a>
                             </li>
-                     <!--       <li>
+                            <!--       <li>
                              <a href="#"><i class="fa fa-line-chart"></i>
                     	<span class="menu-item-parent"><spring:message code="mihabitat.menu.votaciones"/></span>
                     	</a>
@@ -662,58 +662,58 @@
                         </ul>
                     </li>
                     <li>
-                    	<a href="#"><i class="fa fa-lg fa-fw fa-hotel"></i>
-                    	<span class="menu-item-parent"><spring:message code="mihabitat.menu.arrendatario"/></span>
-                    	</a>
-                    	<ul>
-                    	<li>
-                    		<a href="${pageContext.request.contextPath}/administrador/arrendamiento/nuevo">
-                    		<spring:message code="mihabitat.menu.arrendatario.nuevo"/></a>
-                    	<li>
-                    	<li>
-                    		<a href="${pageContext.request.contextPath}/administrador/arrendamiento/lista">
-                    		<spring:message code="mihabitat.menu.arrendatario.lista"/></a>
-                    	<li>
-                    	</ul>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-hotel"></i>
+                            <span class="menu-item-parent"><spring:message code="mihabitat.menu.arrendatario"/></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/administrador/arrendamiento/nuevo">
+                                    <spring:message code="mihabitat.menu.arrendatario.nuevo"/></a>
+                            <li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/administrador/arrendamiento/lista">
+                                    <spring:message code="mihabitat.menu.arrendatario.lista"/></a>
+                            <li>
+                        </ul>
                     </li>
                     <li>
-                    	<a href="#"><i class="fa fa-lg fa-fw fa-bell"></i>
-                    	<span class="menu-item-parent"><spring:message code="mihabitat.menu.visitas"/></span>
-                    	</a>
-                    	<ul>
-                    	<li>
-                    		<a href="${pageContext.request.contextPath}/administrador/visitantes/nuevo">
-                    		<spring:message code="mihabitat.menu.visitas.nuevo"/></a>
-                    	<li>
-                    	<li>
-                    		<a href="${pageContext.request.contextPath}/administrador/visitantes/lista">
-                    		<spring:message code="mihabitat.menu.visitas.lista"/></a>
-                    	<li>
-                    	</ul>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-bell"></i>
+                            <span class="menu-item-parent"><spring:message code="mihabitat.menu.visitas"/></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/administrador/visitantes/nuevo">
+                                    <spring:message code="mihabitat.menu.visitas.nuevo"/></a>
+                            <li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/administrador/visitantes/lista">
+                                    <spring:message code="mihabitat.menu.visitas.lista"/></a>
+                            <li>
+                        </ul>
                     </li>
-                    </c:when>
+                </c:when>
             </c:choose>
         </ul>
     </nav>
-			<span class="minifyme" data-action="minifyMenu">
+    <span class="minifyme" data-action="minifyMenu">
 				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 </aside>
 <div id="main" role="main">
     <jsp:include page="../comunes/comunesJS.jsp"/>
 
-    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/pais.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/estado.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/municipio.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/colonia.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/direccion.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app.config.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/app.min.js?v=${project-version}"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/pais.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/estado.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/municipio.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/colonia.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/direcciones/direccion.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app.config.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app.min.js?v=1.11-BETA"></script>
 
     <%--SCRIPTS PARA LAS NOTIFICACIONES--%>
-    <script src="${pageContext.request.contextPath}/recursos/js/app/notificaciones/notificacion-app.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/plugin/websockets/sock.js?v=${project-version}"></script>
-    <script src="${pageContext.request.contextPath}/recursos/js/plugin/websockets/stomp.js?v=${project-version}"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/app/notificaciones/notificacion-app.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/plugin/websockets/sock.js?v=1.11-BETA"></script>
+    <script src="${pageContext.request.contextPath}/recursos/js/plugin/websockets/stomp.js?v=1.11-BETA"></script>
 
     <script type="text/javascript">
         var notifiacionesApp = new FuncionalidadNotificacionApp({});
@@ -883,47 +883,47 @@
 <div id="shortcut">
     <ul>
         <li>
-            <a href="/administrador/cargos-departamentos/nuevo" class="jarvismetro-tile big-cubes bg-color-orange">
+            <a href="${pageContext.request.contextPath}/administrador/cargos-departamentos/nuevo" class="jarvismetro-tile big-cubes bg-color-orange">
                 <span class="iconbox"> <i class="fa fa-edit fa-4x"></i> <span> <spring:message
                         code="mihabitat.menu.cargos.nuevo"/> </span> </span> </a>
         </li>
         <li>
-            <a href="/administrador/cargos-departamentos/lista" class="jarvismetro-tile big-cubes bg-color-orange">
+            <a href="${pageContext.request.contextPath}/administrador/cargos-departamentos/lista" class="jarvismetro-tile big-cubes bg-color-orange">
                 <span class="iconbox"> <i class="fa fa-list fa-4x"></i> <span> <spring:message
                         code="mihabitat.menu.cargos.lista"/> </span> </span> </a>
         </li>
         <li>
-            <a href="/administrador/pagos/nuevo" class="jarvismetro-tile big-cubes bg-color-red"> <span class="iconbox"> <i
+            <a href="${pageContext.request.contextPath}/administrador/pagos/nuevo" class="jarvismetro-tile big-cubes bg-color-red"> <span class="iconbox"> <i
                     class="fa fa-money fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.nuevo.pagos"/> </span> </span> </a>
         </li>
         <li>
-            <a href="/administrador/pagos/lista" class="jarvismetro-tile big-cubes bg-color-red"> <span class="iconbox"> <i
+            <a href="${pageContext.request.contextPath}/administrador/pagos/lista" class="jarvismetro-tile big-cubes bg-color-red"> <span class="iconbox"> <i
                     class="fa fa-list fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.lista.pagos"/> </span> </span> </a>
         </li>
         <li>
-            <a href="/administrador/gastos/nuevo" class="jarvismetro-tile big-cubes bg-color-redLight"> <span
+            <a href="${pageContext.request.contextPath}/administrador/gastos/nuevo" class="jarvismetro-tile big-cubes bg-color-redLight"> <span
                     class="iconbox"> <i class="fa fa-arrow-circle-up fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.nuevo.gastos"/> </span> </span> </a>
         </li>
         <li>
-            <a href="/administrador/gastos/lista" class="jarvismetro-tile big-cubes bg-color-redLight"> <span
+            <a href="${pageContext.request.contextPath}/administrador/gastos/lista" class="jarvismetro-tile big-cubes bg-color-redLight"> <span
                     class="iconbox"> <i class="fa fa-list fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.lista.gastos"/> </span> </span> </a>
         </li>
         <li class="hidden-mobile">
-            <a href="/administrador/facturasporpagar/cargar" class="jarvismetro-tile big-cubes bg-color-purple"> <span
+            <a href="${pageContext.request.contextPath}/administrador/facturasporpagar/cargar" class="jarvismetro-tile big-cubes bg-color-purple"> <span
                     class="iconbox"> <i
                     class="fa fa-file-code-o fa-4x"></i> <span> Cargar Facturas por Pagar </span> </span> </a>
         </li>
         <li class="hidden-mobile">
-            <a href="/administrador/facturasporpagar/lista" class="jarvismetro-tile big-cubes bg-color-purple"> <span
+            <a href="${pageContext.request.contextPath}/administrador/facturasporpagar/lista" class="jarvismetro-tile big-cubes bg-color-purple"> <span
                     class="iconbox"> <i class="fa fa-list fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.lista.facturasporpagar"/> </span> </span> </a>
         </li>
         <li class="hidden-mobile">
-            <a href="/administrador/pago-proveedores/nuevo" class="jarvismetro-tile big-cubes bg-color-purple"> <span
+            <a href="${pageContext.request.contextPath}/administrador/pago-proveedores/nuevo" class="jarvismetro-tile big-cubes bg-color-purple"> <span
                     class="iconbox"> <i class="fa fa-arrow-circle-right fa-4x"></i> <span> <spring:message
                     code="mihabitat.menu.proveedores.pagos"/> </span> </span> </a>
         </li>
@@ -1043,14 +1043,14 @@
 </body>
 
 <script type="text/javascript">
-var requestContextPath = '${pageContext.request.contextPath}';
-$(function()  {
-	  $('input[name=chooseOptions]').on('input',function() {
-		  
-	    var selectedOption = $('option[value="'+$(this).val()+'"]');
-	   	if(!(selectedOption.attr('id')==undefined)){
-	   		location.href=requestContextPath+"/"+selectedOption.attr('id');}
-	 	  });
-	});
+    var requestContextPath = '${pageContext.request.contextPath}';
+    $(function()  {
+        $('input[name=chooseOptions]').on('input',function() {
+
+            var selectedOption = $('option[value="'+$(this).val()+'"]');
+            if(!(selectedOption.attr('id')==undefined)){
+                location.href=requestContextPath+"/"+selectedOption.attr('id');}
+        });
+    });
 </script>
 </html>

@@ -55,7 +55,7 @@ var ResumenDeAbonosViewModel = function(data) {
     
     self.imprimir = function(formato) {
         /*var fecha = "01-" + self.reporte.fecha();*/
-        var url = contextPath + "/administrador/reportes/resumen-abonos/imprimir?formato="
+        var url = "/administrador/reportes/resumen-abonos/imprimir?formato="
                     + formato + "&inicio=" + self.reporte.inicio() + "&fin=" +  self.reporte.fin() + "&detalle=" +  self.reporte.detalle() + "&cancelados=" +  self.reporte.cancelados() + "&conSaldoFavor=" +  self.reporte.conSaldoFavor() + "&usuarioComentario=" + self.reporte.usuarioComentario();
         window.open(contextPath + url, '_blank');
     }

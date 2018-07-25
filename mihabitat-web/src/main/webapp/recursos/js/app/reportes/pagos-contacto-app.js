@@ -31,7 +31,7 @@ var PagosContactoViewModel = function() {
     
     self.imprimir = function(formato) {
         if (self.valida()) {
-            var url = contextPath + "/administrador/reportes/pagos-contacto/imprimir"
+            var url = "/administrador/reportes/pagos-contacto/imprimir"
                 + "?formato=" + formato
                 + "&anio=" + self.reporte.anio();
             window.open(contextPath + url, '_blank');

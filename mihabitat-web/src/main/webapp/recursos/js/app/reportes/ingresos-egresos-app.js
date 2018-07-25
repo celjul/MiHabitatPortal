@@ -40,7 +40,7 @@ var IngresosEgresosViewModel = function () {
 
     self.imprimir = function(formato) {
         if (self.isValid()) {
-            var url = contextPath + "/administrador/reportes/ingresos-egresos/imprimir?inicio="
+            var url = "/administrador/reportes/ingresos-egresos/imprimir?inicio="
                         + self.reporte.inicio() + "&fin=" + self.reporte.fin() + "&formato=" + formato;
             window.open(contextPath + url, '_blank');
         }

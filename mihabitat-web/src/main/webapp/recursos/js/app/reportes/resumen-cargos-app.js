@@ -53,7 +53,7 @@ var ResumenDeCargosViewModel = function(data) {
     
     self.imprimir = function(formato) {
         /*var fecha = "01-" + self.reporte.fecha();*/
-        var url = contextPath + "/administrador/reportes/resumen-cargos/imprimir?formato="
+        var url =  "/administrador/reportes/resumen-cargos/imprimir?formato="
                     + formato + "&inicio=" + self.reporte.inicio() + "&fin=" +  self.reporte.fin() + "&detalle=" +  self.reporte.detalle() + "&cancelados=" +  self.reporte.cancelados();
         window.open(contextPath + url, '_blank');
     }

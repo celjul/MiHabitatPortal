@@ -20,7 +20,7 @@ var SaldoFavorViewModel = function(data) {
     }
     
     self.imprimir = function(formato) {
-        var url = contextPath + "/administrador/reportes/saldo-favor/imprimir?formato="
+        var url = "/administrador/reportes/saldo-favor/imprimir?formato="
                     + formato + "&detalle=" +  self.reporte.detalle();
         window.open(contextPath + url, '_blank');
     }

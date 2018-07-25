@@ -22,7 +22,7 @@ var CuentasCobrarViewModel = function(data) {
     }
     
     self.imprimir = function(formato) {
-        var url = contextPath + "/administrador/reportes/cuentas-cobrar/imprimir?fin=" 
+        var url = "/administrador/reportes/cuentas-cobrar/imprimir?fin="
                     + self.reporte.fin() + "&formato=" + formato;
         window.open(contextPath + url, '_blank');
     }

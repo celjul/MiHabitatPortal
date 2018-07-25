@@ -56,7 +56,7 @@ var CuentaDetalleViewModel = function(data) {
     
     self.imprimir = function(formato) {
         if (self.isValid()) {
-            var url = contextPath + "/administrador/reportes/cuenta-detalle/imprimir?idCuenta="
+            var url = "/administrador/reportes/cuenta-detalle/imprimir?idCuenta="
                         + self.reporte.cuenta.id() + "&inicio="
                         + self.reporte.inicio() + "&fin="
                         + self.reporte.fin() + "&formato="
