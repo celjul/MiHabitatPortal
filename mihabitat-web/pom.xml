@@ -278,7 +278,7 @@
 				<version>2.2</version>
 				<configuration>
 					<systemProperties>
-						<JAVA_OPTS>-Xms2048m -Xmx4096m -XX:PermSize=256m -XX:MaxPermSize=512m -Xss4m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled</JAVA_OPTS>
+							<JAVA_OPTS>-Xms2048m -Xmx4096m -XX:PermSize=256m -XX:MaxPermSize=512m -Xss4m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled</JAVA_OPTS>
 					</systemProperties>
 					<!--  
 					<port>8070</port>

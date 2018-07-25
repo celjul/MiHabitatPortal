@@ -90,9 +90,6 @@
 								<td><label> ${item.placas}</label></td>
 								<td><label> ${item.idStatus.VDescripcion}</label></td>
 								<td style="text-align: center;">
-
-
-
 									<div class="btn-group">
 										<a class="btn btn-default btn-xs" href="javascript:void(0);"><i class="fa fa-cog"></i></a>
 										<a class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" href="javascript:void(0);"><span class="caret"></span></a>
@@ -109,9 +106,7 @@
 											</li>
 										</ul>
 									</div>
-
 								</td>
-																
 							</tr>	
 							</c:forEach>
 						</tbody>

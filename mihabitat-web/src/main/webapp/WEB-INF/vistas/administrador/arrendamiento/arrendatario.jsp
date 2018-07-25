@@ -194,11 +194,11 @@ function validateMyForm()
 }
 
 $(function() {
-	  $('input[name=chooseOption]').on('input',function() {
+	  	$('input[name=chooseOption]').on('input',function() {
 	    var selectedOption = $('option[value="'+$(this).val()+'"]');
 	   	if(selectedOption.attr('id')==undefined){document.getElementById('id_departamento').value = -1;}
 	   	else{document.getElementById('id_departamento').value = selectedOption.attr('id');}
-	 	  });
+	 	 	 });
 	});
 	
 $(document).ready(function(){

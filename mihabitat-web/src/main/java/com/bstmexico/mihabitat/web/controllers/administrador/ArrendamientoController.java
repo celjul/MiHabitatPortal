@@ -327,7 +327,7 @@ public class ArrendamientoController {
 		jrDataSource = new JRBeanCollectionDataSource(collection);
 
 		String sourceFile = directorio + "ReporteArrendatarios.jasper";
-		return reportUtils.export("pdf", sourceFile, map, jrDataSource);
+				return reportUtils.export("pdf", sourceFile, map, jrDataSource);
 
 
 

@@ -18,11 +18,9 @@ public class ReporteArrendatarios {
     public int getNumAdultos() {
         return numAdultos;
     }
-
     public void setNumAdultos(int numAdultos) {
         this.numAdultos = numAdultos;
     }
-
     private String administrador;
         private  String torre;
     public String getPlacas() {

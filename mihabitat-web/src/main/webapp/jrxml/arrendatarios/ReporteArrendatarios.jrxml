@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2018-07-04T12:37:58 -->
+<!-- 2018-07-25T16:03:35 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteArrendatarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ac382a2-ee24-4eac-ab17-94d775b42b63">
 	<parameter name="IMAGEN" class="java.awt.Image" isForPrompting="false">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -36,7 +36,7 @@
 				<textElement verticalAlignment="Middle" markup="none">
 					<font fontName="Arial" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{condominio}.getDireccion().getCalle() + " " +
+				<textFieldExpression><![CDATA[$F{condominio}.getDireccion().getCalle()  + " " +
 $F{condominio}.getDireccion().getNoExterior() + ", " +
 $F{condominio}.getDireccion().getColonia().getNombre() + ", C.P. " +
 $F{condominio}.getDireccion().getColonia().getCodigoPostal() + ", " +
@@ -214,7 +214,7 @@ $F{condominio}.getDireccion().getColonia().getMunicipio().getEstado().getNombre(
 				<text><![CDATA[Arrendatario:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="232" y="334" width="90" height="21" uuid="1f8e9527-d3ac-4517-b302-4e5944f1541d"/>
+				<reportElement x="232" y="336" width="90" height="21" uuid="1f8e9527-d3ac-4517-b302-4e5944f1541d"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="16"/>
 				</textElement>
